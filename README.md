@@ -12,43 +12,32 @@ This is the official repository for the Hope For Children website, a non-profit 
 |Project File                |True     |
 <br>
 
-# Users schema
+# Program Schema
 
 |Attribute               | Required|
 |--------------          |:-------:|
-|Username                |True     |
-|Email                   |True     |
-|Password                |True     |
-|First Name              |True     |
-|Last Name               |True     |
-|Title                   |True     |
-|Residence               |True     |
-|Resume/CV               |False    |
-|Gender                  |False    |
-|Date of Birth           |False    |
-|About                   |False    |
-|Timestamp               |default  |
+|id                          |True     |
+|project title               |True     |
+|project description         |True     |
+|image                       |True     |
+|Project Activities          |True     |
 
-# UserProfile Schema
+# Gallery Schema
 |Attribute               | Required|
 |--------------          |:-------:|
-|UserId                  |ForeignKey(User)     |
-|Linkedin                |False    |
-|Education               |False    |
-|Certification           |False    |
-|Skills                  |ForeignKey(Skill)    |
-|Timestamp               |default  |          
+|id                          |True     |
+|Gallery Category            |True     |
+|Image File                  |True     |
+|Image caption               |True     |
 
-# Client SChema
+# Donation Schema
 |Attribute               | Required|
 |--------------          |:-------:|
-|ClientId                |True     |
-|Email                   |True     |
-|Organization            |False    |
-|HiringManagerName       |False    |
-|CareerSite              |False    |
-|password                |True     |
-|Timestamp               |default  |
+|id                      |True     |
+|donor name              |True     |
+|donor email             |True     |
+|donated amount          |False    |
+
 # Skill Schema
 |Attribute               | Required|
 |--------------          |:-------:|
