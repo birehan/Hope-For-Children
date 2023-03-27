@@ -46,7 +46,7 @@ This is the official repository for the Hope For Children website, a non-profit 
 |partner name            |True     |
 |partner site link       |False    |
 
-# Our Children Schema
+# Children Schema
 |Attribute               | Required|
 |--------------          |:-------:|
 |id                      |True     |
