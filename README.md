@@ -36,10 +36,27 @@ This is the official repository for the Hope For Children website, a non-profit 
 |id                      |True     |
 |donor name              |True     |
 |donor email             |True     |
-|donated amount          |False    |
+|donated amount          |True    |
 
-# Skill Schema
+# Parteners Schema
 |Attribute               | Required|
 |--------------          |:-------:|
-|skillId                 |default  |
-|name                    |False    |
+|id                      |True     |
+|partner image           |True     |
+|partner name            |True     |
+|partner site link       |False    |
+
+# Our Children Schema
+|Attribute               | Required|
+|--------------          |:-------:|
+|id                      |True     |
+|child image             |True     |
+|child name              |True     |
+|child story             |True     |
+
+# Admin Schema
+|Attribute               | Required|
+|--------------          |:-------:|
+|id                      |True     |
+|admin username          |True     |
+|admin password          |True     |
