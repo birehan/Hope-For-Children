@@ -1,57 +1,28 @@
-import { Box, IconButton, Stack, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import DrawerComponent from "./Drawer";
-const useStyles = () => {
-  return {
-    header: {
-      position: "absolute",
-      top: 0,
-      // background: "transparent",
-      height: "80px",
-      width: "100vw",
-      zIndex: "10",
-      background: "rgba(70, 69, 81, 0.62)", // or any other color you want for the background
-      backdropFilter: "blur(10px)",
-    },
-  };
-};
-
-const links = [
-  {
-    name: "Courses",
-    path: "/courses",
-  },
-  {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Testimonials",
-    path: "/testimonials",
-  },
-  {
-    name: "Contact-Us",
-    path: "/contact",
-  },
-];
+import Link from "next/link";
+import Image from "next/image";
+import links from "./HeaderLinks";
+import AchievementDropDown from "./AchievementDropDown";
+import useStyles from "./styles";
 
 const Header = () => {
   const classes = useStyles();
 
-  //   return (
-  //     <Box sx={classes.header}>
-  //       <Box sx={{ color: "white" }}>Header</Box>
-  //     </Box>
-  //   );
-  // };
-
-  // export default Header;
-
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
     <Box sx={classes.header}>
@@ -61,59 +32,63 @@ const Header = () => {
           setOpenDrawer={setOpenDrawer}
         />
       )}
-
-      <Box
-        onClick={() => {
-          // navigate("/");
-        }}
-        component="img"
-        alt="logo"
-        src="/"
-        // sx={useStyles.Mlogo}
-      ></Box>
-
       {isMatch ? (
-        <IconButton
-          sx={{ color: "black", mr: "20px" }}
-          onClick={() => setOpenDrawer(!openDrawer)}
-        >
-          <MenuIcon />
-        </IconButton>
-      ) : (
         <Stack
-        // sx={useStyles.container}
+          sx={{
+            ...classes.stackContainer,
+            justifyContent: "space-between",
+            padding: "10px 20px",
+          }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "end",
-            }}
+          <Link href="/">
+            <Box
+              component="img"
+              alt="logo"
+              src="/assets/images/logo2.png"
+              sx={{ width: "50px", height: "50px" }}
+            ></Box>
+          </Link>
+          <IconButton
+            sx={{ color: "white" }}
+            onClick={() => setOpenDrawer(!openDrawer)}
           >
-            {" "}
-            <Stack
-            // sx={useStyles.linksContainer}
-            >
-              {links.map((link, index) => {
+            <MenuIcon />
+          </IconButton>
+        </Stack>
+      ) : (
+        <Stack sx={classes.stackContainer}>
+          <Stack sx={classes.logoContainer}>
+            <Image
+              src="/assets/images/logo2.png"
+              alt="log"
+              height="50"
+              width="50"
+            />
+            <Typography sx={classes.logoTitle}>Hope For Children</Typography>
+          </Stack>
+          <Stack sx={classes.navLinksContainer}>
+            {links.map((link, index) => {
+              if (link.name === "Achievements") {
                 return (
-                  <Box
-                    key={index}
-                    onClick={() => {
-                      // navigate(link.path);
-                    }}
-                    title={link.name}
-                    sx={
-                      {
-                        // ...useStyles.headerLinks,
-                        // ...(pathname === link.path && useStyles.selectedLink),
-                      }
-                    }
-                  >
+                  <AchievementDropDown IsSmallScreen={false} key={index} />
+                );
+              }
+              return (
+                <Link
+                  key={index}
+                  style={{ textDecoration: "none" }}
+                  href={link.path}
+                >
+                  <Box key={index} sx={classes.navLink}>
                     {link.name}
                   </Box>
-                );
-              })}
-            </Stack>
-          </Box>
+                </Link>
+              );
+            })}
+          </Stack>
+          <Link href="/donate" style={{ textDecoration: "none" }}>
+            <Button sx={classes.donateButton}>Donate Now</Button>
+          </Link>
         </Stack>
       )}
     </Box>

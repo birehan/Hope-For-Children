@@ -20,10 +20,14 @@
     "@types/swiper": "^6.0.0",
     "next": "latest",
     "react": "latest",
+    "react-countup": "^6.4.2",
     "react-dom": "latest",
-    "swiper": "^9.3.0"
+    "react-intersection-observer": "^9.4.3",
+    "swiper": "^9.3.0",
+    "use-count-up": "^3.0.1"
   },
   "devDependencies": {
+    "@types/countup.js": "^2.0.4",
     "@types/node": "latest",
     "@types/react": "latest",
     "eslint": "latest",
