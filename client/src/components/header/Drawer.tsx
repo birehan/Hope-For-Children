@@ -76,37 +76,6 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-<<<<<<< HEAD
-          <ListItem sx={classes.listItem}>
-            <Box sx={classes.drawerSite}>
-              <Stack sx={classes.drawerContent}>
-                <Link href="/" sx={classes.drawerLink}>
-                  <Box
-                    component="img"
-                    alt="logo"
-                    src="/assets/images/logo.jpg"
-                    sx={classes.logo}
-                  ></Box>
-
-                  <Typography sx={classes.title}>Hope For Children</Typography>
-                </Link>
-
-                <CloseIcon onClick={() => setOpenDrawer(false)} />
-              </Stack>
-            </Box>
-          </ListItem>
-          <Divider />
-          {links.map((link, index) => {
-            if (link.name === "Achievements") {
-              return <AchievementDropDown IsSmallScreen={true} key={index} />;
-            }
-
-            return (
-              <Stack key={index}>
-                <ListItem>
-                  <Link href={link.path} sx={classes.link}>
-                    <Typography sx={{ fontSize: "1.2rem", fontWeight: "400" }}>
-=======
           <ListItem sx={{ border: "3px solid green", flexDirection: "column" }}>
             <Link sx={classes.drawerSite}>
               <Stack
@@ -192,16 +161,11 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
                         fontWeight: "400",
                       }}
                     >
->>>>>>> f1bf65e (change in folder structure)
                       {link.name}
                     </Typography>
                   </Link>
                 </ListItem>
-<<<<<<< HEAD
-                <Divider sx={classes.divider} />
-=======
                 <Divider />
->>>>>>> f1bf65e (change in folder structure)
               </Stack>
             );
           })}
