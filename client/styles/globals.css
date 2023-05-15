@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -26,52 +27,45 @@ body {
   -webkit-overflow-scrolling: touch; */
 }
 
-/* #00B1F4 */
-
-* {
-  transition: all 0.4s ease-in-out;
+.thematic-card {
+  background: #ffffff;
+  box-shadow: 2px 3px 32px -12px rgba(0, 155, 154, 0.77);
+  border-radius: 10px;
 }
 
-.swiper-button-next {
-  color: #00b1f4 !important;
-  font-weight: 550;
-  /* background: red; */
+
+.corners {
+  position: relative;
 }
 
-.swiper-button-prev {
-  color: #00b1f4 !important;
-  font-weight: 550;
+.top, .bottom {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #00b1f4 !important;
-}
-::-webkit-scrollbar {
-  /* display: none; */
+.top {
+  top: 0;
+  border-top: 3px solid  #00B1F4;
 }
 
-.visible-scrollbar,
-.invisible-scrollbar,
-.mostly-customized-scrollbar {
-  display: block;
-  width: 10em;
-  overflow: auto;
-  height: 2em;
+.bottom {
+  bottom: 0;
+  border-bottom: 3px solid  #00B1F4;
 }
 
-.invisible-scrollbar::-webkit-scrollbar {
-  display: none;
+.left {
+  left: 0;
+  border-left: 3px solid  #00B1F4;
 }
 
-/* Demonstrate a "mostly customized" scrollbar
- * (won't be visible otherwise if width/height is specified) */
-.mostly-customized-scrollbar::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  background-color: #aaa; /* or add it to the track */
+.right {
+  right: 0;
+  border-right: 3px solid  #00B1F4;
 }
 
-/* Add a thumb */
-.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
-  background: #000;
-}
+
+
+
+

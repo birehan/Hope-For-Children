@@ -1,6 +1,6 @@
 import { Thematic } from "../src/models/thematicAreas"
-import { value } from "../src/models/values"
 
+import { value } from "../src/models/values"
 export const thematics:Thematic[] = [
     {
         id:1,
@@ -35,7 +35,6 @@ export const thematics:Thematic[] = [
         imageUrl:""
     },
 ]
-
 export const values: value[] = [
     {
         id:"01",
