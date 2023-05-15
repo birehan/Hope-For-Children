@@ -39,7 +39,7 @@ export const thematics:Thematic[] = [
 export const values: value[] = [
     {
         id:"01",
-        title:"Integrity and Accountability",
+        title:"Participation and Collaboration",
         desc:"Communities can be empowered to help themselves and should own the process and results of all efforts. We work in partnership with children, the community, our donors, the government and other service providers to meet our shared goals."
     },
     {
