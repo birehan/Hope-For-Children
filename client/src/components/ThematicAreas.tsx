@@ -46,7 +46,7 @@ const ThematicAreas = () => {
         <p
           className={`text-center text-[18px] ${popin.style.fontFamily} tracking-wider not-italic text-[#010101]
           max-w-[1200px] h-[168px] font-poppins  font-[400] text-[18px] leading-[232.5%] text-center
-          text-[rgba(1, 1, 1, 0.74)] letter-spacing-[0.055em]`}
+          text-[rgba(1, 1, 1, 0.74)] letter-spacing-[0.055em] mb-2 md:mb-0`}
         >
           HFC has been injecting multifaceted on different areas to provide
           holistic services to poor community members, PLWHA, OVC and their care
@@ -56,10 +56,10 @@ const ThematicAreas = () => {
       </div>
       <div className="relative p-5">
         <div className="corners max-w-[1150px] m-auto">
-          <div className="top left"></div>
-          <div className="top right"></div>
-          <div className="bottom right"></div>
-          <div className="bottom left"></div>
+          <div className="hidden md:top left"></div>
+          <div className="hidden md:top right"></div>
+          <div className="hidden md:bottom right"></div>
+          <div className="hidden md:bottom left"></div>
           <Splide
             options={{
               rewind: true,
