@@ -1,6 +1,13 @@
 import { Thematic } from "../src/models/thematicAreas"
-
 import { value } from "../src/models/values"
+import image1 from '../common/images/Direct_reach_Ethiopia.png'
+import image2 from '../common/images/ESAP.png'
+import image3 from '../common/images/GCf.png'
+import image4 from '../common/images/Mowasa.png'
+import image5 from '../common/images/usaid.png'
+import image6 from '../common/images/society.png'
+import image7 from '../common/images/the_world_bank.png'
+
 export const thematics:Thematic[] = [
     {
         id:1,
@@ -61,4 +68,14 @@ export const values: value[] = [
         title:"Equity",
         desc:"Communities can be empowered to help themselves and should own the process and results of all efforts. We work in partnership with children, the community, our donors, the government and other service providers to meet our shared goals."
     },
+]
+
+export const partners = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7
 ]
