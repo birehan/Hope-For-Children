@@ -56,10 +56,10 @@ const ThematicAreas = () => {
       </div>
       <div className="relative p-5">
         <div className="corners max-w-[1150px] m-auto">
-          <div className="hidden md:top left"></div>
-          <div className="hidden md:top right"></div>
-          <div className="hidden md:bottom right"></div>
-          <div className="hidden md:bottom left"></div>
+          <div className="hidden md:flex top left"></div>
+          <div className="hidden md:flex top right"></div>
+          <div className="hidden md:flex bottom right"></div>
+          <div className="hidden md:flex bottom left"></div>
           <Splide
             options={{
               rewind: true,

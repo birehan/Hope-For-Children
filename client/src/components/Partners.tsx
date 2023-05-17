@@ -12,9 +12,13 @@ const Partners = () => {
         <Splide
           className="w-full px-20 py-12"
           options={{
+            type:'loop',
             perPage: 6,
             pagination:false,
             paginationKeyboard:true,
+            autoplay: true,
+            interval:5000,
+            useScroll: true,
             breakpoints: {
               768: {
                 perPage: 3,
