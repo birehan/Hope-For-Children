@@ -14,34 +14,11 @@ import { Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import Logout from "@mui/icons-material/Logout";
 
-// import { logOutUser } from "../features/authentication/actions/users.js";
-// import { useDispatch } from "react-redux";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import Logo from "../assets/logo.png";
-
-const links = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "Courses",
-    path: "/courses",
-  },
-  {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Testimonials",
-    path: "/testimonials",
-  },
-  {
-    name: "Contact-Us",
-    path: "/contact",
-  },
-];
+import links from "./HeaderLinks";
+import AchievementDropDown from "./AchievementDropDown";
 
 const useStyles = () => {
   return {
@@ -76,7 +53,7 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-          <ListItem sx={{ border: "3px solid green", flexDirection: "column" }}>
+          <ListItem sx={{ flexDirection: "column" }}>
             <Link sx={classes.drawerSite}>
               <Stack
                 sx={{
@@ -133,6 +110,9 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
             </Link>
           </ListItem>
           {links.map((link, index) => {
+            if (link.name === "Achievements") {
+              return <AchievementDropDown IsSmallScreen={true} key={index} />;
+            }
             return (
               <Stack key={index}>
                 <ListItem>

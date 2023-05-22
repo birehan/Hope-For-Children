@@ -20,7 +20,7 @@ const LandingCardsList: React.FC = () => {
         "Sponsor one child payment for the company so that he will have the life he want in the future ok",
     },
     {
-      imageUrl: "/assets/images/donation.png",
+      imageUrl: "/assets/images/donation1.png",
       title: "Donation",
       description:
         "Sponsor one child payment for the company so that he will have the life he want in the future ok",
@@ -38,6 +38,7 @@ const LandingCardsList: React.FC = () => {
       {cards.map(({ imageUrl, title, description }, index) => (
         <LandingCard
           key={index}
+          index={index}
           imageUrl={imageUrl}
           title={title}
           description={description}

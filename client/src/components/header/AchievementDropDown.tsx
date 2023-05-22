@@ -49,7 +49,7 @@ const AchievementDropDown = ({ IsSmallScreen }: Props) => {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
-        sx={{ marginTop: "8px" }}
+        sx={{}}
       >
         <Stack sx={classes.stackMenu}>
           <MenuItem sx={classes.menuItem} onClick={handleClose}>

@@ -20,7 +20,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background:rgba(247, 248, 252, 0.5);
+  background: rgba(247, 248, 252, 0.5);
 
   font-family: "DM Sans", "Poppins", "Helvetica Neue", sans-serif;
 
@@ -70,4 +70,13 @@ body {
   background: #ffffff;
   box-shadow: 0px 4px 50px rgba(0, 177, 244, 0.2);
   border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background-color: #00b1f4; /* Replace with your desired active color */
 }

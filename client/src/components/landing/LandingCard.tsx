@@ -6,13 +6,25 @@ interface Props {
   imageUrl: string;
   title: string;
   description: string;
+  index: number;
 }
-export default function LandingCard({ imageUrl, title, description }: Props) {
+export default function LandingCard({
+  imageUrl,
+  title,
+  description,
+  index,
+}: Props) {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={8} md={3} lg={3} sx={{ width: "100%" }}>
-      <Card sx={classes.card}>
+    <Grid item xs={12} sm={8} md={3} lg={3} sx={{}}>
+      <Card
+        sx={{
+          ...classes.card,
+          background: index % 2 == 0 ? "white" : "#00B1F4",
+          color: index % 2 == 0 ? "#00B1F4" : "white",
+        }}
+      >
         <Image
           src={imageUrl}
           alt={title}
@@ -33,7 +45,22 @@ export default function LandingCard({ imageUrl, title, description }: Props) {
             {description}
           </Typography>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button sx={classes.button}>Read More</Button>
+            <Button
+              sx={{
+                ...classes.button,
+                color: index % 2 == 0 ? "#00B1F4" : "white",
+                border:
+                  index % 2 == 0 ? "1px solid #00b1f4" : "1px solid white",
+                "&:hover": {
+                  backgroundColor: index % 2 == 0 ? "#00B1F4" : "white",
+                  color: index % 2 == 0 ? "white" : "#00b1f4",
+                  border:
+                    index % 2 == 0 ? "1px solid white" : "1px solid  #00b1f4",
+                },
+              }}
+            >
+              Read More
+            </Button>
           </div>
         </CardContent>
       </Card>
