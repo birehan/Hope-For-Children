@@ -8,12 +8,12 @@ const Partners = () => {
       <div className="w-[100%] flex items-center justify-center">
         <h1 className="text-[40px] text-[#00B1F4] mb-3">Our Partners</h1>
       </div>
-      <div className="max-w-[1400px] partners-card m-auto mb-10">
+      <div className="max-w-[1300px] partners-card m-auto mb-10">
         <Splide
           className="w-full px-20 py-12"
           options={{
             type:'loop',
-            perPage: 6,
+            perPage: 5,
             pagination:false,
             paginationKeyboard:true,
             autoplay: true,
@@ -30,7 +30,7 @@ const Partners = () => {
         >
           {partners.map((partner) => (
             <SplideSlide>
-              <Image className="w-20 h-20 md:mx-16" src={partner} alt="" />
+              <Image className="w-20 h-20 md:mx-16 cursor-pointer" src={partner} alt="" />
             </SplideSlide>
           ))}
         </Splide>

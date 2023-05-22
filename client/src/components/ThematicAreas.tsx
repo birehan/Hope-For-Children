@@ -38,13 +38,13 @@ const ThematicAreas = () => {
   return (
     <div>
       <div
-        className={`flex flex-col ${popin.style.fontFamily}  items-center max-w-[1400px] m-auto`}
+        className={`flex flex-col ${popin.style.fontFamily}  items-center px-10 md:p-0 max-w-[1400px] m-auto`}
       >
         <h1 className="text-[#00B1F4] text-[50px] my-2 not-italic">
           Thematic Areas
         </h1>
         <p
-          className={`text-center text-[18px] ${popin.style.fontFamily} tracking-wider not-italic text-[#010101]
+          className={`text-center my-5 md:my-0 text-[18px] ${popin.style.fontFamily} tracking-wider not-italic text-[#010101]
           max-w-[1200px] h-[168px] font-poppins  font-[400] text-[18px] leading-[232.5%] text-center
           text-[rgba(1, 1, 1, 0.74)] letter-spacing-[0.055em] mb-2 md:mb-0`}
         >
@@ -55,7 +55,7 @@ const ThematicAreas = () => {
         </p>
       </div>
       <div className="relative p-5">
-        <div className="corners max-w-[1150px] m-auto">
+        <div className="corners w-[100%] md:max-w-[1200px] m-auto">
           <div className="hidden md:flex top left"></div>
           <div className="hidden md:flex top right"></div>
           <div className="hidden md:flex bottom right"></div>
@@ -74,7 +74,7 @@ const ThematicAreas = () => {
           >
             {thematics.map((them) => (
               <SplideSlide>
-                <div className="block md:flex max-w-[1100px] m-auto thematic-card my-6">
+                <div className="block md:flex max-w-[1150px] m-auto thematic-card my-6">
                   <div className="flex-1">
                     <Image className="w-full h-full" src={thematic} alt="" />
                   </div>
