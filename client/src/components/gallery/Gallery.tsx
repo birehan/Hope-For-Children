@@ -7,13 +7,13 @@ const Gallery = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("Children");
 
-  const handleTabChange = (tab) => {
+  const handleTabChange = (tab:any) => {
     setActiveTab(tab);
   };
 
   return (
     <div className="flex flex-col justify-center items-center p-10">
-      <div className="flex gallerytab bg-white-primary shadow-lg rounded-lg p-5 gap-3">
+      <div className="flex flex-wrap justify-center items-center gallerytab bg-white-primary shadow-lg rounded-lg p-5 gap-3">
         {gallery_tabs.map((tab) => (
           <button
             className={`w-[143px] ${

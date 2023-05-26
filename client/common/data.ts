@@ -1,5 +1,12 @@
 import { Thematic } from "../src/models/thematicAreas"
 import { value } from "../src/models/values"
+import rect1 from './images/Rectangle1.png'
+import rect2 from './images/Rectangle2.png'
+import rect3 from './images/Rectangle3.png'
+import rect4 from './images/Rectangle4.png'
+import rect5 from './images/Rectangle5.png'
+import rect6 from './images/Rectangle6.png'
+
 
 export const thematics:Thematic[] = [
     {
@@ -91,3 +98,35 @@ export const gallery_tabs = [
     },
 ]
 
+export const images = [
+    {
+        id:1,
+        h:300,
+        imageUrl:rect1
+    },
+    {
+        id:2,
+        h:200,
+        imageUrl:rect2
+    },
+    {
+        id:3,
+        h:300,
+        imageUrl:rect3
+    },
+    {
+        id:4,
+        h:200,
+        imageUrl:rect4
+    },
+    {
+        id:6,
+        h:300,
+        imageUrl:rect6
+    },
+    {
+        id:5,
+        h:300,
+        imageUrl:rect5
+    },
+]
