@@ -19,14 +19,18 @@
     "@mui/styles": "^5.11.13",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
+    "@types/react-responsive-masonry": "^2.1.0",
     "@types/swiper": "^6.0.0",
     "next": "latest",
     "react": "latest",
     "react-countup": "^6.4.2",
     "react-dom": "latest",
+    "react-grid-gallery": "^1.0.0",
     "react-intersection-observer": "^9.4.3",
+    "react-responsive-masonry": "^2.1.7",
     "swiper": "^9.3.0",
-    "use-count-up": "^3.0.1"
+    "use-count-up": "^3.0.1",
+    "yet-another-react-lightbox": "^3.10.0"
   },
   "devDependencies": {
     "@types/countup.js": "^2.0.4",

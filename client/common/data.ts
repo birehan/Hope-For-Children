@@ -63,3 +63,31 @@ export const values: value[] = [
         desc:"Communities can be empowered to help themselves and should own the process and results of all efforts. We work in partnership with children, the community, our donors, the government and other service providers to meet our shared goals."
     },
 ]
+
+export const gallery_tabs = [
+    {
+        id:1,
+        name:"Children"
+    },
+    {
+        id:2,
+        name:"Ceremony"
+    },
+    {
+        id:3,
+        name:"Youth"
+    },
+    {
+        id:4,
+        name:"Achievement"
+    },
+    {
+        id:4,
+        name:"Videos"
+    },
+    {
+        id:5,
+        name:"All"
+    },
+]
+

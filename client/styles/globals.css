@@ -26,8 +26,6 @@ body {
   -webkit-overflow-scrolling: touch; */
 }
 
-/* #00B1F4 */
-
 * {
   transition: all 0.4s ease-in-out;
 }
@@ -72,6 +70,12 @@ body {
 }
 
 /* Add a thumb */
-.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+.mostly-custsomized-scrollbar::-webkit-scrollbar-thumb {
   background: #000;
+}
+
+.gallerytab {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
