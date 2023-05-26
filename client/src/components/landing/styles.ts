@@ -7,7 +7,7 @@ const useStyles = () => {
       gap: { xs: "30px", lg: "50px" },
       position: { xs: "relative", lg: "absolute" },
       bottom: { xs: "0", lg: "-150px" },
-      zIndex: 10,
+      zIndex: 100,
       left: 0,
       right: 0,
     },
@@ -21,8 +21,6 @@ const useStyles = () => {
       boxShadow: "4px 4px 30px 18px rgba(0, 0, 0, 0.08)",
       borderRadius: "30px",
       // height: "300px",
-      zIndex: "10",
-      height: "100%",
     },
     media: {
       height: "200px",
@@ -31,6 +29,7 @@ const useStyles = () => {
     },
     title: {
       fontWeight: "bold",
+      color: "#00b1f4",
     },
     description: {
       marginBottom: "10px",
@@ -48,7 +47,7 @@ const useStyles = () => {
     },
     landingContainer: {
       height: { xs: "500px", md: "600px", lg: "800px" },
-      width: "100vw",
+      width: "100%",
       position: "relative",
     },
     landingText: {
