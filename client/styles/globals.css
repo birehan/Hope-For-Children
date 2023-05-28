@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,7 +20,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #f5f5f5;
+  background: rgba(247, 248, 252, 0.5);
 
   font-family: "DM Sans", "Poppins", "Helvetica Neue", sans-serif;
 
@@ -26,68 +28,55 @@ body {
   -webkit-overflow-scrolling: touch; */
 }
 
-* {
-  transition: all 0.4s ease-in-out;
-}
-
-.swiper-button-next {
-  color: #00b1f4 !important;
-  font-weight: 550;
-  /* background: red; */
-}
-
-.swiper-button-prev {
-  color: #00b1f4 !important;
-  font-weight: 550;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #00b1f4 !important;
-}
-::-webkit-scrollbar {
-  /* display: none; */
-}
-
-.visible-scrollbar,
-.invisible-scrollbar,
-.mostly-customized-scrollbar {
-  display: block;
-  width: 10em;
-  overflow: auto;
-  height: 2em;
-}
-
-.invisible-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.mostly-customized-scrollbar::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  background-color: #aaa; 
-}
-.mostly-custsomized-scrollbar::-webkit-scrollbar-thumb {
-  background: #000;
-}
-
-.gallerytab {
+.thematic-card {
   background: #ffffff;
-  box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 3px 32px -12px rgba(0, 155, 154, 0.77);
   border-radius: 10px;
 }
 
-.btn {
-  background: linear-gradient(
-    108.74deg,
-    rgba(216, 218, 229, 0.24) 0%,
-    rgba(215, 216, 219, 0.06) 100%
-  );
-  box-shadow: 0px 0px 50px -25px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(50px);
-  width: 60px;
-  height: 60px;
-  left: 126.5px;
-  top: -5.5px;
-  color: #00B1F4;
-  border-radius: 50px;
+.corners {
+  position: relative;
+}
+
+.top,
+.bottom {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.top {
+  top: 0;
+  border-top: 3px solid #00b1f4;
+}
+
+.bottom {
+  bottom: 0;
+  border-bottom: 3px solid #00b1f4;
+}
+
+.left {
+  left: 0;
+  border-left: 3px solid #00b1f4;
+}
+
+.right {
+  right: 0;
+  border-right: 3px solid #00b1f4;
+}
+
+.partners-card {
+  background: #ffffff;
+  box-shadow: 0px 4px 50px rgba(0, 177, 244, 0.2);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background-color: #00b1f4; /* Replace with your desired active color */
 }
