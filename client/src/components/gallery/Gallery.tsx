@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { gallery_tabs } from "../../../common/data";
 import Images from './Images'
+import Videos from "./Videos";
 
 const Gallery = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const Gallery = () => {
       <div className="mt-[3rem]">
         {activeTab === "Children" && <Images/>}
         {activeTab === "Ceremony" && <p>Ceremony</p>}
-        {activeTab === "Videos" && <p>Vedios</p>}
+        {activeTab === "Videos" && <Videos/>}
         {activeTab === "Images" && <p>Images</p>}
         {activeTab === "Youth" && <p>Youth</p>}
         {activeTab === "Achievement" && <p>Achievement</p>}

@@ -3,9 +3,9 @@ import { value } from "../src/models/values"
 import rect1 from './images/Rectangle1.png'
 import rect2 from './images/Rectangle2.png'
 import rect3 from './images/Rectangle3.png'
-import rect4 from './images/Rectangle4.png'
+import rect4 from './images/Rectangle4.JPG'
 import rect5 from './images/Rectangle5.png'
-import rect6 from './images/Rectangle6.png'
+import rect6 from './images/Rectangle6.JPG'
 
 
 export const thematics:Thematic[] = [
@@ -121,12 +121,55 @@ export const images = [
     },
     {
         id:6,
-        h:300,
-        imageUrl:rect6
+        h:200,
+        imageUrl:rect5
     },
     {
         id:5,
-        h:300,
-        imageUrl:rect5
+        h:200,
+        imageUrl:rect6
     },
+]
+
+export const vedios = [
+    {
+        id:1,
+        title:"Welcome Ceremony",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:2,
+        title:"Anniversary",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:3,
+        title:"Welcome Ceremony",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:4,
+        title:"Anniversary",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:5,
+        title:"Welcome Ceremony",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:6,
+        title:"Anniversary",
+        vedioId:"2g811Eo7K8U"
+    },
+    // {
+    //     id:7,
+    //     title:"Welcome Ceremony",
+    //     vedioId:"2g811Eo7K8U"
+    // },
+    // {
+    //     id:8,
+    //     title:"Welcome Ceremony",
+    //     vedioId:"2g811Eo7K8U"
+    // },
 ]

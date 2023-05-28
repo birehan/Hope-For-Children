@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const breakpointColumnsObj = {
   default: 3,
   1200: 3,
-  300: 1, 
+  500: 1, 
 };
 
 const Images = () => {
@@ -20,7 +20,7 @@ const Images = () => {
       >
         {images.map((image) => (
           <div key={image.id}>
-            <div className="w-full">
+            <div className="w-full gap-2">
               <Image
                 className={`w-full`}
                 src={image.imageUrl}

@@ -21,7 +21,7 @@ const Hero = () => {
             <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">Check some of our achievements through our gallery</p>
           </div>
           <div className="flex justify-center items-center p-4 gap-10">
-            <button className="w-32 sm:w-40 h-10 sm:h-12 bg-blue-500 rounded-full transition duration-300 ease-in-out hover:bg-blue-600">
+            <button className="w-32 sm:w-40 h-10 sm:h-12 bg-[#00B1F4] rounded-full transition duration-300 ease-in-out hover:bg-blue-600">
               Donate Now
             </button>
             <button className="border border-white w-32 sm:w-40 h-10 sm:h-12 rounded-full transition duration-300 ease-in-out hover:bg-gray-200 hover:text-blue-600">

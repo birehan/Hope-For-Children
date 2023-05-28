@@ -61,15 +61,11 @@ body {
   display: none;
 }
 
-/* Demonstrate a "mostly customized" scrollbar
- * (won't be visible otherwise if width/height is specified) */
 .mostly-customized-scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 8px;
-  background-color: #aaa; /* or add it to the track */
+  background-color: #aaa; 
 }
-
-/* Add a thumb */
 .mostly-custsomized-scrollbar::-webkit-scrollbar-thumb {
   background: #000;
 }
