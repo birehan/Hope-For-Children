@@ -79,3 +79,106 @@ export const partners = [
     image6,
     image7
 ]
+
+export const gallery_tabs = [
+    {
+        id:1,
+        name:"Children"
+    },
+    {
+        id:2,
+        name:"Ceremony"
+    },
+    {
+        id:3,
+        name:"Youth"
+    },
+    {
+        id:4,
+        name:"Achievement"
+    },
+    {
+        id:4,
+        name:"Videos"
+    },
+    {
+        id:5,
+        name:"All"
+    },
+]
+
+export const images = [
+    {
+        id:1,
+        h:300,
+        imageUrl:rect1
+    },
+    {
+        id:2,
+        h:200,
+        imageUrl:rect2
+    },
+    {
+        id:3,
+        h:300,
+        imageUrl:rect3
+    },
+    {
+        id:4,
+        h:200,
+        imageUrl:rect4
+    },
+    {
+        id:6,
+        h:200,
+        imageUrl:rect5
+    },
+    {
+        id:5,
+        h:200,
+        imageUrl:rect6
+    },
+]
+
+export const vedios = [
+    {
+        id:1,
+        title:"Welcome Ceremony",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:2,
+        title:"Anniversary",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:3,
+        title:"Welcome Ceremony",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:4,
+        title:"Anniversary",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:5,
+        title:"Welcome Ceremony",
+        vedioId:"2g811Eo7K8U"
+    },
+    {
+        id:6,
+        title:"Anniversary",
+        vedioId:"2g811Eo7K8U"
+    },
+    // {
+    //     id:7,
+    //     title:"Welcome Ceremony",
+    //     vedioId:"2g811Eo7K8U"
+    // },
+    // {
+    //     id:8,
+    //     title:"Welcome Ceremony",
+    //     vedioId:"2g811Eo7K8U"
+    // },
+]
