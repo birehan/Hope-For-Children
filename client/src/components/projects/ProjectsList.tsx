@@ -1,5 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Swiper } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -17,7 +16,7 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectsList = () => {
   return (
-    <Box sx={{ height: "570px", width: { xs: "90vw", lg: "80vw" } }}>
+    <Box sx={{ height: "600px", width: { xs: "90vw", lg: "80vw" } }}>
       <Swiper
         slidesPerView={1}
         centeredSlides={false}
@@ -48,17 +47,16 @@ const ProjectsList = () => {
           clickable: true,
         }}
         modules={[Keyboard, Pagination]}
-        className={`${styles.swiper} custom-swiper`}
+        className={`${styles.swiper}`}
       >
         {projects.map(({ imageUrl, title, description }, index: number) => {
           return (
-            <SwiperSlide key={index}>
-              <ProjectCard
-                imageUrl={imageUrl}
-                title={title}
-                description={description}
-              />
-            </SwiperSlide>
+            <ProjectCard
+              key={index}
+              imageUrl={imageUrl}
+              title={title}
+              description={description}
+            />
           );
         })}
       </Swiper>
