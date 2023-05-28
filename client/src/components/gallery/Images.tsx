@@ -22,7 +22,7 @@ const Images = () => {
           <div key={image.id}>
             <div className="w-full gap-2">
               <Image
-                className={w-full}
+                className={`w-full`}
                 src={image.imageUrl}
                 layout="responsive"
                 height={image.h}

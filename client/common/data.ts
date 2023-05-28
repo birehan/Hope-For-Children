@@ -7,6 +7,14 @@ import image4 from '../common/images/Mowasa.png'
 import image5 from '../common/images/usaid.png'
 import image6 from '../common/images/society.png'
 import image7 from '../common/images/the_world_bank.png'
+import rect1 from './images/Rectangle1.png'
+import rect2 from './images/Rectangle2.png'
+import rect3 from './images/Rectangle3.png'
+import rect4 from './images/Rectangle4.jpg'
+import rect5 from './images/Rectangle5.png'
+import rect6 from './images/Rectangle6.jpg'
+
+
 
 export const thematics:Thematic[] = [
     {
