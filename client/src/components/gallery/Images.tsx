@@ -1,4 +1,3 @@
-import React from "react";
 import { images } from "../../../common/data";
 import Image from "next/image";
 import Masonry from "react-masonry-css";

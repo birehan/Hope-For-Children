@@ -1,6 +1,4 @@
-import React from "react";
 import YouTube from "react-youtube";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { vedios } from "../../../common/data";
 
 function Videos() {

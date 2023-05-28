@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { useState } from "react";
 import { gallery_tabs } from "../../../common/data";
 import Images from './Images'
 import Videos from "./Videos";
