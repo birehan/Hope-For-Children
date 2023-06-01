@@ -17,7 +17,7 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectsList = () => {
   return (
-    <Box sx={{ height: "570px", width: { xs: "90vw", lg: "80vw" } }}>
+    <Box sx={{ height: "540px", width: { xs: "90vw", lg: "80vw" } }}>
       <Swiper
         slidesPerView={1}
         centeredSlides={false}

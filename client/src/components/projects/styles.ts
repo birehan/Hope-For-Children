@@ -30,7 +30,7 @@ const useStyles = () => {
     card: {
       display: "flex",
       flexDirection: "column",
-      gap: "30px",
+      gap: "10px",
       alignItems: "center",
       justifyContent: "center",
       background: "#FFFFFF",
