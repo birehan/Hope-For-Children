@@ -9,7 +9,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="bg-[#F7F8FC80]">
-      <div className="px-5 pt-14 pb-5 flex-wrap md:flex-nowrap flex justify-between max-w-[1000px] m-auto">
+      <div className="px-5 pt-14 pb-5 flex-wrap md:flex-nowrap flex justify-between max-w-[1300px] m-auto">
         <div>
           <h1 className="font-volkhov font-bold text-xl leading-6 tracking-wider text-primary-b">
             Hope For Children
@@ -24,7 +24,6 @@ const Footer = () => {
               <Instagram className="text-white" />
             </button>
             <button className="w-10 h-10 border rounded-[50%] left-441 top-5904 bg-[#FFFFFF]  shadow-md">
-
             <Twitter />
             </button>
           </div>
