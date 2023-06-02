@@ -1,4 +1,5 @@
 import React from "react";
+import DonateOnline from "./DonateOnline";
 import Support from "./Support";
 
 const Donate = () => {
@@ -19,7 +20,7 @@ const Donate = () => {
             <h1 className="col-span-3">62246871</h1>
             <h1 className="col-span-4">Hope for Children Organization</h1>
           </div>
-          <hr/>
+          <hr />
           <div className="grid md:grid-cols-12 gap-5 py-2 my-5">
             <h1 className="text-[#00B1F4]">02</h1>
             <h1 className="col-span-4">COMMERCIAL BANK OF ETHIOPIA</h1>
@@ -28,8 +29,10 @@ const Donate = () => {
           </div>
         </div>
       </div>
-      <div className="md:mx-10 my-3">
-        <Support/>
+      <div className="block lg:flex border-[3px] border-[#00B1F4] rounded-md p-10 md:mx-10 gap-20 my-20 relative">
+        <Support />
+        <div className="line"></div>
+        <DonateOnline />
       </div>
     </div>
   );
