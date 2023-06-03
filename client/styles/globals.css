@@ -90,3 +90,30 @@ body {
 .swiper-button-next:after {
   color: #00b1f4;
 }
+.donate {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 49px 5px rgba(0, 177, 244, 0.43);
+  border-radius: 15px;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-self: center;
+  width: 2px;
+  height: 80%;
+  background-color: #00B1F4;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .line {
+    display: none;
+  }
+}
+
+
+
+
+
