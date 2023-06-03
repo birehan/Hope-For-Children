@@ -16,6 +16,31 @@ export interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  React.useEffect(() => {
+    // Save scroll position on refresh
+    const handleBeforeUnload = () => {
+      localStorage.setItem("scrollPosition", JSON.stringify(window.scrollY));
+    };
+
+    // Retrieve and set scroll position on page load
+    const handleLoad = () => {
+      const scrollPosition = localStorage.getItem("scrollPosition");
+      if (scrollPosition !== null) {
+        window.scrollTo(0, parseInt(scrollPosition, 10));
+        localStorage.removeItem("scrollPosition");
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>

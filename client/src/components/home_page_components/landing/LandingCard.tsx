@@ -17,7 +17,16 @@ export default function LandingCard({
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={8} md={3} lg={3} sx={{}}>
+    <Grid
+      item
+      xs={12}
+      sm={5.75}
+      md={3.72}
+      lg={3}
+      sx={{
+        padding: "0 !important",
+      }}
+    >
       <Card
         sx={{
           ...classes.card,

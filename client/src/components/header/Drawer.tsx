@@ -1,8 +1,7 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import {
   Drawer,
   List,
-  Button,
   Stack,
   Typography,
   ListItem,
@@ -10,32 +9,11 @@ import {
   Divider,
 } from "@mui/material";
 import { Box } from "@mui/system";
-// import { useSelector } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
-import Logout from "@mui/icons-material/Logout";
 
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
-import Logo from "../assets/logo.png";
 import links from "./HeaderLinks";
 import AchievementDropDown from "./AchievementDropDown";
-
-const useStyles = () => {
-  return {
-    drawerSite: {
-      color: "black",
-      fontSize: { lg: "27px", md: "22px" },
-      textDecoration: "none",
-      p: "5px 0",
-      "&:hover": {
-        cursor: "pointer",
-        color: "#4d99b6",
-        transition: "300ms all ease-in",
-      },
-      width: "100%",
-    },
-  };
-};
+import useStyles from "./styles";
 
 interface Props {
   openDrawer: boolean;
@@ -43,7 +21,7 @@ interface Props {
 }
 
 const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
-  const classes = useStyles();
+  const styles = useStyles();
 
   return (
     <>
@@ -54,7 +32,7 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
       >
         <List>
           <ListItem sx={{ flexDirection: "column" }}>
-            <Link sx={classes.drawerSite}>
+            <Link sx={styles.drawerSite}>
               <Stack
                 sx={{
                   flexDirection: "row",
@@ -63,7 +41,6 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
                 }}
               >
                 <Box>
-                  {" "}
                   <Link
                     onClick={() => {
                       setOpenDrawer(false);
@@ -75,30 +52,14 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
                       fontWeight: "bold",
                     }}
                   >
-                    <Stack
-                      sx={{
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        gap: "10px",
-                      }}
-                    >
+                    <Stack sx={styles.logoContainer}>
                       <Box
                         component="img"
                         alt="logo"
                         src="/assets/images/logo.jpg"
-                        sx={{
-                          width: "40px",
-                          height: "40px",
-                        }}
-                      ></Box>
-
-                      <Typography
-                        sx={{
-                          fontSize: "22px",
-                          color: "#00b1f4",
-                        }}
-                      >
+                        sx={styles.logoImage}
+                      />
+                      <Typography sx={styles.drawerTitle}>
                         Hope For Children
                       </Typography>
                     </Stack>
@@ -117,30 +78,13 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }: Props) => {
               <Stack key={index}>
                 <ListItem>
                   <Link
+                    href={link.path}
                     onClick={() => {
                       setOpenDrawer(false);
                     }}
-                    sx={{
-                      color: "black",
-                      fontSize: { lg: "27px", md: "22px" },
-                      textDecoration: "none",
-                      p: "5px 0",
-
-                      "&:hover": {
-                        cursor: "pointer",
-                        color: "#4d99b6",
-                        transition: "300ms all ease-in",
-                      },
-                      width: "100%",
-                    }}
+                    sx={styles.listItem}
                   >
-                    <Typography
-                      sx={{
-                        // color: "white",
-                        fontSize: "1.2rem",
-                        fontWeight: "400",
-                      }}
-                    >
+                    <Typography sx={styles.listItemText}>
                       {link.name}
                     </Typography>
                   </Link>

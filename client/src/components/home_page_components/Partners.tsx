@@ -1,6 +1,6 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
-import { partners } from "../../common/data";
+import { partners } from "../../../common/data";
 
 const Partners = () => {
   return (
@@ -12,12 +12,12 @@ const Partners = () => {
         <Splide
           className="w-full px-20 py-12"
           options={{
-            type:'loop',
+            type: "loop",
             perPage: 5,
-            pagination:false,
-            paginationKeyboard:true,
+            pagination: false,
+            paginationKeyboard: true,
             autoplay: true,
-            interval:5000,
+            interval: 5000,
             useScroll: true,
             breakpoints: {
               768: {
@@ -30,7 +30,11 @@ const Partners = () => {
         >
           {partners.map((partner) => (
             <SplideSlide>
-              <Image className="w-20 h-20 md:mx-16 cursor-pointer" src={partner} alt="" />
+              <Image
+                className="w-20 h-20 md:mx-16 cursor-pointer"
+                src={partner}
+                alt=""
+              />
             </SplideSlide>
           ))}
         </Splide>

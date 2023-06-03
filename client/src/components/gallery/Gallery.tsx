@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { gallery_tabs } from "../../../common/data";
-import Images from './Images'
+import Images from "./Images";
 import Videos from "./Videos";
 
 const Gallery = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("Children");
 
-  const handleTabChange = (tab:any) => {
+  const handleTabChange = (tab: any) => {
     setActiveTab(tab);
   };
 
@@ -27,9 +27,9 @@ const Gallery = () => {
         ))}
       </div>
       <div className="mt-[3rem]">
-        {activeTab === "Children" && <Images/>}
+        {activeTab === "Children" && <Images />}
         {activeTab === "Ceremony" && <p>Ceremony</p>}
-        {activeTab === "Videos" && <Videos/>}
+        {activeTab === "Videos" && <Videos />}
         {activeTab === "Images" && <p>Images</p>}
         {activeTab === "Youth" && <p>Youth</p>}
         {activeTab === "Achievement" && <p>Achievement</p>}
@@ -39,5 +39,4 @@ const Gallery = () => {
   );
 };
 
-
-export default Gallery
+export default Gallery;
