@@ -54,7 +54,7 @@ const useStyles = () => {
     },
     button: {
       borderRadius: "50px",
-      padding: "10px 30px",
+      padding: "4px 30px",
       color: "#00b1f4",
       border: "1px solid #00b1f4",
       "&:hover": {

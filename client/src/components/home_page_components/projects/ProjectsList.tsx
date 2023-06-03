@@ -1,15 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import styles from "../../../../styles/projectStyles.module.css";
 
-// import "./projectStyles.css";
-import styles from "../../../styles/projectStyles.module.css";
-
-// import required modules
 import { Keyboard, Pagination } from "swiper";
 import { Box } from "@mui/material";
 import { projects } from "./projectsData";
@@ -17,7 +13,9 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectsList = () => {
   return (
-    <Box sx={{ height: "540px", width: { xs: "90vw", lg: "80vw" } }}>
+    <Box
+      sx={{ height: "540px", width: { xs: "95vw", md: "90vw", lg: "85vw" } }}
+    >
       <Swiper
         slidesPerView={1}
         centeredSlides={false}

@@ -1,12 +1,12 @@
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
-import { values } from "../../common/data";
+import { values } from "../../../common/data";
 
 const Value = () => {
   const [selectedValue, setSelectedValue] = useState(null);
 
   const toggleValue = (valueId: any | null) => {
-    setSelectedValue(prev => (prev === valueId ? null : valueId));
+    setSelectedValue((prev) => (prev === valueId ? null : valueId));
   };
 
   const getButtonRotation = (valueId: any | null) => {
@@ -36,7 +36,9 @@ const Value = () => {
           </div>
           <div
             className={`transition-all duration-500 ${
-              selectedValue === val.id ? "max-h-[100px]" : "max-h-0 overflow-hidden"
+              selectedValue === val.id
+                ? "max-h-[100px]"
+                : "max-h-0 overflow-hidden"
             }`}
           >
             <p className="px-10 py-5">{val.desc}</p>

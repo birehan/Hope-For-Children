@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
@@ -8,6 +9,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+* {
+  /* font-family: "DM Sans", sans-serif; */
+  font-family: "Poppins", sans-serif !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -79,4 +84,9 @@ body {
 
 .custom-swiper .swiper-pagination-bullet-active {
   background-color: #00b1f4; /* Replace with your desired active color */
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: #00b1f4;
 }

@@ -1,33 +1,176 @@
-import * as React from "react";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Link from "../src/Link";
-import ProTip from "../src/ProTip";
+import {
+  Box,
+  MenuItem,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import Header from "../src/components/header/Header";
+import AboutDropDown from "../src/components/about_components/AboutDropDown";
+import aboutData from "../src/components/about_components/options_data";
+import AboutDetail from "../src/components/about_components/AboutDetail";
+import Image from "next/image";
 
 export default function About() {
+  const { title, icon, items } = aboutData.staff;
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <Container maxWidth="lg">
-      <Box
+    <Stack>
+      <Header />
+      <Stack
         sx={{
-          my: 4,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          position: "relative",
+          height: { xs: "300px", md: "400px" },
+          background: "url(/assets/images/landing1.png)",
+          backgroundPosition: "center",
+          justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI - Next.js example in TypeScript
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#00B1F4",
+            fontWeight: "bold",
+          }}
+        ></Typography>
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#00B1F4",
+            fontWeight: "bold",
+          }}
+        >
+          Who We Are
         </Typography>
-        <Box maxWidth="sm">
-          <Button variant="contained" component={Link} noLinkStyle href="/">
-            Go to the home page
-          </Button>
-        </Box>
-        <ProTip />
-      </Box>
-    </Container>
+      </Stack>
+      <Stack
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          margin: { xs: "40px auto", md: "50px auto" },
+          width: { xs: "95vw", sm: "90vw", md: "85vw", lg: "80" },
+          // border: "5px solid green",
+          gap: "30px",
+        }}
+      >
+        {isLargeScreen ? (
+          <Stack
+            sx={{
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "20px",
+              padding: { xs: "15px", md: "20px" },
+              borderRadius: "5px",
+              boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
+            }}
+          >
+            <Typography
+              sx={{
+                background: "#00B1F4",
+                color: "white",
+                padding: "5px 15px",
+                borderRadius: "5px",
+                "&:hover": {
+                  cursor: "pointer",
+                  opacity: "0.85",
+                },
+              }}
+            >
+              About-Us
+            </Typography>
+
+            <Box
+              sx={{
+                background: "#00B1F4",
+                color: "white",
+                padding: "5px 15px",
+                borderRadius: "5px",
+                "&:hover": {
+                  cursor: "pointer",
+                  opacity: "0.85",
+                },
+              }}
+            >
+              <AboutDropDown title={title} icon={icon} items={items} />
+            </Box>
+          </Stack>
+        ) : (
+          <Stack sx={{}}>
+            <Stack
+              sx={{
+                boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
+                width: "fit-content",
+                padding: "20px 40px 20px 10px",
+              }}
+            >
+              <MenuItem sx={{ gap: "10px" }}>
+                <Image src={icon} alt="Icon" width="20" height="20" />{" "}
+                <span>{title}</span>
+              </MenuItem>
+
+              {items.map((item) => (
+                <Stack key={item.title}>
+                  <MenuItem sx={{ gap: "10px" }}>
+                    <img src={item.icon} alt="Item Icon" />
+                    <span>{item.title}</span>
+                  </MenuItem>
+                </Stack>
+              ))}
+            </Stack>
+
+            <Stack
+              sx={{
+                boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
+                width: "fit-content",
+                padding: "20px 40px 20px 10px",
+              }}
+            >
+              <MenuItem sx={{ gap: "10px" }}>
+                <Image src={icon} alt="Icon" width="20" height="20" />{" "}
+                <span>{title}</span>
+              </MenuItem>
+
+              {items.map((item) => (
+                <Stack key={item.title}>
+                  <MenuItem sx={{ gap: "10px" }}>
+                    <img src={item.icon} alt="Item Icon" />
+                    <span>{item.title}</span>
+                  </MenuItem>
+                </Stack>
+              ))}
+            </Stack>
+
+            <Stack
+              sx={{
+                boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
+                width: "fit-content",
+                padding: "20px 40px 20px 10px",
+              }}
+            >
+              <MenuItem sx={{ gap: "10px" }}>
+                <Image src={icon} alt="Icon" width="20" height="20" />{" "}
+                <span>{title}</span>
+              </MenuItem>
+
+              {items.map((item) => (
+                <Stack key={item.title}>
+                  <MenuItem sx={{ gap: "10px" }}>
+                    <img src={item.icon} alt="Item Icon" />
+                    <span>{item.title}</span>
+                  </MenuItem>
+                </Stack>
+              ))}
+            </Stack>
+          </Stack>
+        )}
+        <Stack>
+          <AboutDetail />
+        </Stack>
+      </Stack>
+    </Stack>
   );
 }

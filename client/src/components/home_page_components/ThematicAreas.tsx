@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Poppins } from "next/font/google";
-import thematic from "../../common/images/thematic.png";
+import thematic from "../../../common/images/thematic.png";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { thematics } from "../../common/data";
+import { thematics } from "../../../common/data";
 import { useEffect, useRef, useState } from "react";
 const popin = Poppins({
   weight: ["600"],
@@ -64,7 +64,7 @@ const ThematicAreas = () => {
             options={{
               rewind: true,
               arrows: false,
-              pagination:false
+              pagination: false,
             }}
             aria-label="React Splide Example"
             ref={splideRef}
