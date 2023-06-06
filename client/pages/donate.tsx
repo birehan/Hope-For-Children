@@ -1,6 +1,6 @@
 import React from 'react'
-import Donate from '../src/donate/Donate'
-import DonateHero from '../src/donate/DonateHero'
+import Donate from '../src/components/donate/Donate'
+import DonateHero from '../src/components/donate/DonateHero'
 
 const donate = () => {
   return (
