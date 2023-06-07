@@ -14,6 +14,19 @@ import rect4 from "./images/Rectangle4.jpg";
 import rect5 from "./images/Rectangle5.png";
 import rect6 from "./images/Rectangle6.jpg";
 
+import VillaIcon from '@mui/icons-material/Villa';
+import PersonIcon from '@mui/icons-material/Person';
+import KayakingIcon from '@mui/icons-material/Kayaking';
+import GroupIcon from '@mui/icons-material/Group';
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+
+
+import HeartBrokenOutlinedIcon from '@mui/icons-material/HeartBrokenOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import AllInclusiveOutlinedIcon from '@mui/icons-material/AllInclusiveOutlined';
+import PsychologyAltOutlinedIcon from '@mui/icons-material/PsychologyAltOutlined';
+import Diversity2OutlinedIcon from '@mui/icons-material/Diversity2Outlined';
+
 export const thematics: Thematic[] = [
   {
     id: 1,
@@ -182,3 +195,84 @@ export const vedios = [
     vedioId: "2g811Eo7K8U",
   },
 ];
+
+export const acnavs = [
+  {
+    icon:VillaIcon,
+    title:'Group home sector',
+    link:''
+  },
+  {
+    icon:PersonIcon,
+    title:'Youth enrichment center',
+    link:''
+  },
+  {
+    icon:KayakingIcon,
+    title:'Life skill training',
+    link:''
+  },
+  {
+    icon:GroupIcon,
+    title:'Social accountable program',
+    link:''
+  },
+  {
+    icon:PsychologyOutlinedIcon,
+    title:'Capacity building',
+    link:''
+  },
+]
+
+export const acprograms = [
+  {
+    icon: HeartBrokenOutlinedIcon,
+    title:'Group home sector',
+    link:''
+  },
+  {
+    icon:SchoolOutlinedIcon,
+    title:'Youth enrichment center',
+    link:''
+  },
+  {
+    icon:AllInclusiveOutlinedIcon,
+    title:'Life skill training',
+    link:''
+  },
+  {
+    icon:PsychologyAltOutlinedIcon,
+    title:'Social accountable program',
+    link:''
+  },
+  {
+    icon:Diversity2OutlinedIcon,
+    title:'Social accountable program',
+    link:''
+  },
+
+  {
+    icon:PsychologyOutlinedIcon,
+    title:'Capacity building',
+    link:''
+  },
+]
+
+export const accomplishments = [
+  {
+    title: 'Group Home Sector',
+    desc1: `The Group Home initiative is a crucial intervention area of Hope for Children Organization's humanitarian work, aimed at providing a happy and healthy environment for orphans and highly vulnerable children. Through a holistic and participatory approach to care and support, this project focuses on family care as its foundation.`,
+    desc2: `Hope for Children Organization has contributed to the development of more than 150 children through this initiative. By instilling in the children a sense of family love, educating them, and providing integrated care and support from infancy until they start to live independently.`,
+  },
+
+  {
+    title: 'Education (Sponsorship support)',
+    desc1: `Our organization places a strong emphasis on education as a key focus area, in line with our vision and mission. We strive to empower vulnerable children and youth, as well as their caregivers and communities, by providing them with the necessary tools and resources to become productive, responsible, and economically self-sufficient citizens.`,
+    desc2: ` Our education initiative is particularly geared towards children and youth who face serious social and economic challenges while living with their families and guardians. Through our program, we are able to cover the costs of education, health, and food, helping to ensure that these children can succeed`,
+  },
+  {
+    title: 'Fighting against HIV AIDS Health',
+    desc1: `Since its inception, Hope for Children Organization has been committed to combating the HIV/AIDS epidemic, and this has been our most extensive and impactful area of intervention. Through our initiative, we have saved numerous lives from the brink of death, serving over 12,500 beneficiaries by providing in-home care, food, and medical treatment to those living with HIV/AIDS, while also educating the public on the issue.`,
+    desc2: `In this project, HFC has made a significant impact in the fight against the HIV/AIDS epidemic, enhancing the lives of the target community, including victims, at-risk individuals, and children.`,
+  },
+]
