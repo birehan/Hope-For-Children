@@ -7,7 +7,7 @@ const StudentList = () => {
       <div className="studentList max-w-[1000px] m-auto p-5 flex flex-col md:flex-row  gap-6 mb-10  md:mb-[8rem]">
         <div className="p-5 md:ml-10 md:mt-[-6rem] bg-white">
           <Image
-            className="w-full md:w-[20vw] h-[45vh] md:h-[35vh] rounded-md"
+            className="w-full md:w-[20vw] h-[45vh] md:h-[33vh] rounded-md"
             src={student}
             alt="student"
           />
@@ -32,7 +32,7 @@ const StudentList = () => {
       <div className="studentList max-w-[1000px] m-auto p-5 flex flex-col md:flex-row  gap-6 mb-10 md:mb-[8rem]">
         <div className="p-5 md:ml-10 md:mt-[-6rem] bg-white">
           <Image
-            className="w-full md:w-[20vw] h-[45vh] md:h-[35vh] rounded-md"
+            className="w-full md:w-[20vw] h-[45vh] md:h-[33vh] rounded-md"
             src={student}
             alt="student"
           />
@@ -56,7 +56,7 @@ const StudentList = () => {
       <div className="studentList max-w-[1000px] m-auto p-5 flex flex-col md:flex-row  gap-6 mb-10 md:mb-[8rem]">
         <div className="p-5 md:ml-10 md:mt-[-6rem] bg-white">
           <Image
-            className="w-full md:w-[20vw] h-[45vh] md:h-[35vh] rounded-md"
+            className="w-full md:w-[20vw] h-[45vh] md:h-[33vh] rounded-md"
             src={student}
             alt="student"
           />
