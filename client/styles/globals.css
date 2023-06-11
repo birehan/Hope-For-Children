@@ -111,7 +111,7 @@ body {
     display: none;
   }
 }
-.accontainer{
+.accontainer {
   position: sticky;
 }
 .acard {
@@ -131,4 +131,11 @@ body {
   background: #ffffff;
   box-shadow: 2px 3px 32px -12px rgba(0, 177, 244, 0.77);
   border-radius: 10px;
+}
+
+.studentList {
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(0, 177, 244, 0.31);
+  border-radius: 26px;
 }
