@@ -1,0 +1,17 @@
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.csproj.AssemblyReference.cache
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.AssemblyInfoInputs.cache
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.AssemblyInfo.cs
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.csproj.CoreCompileInputs.cache
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Persistence.deps.json
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Persistence.dll
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Persistence.pdb
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Application.dll
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Domain.dll
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Domain.pdb
+/home/babi/Desktop/Hope-For-Children/server/Persistence/bin/Debug/net6.0/Application.pdb
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.csproj.CopyComplete
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.dll
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/refint/Persistence.dll
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/Persistence.pdb
+/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/Debug/net6.0/ref/Persistence.dll

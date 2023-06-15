@@ -1,6 +1,6 @@
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
 import { partners } from "../../../common/data";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 const Partners = () => {
   return (

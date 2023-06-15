@@ -1,0 +1,15 @@
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.csproj.AssemblyReference.cache
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.AssemblyInfoInputs.cache
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.AssemblyInfo.cs
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.csproj.CoreCompileInputs.cache
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/bin/Debug/net6.0/HFC.Application.deps.json
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/bin/Debug/net6.0/HFC.Application.dll
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/bin/Debug/net6.0/HFC.Application.pdb
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/bin/Debug/net6.0/HFC.Domain.dll
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/bin/Debug/net6.0/HFC.Domain.pdb
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.csproj.CopyComplete
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.dll
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/refint/HFC.Application.dll
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/HFC.Application.pdb
+/home/babi/Desktop/Hope-For-Children/HFC/HFC.Application/obj/Debug/net6.0/ref/HFC.Application.dll

@@ -63,7 +63,7 @@ const Landing = () => {
                     position: "absolute",
                     top: 0,
                     left: 0,
-                    width: "100%",
+                    width: "100vw",
                     height: "100%",
                     objectFit: "cover",
                     filter: "brightness(50%)",

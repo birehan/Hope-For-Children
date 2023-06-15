@@ -13,7 +13,7 @@ import AboutDetail from "../src/components/about_components/AboutDetail";
 import Image from "next/image";
 
 export default function About() {
-  const { title, icon, items } = aboutData.staff;
+  const { title, icon, items } = aboutData[0];
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -51,7 +51,7 @@ export default function About() {
         sx={{
           flexDirection: { xs: "column", md: "row" },
           margin: { xs: "40px auto", md: "50px auto" },
-          width: { xs: "95vw", sm: "90vw", md: "85vw", lg: "80" },
+          width: { xs: "95vw", md: "90vw", lg: "85vw" },
           // border: "5px solid green",
           gap: "30px",
         }}
@@ -99,72 +99,48 @@ export default function About() {
             </Box>
           </Stack>
         ) : (
-          <Stack sx={{}}>
-            <Stack
-              sx={{
-                boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
-                width: "fit-content",
-                padding: "20px 40px 20px 10px",
-              }}
-            >
-              <MenuItem sx={{ gap: "10px" }}>
-                <Image src={icon} alt="Icon" width="20" height="20" />{" "}
-                <span>{title}</span>
-              </MenuItem>
-
-              {items.map((item) => (
-                <Stack key={item.title}>
-                  <MenuItem sx={{ gap: "10px" }}>
-                    <img src={item.icon} alt="Item Icon" />
-                    <span>{item.title}</span>
+          <Stack sx={{ gap: "30px" }}>
+            {aboutData.map((section, index) => {
+              return (
+                <Stack
+                  sx={{
+                    boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
+                    // width: "300px",
+                    padding: "20px 40px 20px 10px",
+                  }}
+                >
+                  <MenuItem
+                    sx={{
+                      gap: "10px",
+                      fontSize: "1.3rem",
+                      "&:hover": { background: "transparent !important" },
+                    }}
+                  >
+                    <Image
+                      src={section.icon}
+                      alt="Icon"
+                      width="30"
+                      height="30"
+                    />{" "}
+                    <span>{section.title}</span>
                   </MenuItem>
+
+                  {section.items.map((item) => (
+                    <Stack
+                      key={item.title}
+                      sx={{
+                        "&:hover": { color: "#00B1F4 !important" },
+                      }}
+                    >
+                      <MenuItem sx={{ gap: "10px" }}>
+                        <img src={item.icon} alt="Item Icon" />
+                        <span>{item.title}</span>
+                      </MenuItem>
+                    </Stack>
+                  ))}
                 </Stack>
-              ))}
-            </Stack>
-
-            <Stack
-              sx={{
-                boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
-                width: "fit-content",
-                padding: "20px 40px 20px 10px",
-              }}
-            >
-              <MenuItem sx={{ gap: "10px" }}>
-                <Image src={icon} alt="Icon" width="20" height="20" />{" "}
-                <span>{title}</span>
-              </MenuItem>
-
-              {items.map((item) => (
-                <Stack key={item.title}>
-                  <MenuItem sx={{ gap: "10px" }}>
-                    <img src={item.icon} alt="Item Icon" />
-                    <span>{item.title}</span>
-                  </MenuItem>
-                </Stack>
-              ))}
-            </Stack>
-
-            <Stack
-              sx={{
-                boxShadow: "2px 3px 32px -12px rgba(0, 155, 154, 0.77)",
-                width: "fit-content",
-                padding: "20px 40px 20px 10px",
-              }}
-            >
-              <MenuItem sx={{ gap: "10px" }}>
-                <Image src={icon} alt="Icon" width="20" height="20" />{" "}
-                <span>{title}</span>
-              </MenuItem>
-
-              {items.map((item) => (
-                <Stack key={item.title}>
-                  <MenuItem sx={{ gap: "10px" }}>
-                    <img src={item.icon} alt="Item Icon" />
-                    <span>{item.title}</span>
-                  </MenuItem>
-                </Stack>
-              ))}
-            </Stack>
+              );
+            })}
           </Stack>
         )}
         <Stack>
