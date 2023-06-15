@@ -1,0 +1,216 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/babi/Desktop/Hope-For-Children/server/Persistence/Persistence.csproj": {}
+  },
+  "projects": {
+    "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj",
+        "packagesPath": "/home/babi/.nuget/packages/",
+        "outputPath": "/home/babi/Desktop/Hope-For-Children/server/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/babi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj": {
+                "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.5.2, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj",
+        "packagesPath": "/home/babi/.nuget/packages/",
+        "outputPath": "/home/babi/Desktop/Hope-For-Children/server/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/babi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/babi/Desktop/Hope-For-Children/server/Persistence/Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/babi/Desktop/Hope-For-Children/server/Persistence/Persistence.csproj",
+        "projectName": "Persistence",
+        "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Persistence/Persistence.csproj",
+        "packagesPath": "/home/babi/.nuget/packages/",
+        "outputPath": "/home/babi/Desktop/Hope-For-Children/server/Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/babi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj": {
+                "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj"
+              },
+              "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj": {
+                "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.410/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
