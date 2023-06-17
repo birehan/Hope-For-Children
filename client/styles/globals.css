@@ -24,7 +24,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
   background: rgba(247, 248, 252, 0.5);
 
   font-family: "DM Sans", "Poppins", "Helvetica Neue", sans-serif;

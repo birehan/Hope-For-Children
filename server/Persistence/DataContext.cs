@@ -33,11 +33,11 @@ namespace Persistence
               .OnDelete(DeleteBehavior.Cascade);
 
 
-            modelBuilder.Entity<Staff>()
-                .HasMany(s => s.Images)
-                .WithOne()
-                .HasForeignKey("StaffId") // Foreign key column name
-                .OnDelete(DeleteBehavior.Cascade);
+            // modelBuilder.Entity<Staff>()
+            //     .HasMany(s => s.Images)
+            //     .WithOne()
+            //     .HasForeignKey("StaffId") // Foreign key column name
+            //     .OnDelete(DeleteBehavior.Cascade);
 
 
 

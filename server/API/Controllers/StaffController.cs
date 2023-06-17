@@ -32,13 +32,13 @@ namespace StaffsManagement.API.Controllers
             return HandleResult(await _mediator.Send(command));
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Put([FromForm] Guid Id, IFormFile File)
-        {
+        // [HttpPut]
+        // public async Task<IActionResult> Put([FromForm] Guid Id, IFormFile File)
+        // {
 
-            var command = new AddStaffPhotoCommand { Id = Id, File = File };
-            return HandleResult(await _mediator.Send(command));
-        }
+        //     var command = new AddStaffPhotoCommand { Id = Id, File = File };
+        //     return HandleResult(await _mediator.Send(command));
+        // }
 
 
         // [Authorize(Policy = "IsTaskCreator")]

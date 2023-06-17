@@ -14,8 +14,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
-
-
   </ItemGroup>
 
   <ItemGroup>
@@ -23,9 +21,6 @@
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-
-
-
   </ItemGroup>
 
 </Project>
