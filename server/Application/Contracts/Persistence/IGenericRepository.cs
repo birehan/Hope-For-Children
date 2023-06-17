@@ -12,6 +12,6 @@ namespace Application.Contracts.Persistence
         Task<T> Add(T entity);
         Task<bool> Exists(Guid id);
         Task Update(T entity);
-        Task Delete(T entity);  
+        Task Delete(T entity);
     }
 }

@@ -2,11 +2,11 @@ using Domain;
 
 namespace Application.Interfaces
 {
-       public interface IUserAccessor
+    public interface IUserAccessor
     {
-         string GetUsername();
+        string GetUsername();
 
-         Task<AppUser>  GetCurrentUser();
+        Task<AppUser> GetCurrentUser();
 
     }
 }
