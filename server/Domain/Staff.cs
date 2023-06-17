@@ -25,7 +25,5 @@ namespace Domain
 
         public Photo Photo { get; set; }
 
-        public ICollection<Photo> Images { get; set; } = new List<Photo>();
-
     }
 }

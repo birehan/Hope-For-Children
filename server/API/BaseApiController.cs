@@ -25,6 +25,10 @@ namespace API.Controllers
             if (result.IsSuccess && result.Value == null)
                 return NotFound(Result<Unit>.Failure("Item not found."));
 
+            if (!result.IsSuccess && result.Error == "Unauthorized")
+                return Unauthorized(Result<string>.Failure("Unauthorized"));
+
+
             return BadRequest(result);
 
         }

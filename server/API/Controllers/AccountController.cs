@@ -1,102 +1,87 @@
-using System.Security.Claims;
-using API.DTOs;
-using API.Services;
-using Domain;
+using Application.Features.Accounts.CQRS.Commands;
+using Application.Features.Accounts.CQRS.Queries;
+using Application.Features.Accounts.DTOs;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AccountController : ControllerBase
+    public class AccountController : BaseApiController
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly TokenService _tokenService;
+        private readonly IMediator _mediator;
 
-        public AccountController(UserManager<AppUser> userManager, TokenService tokenService)
+        public AccountController(IMediator mediator)
         {
-            _userManager = userManager;
-            _tokenService = tokenService;
+            _mediator = mediator;
         }
 
-        private UserDto CreateUserObject(AppUser user)
-        {
-            return new UserDto
-            {
-                UserName = user.UserName,
-                Token = _tokenService.CreateToken(user),
-                Email = user.Email
-            };
-        }
 
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
-            var user = await _userManager.Users
-                        .FirstOrDefaultAsync(x => x.Email == loginDto.Email);
-
-            if (user == null) return Unauthorized();
-
-            var result = await _userManager.CheckPasswordAsync(user, loginDto.Password);
-            if (result)
-            {
-                return CreateUserObject(user);
-            }
-            return Unauthorized();
+            return HandleResult(await _mediator.Send(new LoginQuery { LoginDto = loginDto }));
         }
 
-
-        [AllowAnonymous]
+        [Authorize(Policy = "IsSuperAdmin")]
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<string>> Register(CreateUserDto CreateUserDto)
         {
-            var existingUser = await _userManager.FindByNameAsync(registerDto.UserName);
-            if (existingUser != null)
-            {
-                ModelState.AddModelError("Username", "Username taken");
-                return ValidationProblem();
-            }
-
-            existingUser = await _userManager.FindByEmailAsync(registerDto.Email);
-            if (existingUser != null)
-            {
-                ModelState.AddModelError("Email", "Email taken");
-                return ValidationProblem();
-            }
-
-            var user = new AppUser
-            {
-                Email = registerDto.Email,
-                UserName = registerDto.UserName
-            };
-
-            var result = await _userManager.CreateAsync(user, registerDto.Password);
-
-
-            if (result.Succeeded)
-            {
-                return CreateUserObject(user);
-            }
-
-            return BadRequest(result?.Errors);
+            return HandleResult(await _mediator.Send(new CreateUserCommand { CreateUserDto = CreateUserDto }));
         }
-
 
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
-            Console.WriteLine(User.FindFirstValue(ClaimTypes.Email));
-            var user = await _userManager.Users
-            .FirstOrDefaultAsync(x => x.Email == User.FindFirstValue(ClaimTypes.Email));
+            return HandleResult(await _mediator.Send(new GetCurrentUserQuery()));
+        }
 
-            if (user == null) return Unauthorized();
+        [Authorize(Policy = "IsSuperAdmin")]
+        [HttpGet("users")]
+        public async Task<ActionResult<UserDto>> GetUsers()
+        {
+            return HandleResult(await _mediator.Send(new GetUsersListQuery()));
+        }
 
-            return CreateUserObject(user);
+        [Authorize(Policy = "IsSuperAdmin")]
+        [HttpDelete("{username}")]
+        public async Task<ActionResult<UserDto>> DeleteUser(string username)
+        {
+            return HandleResult(await _mediator.Send(new DeleteUserCommand { UserName = username }));
+        }
+
+        [Authorize]
+        [HttpPut("updatePassword")]
+        public async Task<ActionResult<UserDto>> UpdatePassword(UpdateUserPasswordDto updateUserPasswordDto)
+        {
+            return HandleResult(await _mediator.Send(new UpdateUserPasswordCommand { UpdateUserPasswordDto = updateUserPasswordDto }));
+        }
+
+
+        [Authorize(Policy = "IsSuperAdmin")]
+        [HttpPut("updateRole")]
+        public async Task<ActionResult<UserDto>> UpdateRole(UpdateUserRoleDto updateUserRoleDto)
+        {
+            return HandleResult(await _mediator.Send(new UpdateUserRoleCommand { UpdateUserRoleDto = updateUserRoleDto }));
+        }
+
+        [AllowAnonymous]
+        [HttpPut("forgetPasswordSendEmail")]
+        public async Task<ActionResult<string>> ForgetPasswordSendEmail(ForgetPasswordSendEmailCommand command)
+        {
+            return HandleResult(await _mediator.Send(command));
+        }
+
+
+        [AllowAnonymous]
+        [HttpPut("resetPassword")]
+        public async Task<ActionResult<string>> ResetPassword(ResetUserPasswordDto resetUserPasswordDto)
+        {
+            return HandleResult(await _mediator.Send(new ResetUserPasswordCommand { ResetUserPasswordDto = resetUserPasswordDto }));
         }
 
     }
