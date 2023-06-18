@@ -5,7 +5,7 @@ import Value from "./Value";
 const Values = () => {
   return (
     <div className="w-[100%] bg-[#F7F8FCA3]">
-      <div className="max-w-[1300px] flex flex-col m-auto">
+      <div className="w-[95%] md:w-[90%] lg:w-[85%] flex flex-col m-auto">
         <div className="w-full flex items-center justify-center">
           <h1 className="text-[#00B1F4] text-[50px] my-8">Our Values</h1>
         </div>

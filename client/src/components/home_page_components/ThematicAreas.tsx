@@ -36,16 +36,16 @@ const ThematicAreas = () => {
   };
 
   return (
-    <div>
+    <div className="my-5">
       <div
-        className={`flex flex-col ${popin.style.fontFamily}  items-center px-10 md:p-0 max-w-[1400px] m-auto`}
+        className={`flex flex-col ${popin.style.fontFamily}  items-center w-[95%] md:w-[90%] lg:w-[85%] m-auto`}
       >
-        <h1 className="text-[#00B1F4] text-[50px] my-2 not-italic">
+        <h1 className="text-[#00B1F4] text-[50px] my-2 not-italic text-center">
           Thematic Areas
         </h1>
         <p
-          className={`text-center my-5 md:my-0 text-[18px] ${popin.style.fontFamily} tracking-wider not-italic text-[#010101]
-          max-w-[1200px] h-[168px] font-poppins  font-[400] text-[18px] leading-[232.5%] text-center
+          className={`text-center my-5 md:mb-5 text-[18px] ${popin.style.fontFamily} tracking-wider not-italic text-[#010101]
+         first-letter:  font-poppins  font-[400] text-[18px] leading-[232.5%] text-center
           text-[rgba(1, 1, 1, 0.74)] letter-spacing-[0.055em] mb-2 md:mb-0`}
         >
           HFC has been injecting multifaceted on different areas to provide
@@ -54,12 +54,12 @@ const ThematicAreas = () => {
           with regard to child-centered community based development approach.{" "}
         </p>
       </div>
-      <div className="relative p-5">
-        <div className="corners w-[100%] md:max-w-[1200px] m-auto">
-          <div className="hidden md:flex top left"></div>
-          <div className="hidden md:flex top right"></div>
-          <div className="hidden md:flex bottom right"></div>
-          <div className="hidden md:flex bottom left"></div>
+      <div className="relative w-[95%] md:w-[90%] lg:w-[85%] m-auto">
+        <div className="corners w-[100%] m-auto">
+        <div className="hidden lg:flex top left rounded-tl-lg"></div>
+          <div className="hidden lg:flex top right rounded-tr-lg"></div>
+          <div className="hidden lg:flex bottom right rounded-br-lg"></div>
+          <div className="hidden lg:flex bottom left rounded-bl-lg"></div>
           <Splide
             options={{
               rewind: true,
@@ -74,12 +74,12 @@ const ThematicAreas = () => {
           >
             {thematics.map((them) => (
               <SplideSlide>
-                <div className="block md:flex max-w-[1150px] m-auto thematic-card my-6">
+                <div className="block md:flex w-[100%] lg:w-[96%] m-auto thematic-card my-6">
                   <div className="flex-1">
                     <Image className="w-full h-full" src={thematic} alt="" />
                   </div>
-                  <div className="flex-1 md:px-0 py-8 pr-4 mx-6 mr-3">
-                    <h1 className="text-[#00B1F4] text-3xl not-italic ">
+                  <div className="flex-1 md:ml-5">
+                    <h1 className="text-[#00B1F4] mt-5 text-3xl not-italic ">
                       {them.title}
                     </h1>
                     <p className="my-4 font-poppins  text-base leading-[2.23] tracking-[0.03em] text-[rgba(1, 1, 1, 0.74)]">
@@ -88,7 +88,7 @@ const ThematicAreas = () => {
                     <p className="font-poppins text-base leading-[2.23] trackzsing-[0.03em] text-[rgba(1, 1, 1, 0.74)]">
                       {them.desc2}
                     </p>
-                    <button className="text-[#00B1F4] border border-[#00B1F4] rounded-[20px] p-2 w-[10rem] mt-5">
+                    <button className="text-[#00B1F4] border border-[#00B1F4] rounded-[20px] p-2 w-[10rem] my-5">
                       Read More
                     </button>
                   </div>

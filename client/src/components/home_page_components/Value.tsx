@@ -27,7 +27,7 @@ const Value = () => {
             </div>
             <button
               onClick={() => toggleValue(val.id)}
-              className={`h-[40px] w-[40px] bg-gradient-to-r from-[rgba(216,218,229,0.24)] via-[rgba(215,216,219,0.06)] to-transparent shadow-xl backdrop-blur-[50px] rounded-[50%] transform ${getButtonRotation(
+              className={`h-[40px] w-[40px] bg-gradient-to-r from-[rgba(216,218,229,0.24)] via-[rgba(215,216,219,0.06)] to-transparent shadow-xl backdrop-blur-[50px] rounded-[50%] transform transition-all duration-500 ${getButtonRotation(
                 val.id
               )}`}
             >
@@ -37,7 +37,7 @@ const Value = () => {
           <div
             className={`transition-all duration-500 ${
               selectedValue === val.id
-                ? "max-h-[100px]"
+                ? "sm:max-h-[150px]"
                 : "max-h-0 overflow-hidden"
             }`}
           >

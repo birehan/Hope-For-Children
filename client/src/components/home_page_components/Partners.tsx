@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { partners } from "../../../common/data";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-
+import surface from '../../../common/images/Surface.svg'
 const Partners = () => {
   return (
     <div className="my-3">
       <div className="w-[100%] flex items-center justify-center">
         <h1 className="text-[40px] text-[#00B1F4] mb-3">Our Partners</h1>
       </div>
-      <div className="max-w-[1300px] partners-card m-auto mb-10">
+      <div className="max-w-[95%] md:w-[90%] lg:w-[85%] partners-card m-auto mb-10">
         <Splide
           className="w-full px-20 py-12"
           options={{
