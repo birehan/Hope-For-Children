@@ -16,7 +16,15 @@ const Statistics = () => {
       <img
         src="/assets/images/stats.png"
         alt="Background Image"
-        style={classes.backgroundImage}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "brightness(40%)",
+        }}
       />
       <Stack sx={classes.statListContainer}>
         {statisticsData.map((stats, index) => {
