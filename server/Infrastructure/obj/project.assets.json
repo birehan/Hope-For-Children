@@ -2783,19 +2783,19 @@
     ]
   },
   "packageFolders": {
-    "/home/babi/.nuget/packages/": {}
+    "/home/addis/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/babi/Desktop/Hope-For-Children/server/Infrastructure/Infrastructure.csproj",
+      "projectUniqueName": "/home/addis/hope-children/Hope-For-Children/server/Infrastructure/Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Infrastructure/Infrastructure.csproj",
-      "packagesPath": "/home/babi/.nuget/packages/",
-      "outputPath": "/home/babi/Desktop/Hope-For-Children/server/Infrastructure/obj/",
+      "projectPath": "/home/addis/hope-children/Hope-For-Children/server/Infrastructure/Infrastructure.csproj",
+      "packagesPath": "/home/addis/.nuget/packages/",
+      "outputPath": "/home/addis/hope-children/Hope-For-Children/server/Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/babi/.nuget/NuGet/NuGet.Config"
+        "/home/addis/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2807,11 +2807,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj": {
-              "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Application/Application.csproj"
+            "/home/addis/hope-children/Hope-For-Children/server/Application/Application.csproj": {
+              "projectPath": "/home/addis/hope-children/Hope-For-Children/server/Application/Application.csproj"
             },
-            "/home/babi/Desktop/Hope-For-Children/server/Persistence/Persistence.csproj": {
-              "projectPath": "/home/babi/Desktop/Hope-For-Children/server/Persistence/Persistence.csproj"
+            "/home/addis/hope-children/Hope-For-Children/server/Persistence/Persistence.csproj": {
+              "projectPath": "/home/addis/hope-children/Hope-For-Children/server/Persistence/Persistence.csproj"
             }
           }
         }
@@ -2858,12 +2858,22 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.410/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
       }
     }
   }

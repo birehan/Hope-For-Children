@@ -15,13 +15,8 @@ const popin = Poppins({
 
 const ThematicAreas = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const singleThematic = thematics[slideIndex]
   const splideRef = useRef(null);
-
-  useEffect(() => {
-    if (splideRef.current) {
-      splideRef.current.go(slideIndex);
-    }
-  }, [slideIndex]);
 
   const handlePreviousSlide = () => {
     setSlideIndex((slideIndex) =>
@@ -72,7 +67,7 @@ const ThematicAreas = () => {
               setSlideIndex(splide.index);
             }}
           >
-            {thematics.map((them) => (
+            {/* {thematics.map((them) => ( */}
               <SplideSlide>
                 <div className="block md:flex w-[100%] lg:w-[96%] m-auto thematic-card my-6">
                   <div className="flex-1">
@@ -80,13 +75,13 @@ const ThematicAreas = () => {
                   </div>
                   <div className="flex-1 md:ml-5">
                     <h1 className="text-[#00B1F4] mt-5 text-3xl not-italic ">
-                      {them.title}
+                      {singleThematic.title}
                     </h1>
                     <p className="my-4 font-poppins  text-base leading-[2.23] tracking-[0.03em] text-[rgba(1, 1, 1, 0.74)]">
-                      {them.desc}
+                      {singleThematic.desc}
                     </p>
                     <p className="font-poppins text-base leading-[2.23] trackzsing-[0.03em] text-[rgba(1, 1, 1, 0.74)]">
-                      {them.desc2}
+                      {singleThematic.desc2}
                     </p>
                     <button className="text-[#00B1F4] border border-[#00B1F4] rounded-[20px] p-2 w-[10rem] my-5">
                       Read More
@@ -94,7 +89,7 @@ const ThematicAreas = () => {
                   </div>
                 </div>
               </SplideSlide>
-            ))}
+            {/* ))} */}
           </Splide>
         </div>
         <div className="flex justify-center items-center mt-2 gap-2">

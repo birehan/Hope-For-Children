@@ -10,3 +10,15 @@
 /home/babi/Desktop/Hope-For-Children/server/Domain/obj/Debug/net6.0/refint/Domain.dll
 /home/babi/Desktop/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.pdb
 /home/babi/Desktop/Hope-For-Children/server/Domain/obj/Debug/net6.0/ref/Domain.dll
+/home/addis/hope-children/Hope-For-Children/server/Domain/bin/Debug/net6.0/Domain.deps.json
+/home/addis/hope-children/Hope-For-Children/server/Domain/bin/Debug/net6.0/Domain.dll
+/home/addis/hope-children/Hope-For-Children/server/Domain/bin/Debug/net6.0/Domain.pdb
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.csproj.AssemblyReference.cache
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.AssemblyInfoInputs.cache
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.AssemblyInfo.cs
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.csproj.CoreCompileInputs.cache
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.dll
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/refint/Domain.dll
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/Domain.pdb
+/home/addis/hope-children/Hope-For-Children/server/Domain/obj/Debug/net6.0/ref/Domain.dll
