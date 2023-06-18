@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import gallery from "../../common/images/gallery.png";
+import gallery from '../../../common/images/gallery.png'
 
 const DonateHero = () => {
   return (
