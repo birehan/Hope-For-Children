@@ -9,7 +9,7 @@ namespace Persistence.Repositories
         public DataContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
-                 .SetBasePath(Directory.GetCurrentDirectory())
+                 .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../API"))
                  .AddJsonFile("appsettings.json")
                  .Build();
 

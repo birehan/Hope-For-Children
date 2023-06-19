@@ -22,10 +22,6 @@ namespace Persistence
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
 
-            // Configure one-to-many relationship between Task and CheckList
-
-
-            // the relationship between Staff and Photo
             modelBuilder.Entity<Staff>()
               .HasOne(s => s.Photo)
               .WithOne()
@@ -33,16 +29,17 @@ namespace Persistence
               .OnDelete(DeleteBehavior.Cascade);
 
 
-            // modelBuilder.Entity<Staff>()
-            //     .HasMany(s => s.Images)
-            //     .WithOne()
-            //     .HasForeignKey("StaffId") // Foreign key column name
-            //     .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Category>()
+                .HasMany(s => s.SubCategories)
+                .WithOne(s => s.Category)
+                .HasForeignKey(s => s.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-
-
-
-
+            modelBuilder.Entity<SubCategory>()
+                .HasMany(s => s.Photos)
+                .WithOne(s => s.SubCategory)
+                .HasForeignKey(s => s.SubCategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
 
@@ -64,6 +61,8 @@ namespace Persistence
         }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
 
     }
 }

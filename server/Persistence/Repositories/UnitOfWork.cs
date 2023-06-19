@@ -7,9 +7,11 @@ namespace Persistence.Repositories
     {
         private readonly DataContext _context;
 
-
         private IStaffRepository _staffRepository;
 
+        private ICategoryRepository _categoryRepository;
+
+        private ISubCategoryRepository _subCategoryRepository;
 
 
         public UnitOfWork(DataContext context)
@@ -17,14 +19,27 @@ namespace Persistence.Repositories
             _context = context;
         }
 
-
-
-
         public IStaffRepository StaffRepository
         {
             get
             {
                 return _staffRepository ??= new StaffRepository(_context);
+            }
+        }
+
+        public ICategoryRepository CategoryRepository
+        {
+            get
+            {
+                return _categoryRepository ??= new CategoryRepository(_context);
+            }
+        }
+
+        public ISubCategoryRepository SubCategoryRepository
+        {
+            get
+            {
+                return _subCategoryRepository ??= new SubCategoryRepository(_context);
             }
         }
 
