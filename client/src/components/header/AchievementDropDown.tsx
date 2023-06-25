@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { Divider, ListItem, Stack, Typography, Box } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import useStyles from "./styles";
+import Link from "next/link";
 
 interface Props {
   IsSmallScreen: boolean;
@@ -53,11 +54,11 @@ const AchievementDropDown = ({ IsSmallScreen }: Props) => {
       >
         <Stack sx={classes.stackMenu}>
           <MenuItem sx={classes.menuItem} onClick={handleClose}>
-            Our work
+            <Link href="/accomplishment">Our Work</Link>
           </MenuItem>
           <Divider />
           <MenuItem sx={classes.menuItem} onClick={handleClose}>
-            Alumni
+            <Link href="/alumni">Alumni</Link>
           </MenuItem>
         </Stack>
       </Menu>
