@@ -43,7 +43,7 @@ const Footer = () => {
             Contact
           </h1>
           <p className="my-2" >Phone : +2519857474748</p>
-          <p className="my-2">className="my-2"P O X Number : 250</p>
+          <p className="my-2">P O X Number : 250</p>
           <p className="my-2">Email : hopeforchildren12@gmail.com</p>
         </div>
       </div>
