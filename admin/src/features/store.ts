@@ -1,6 +1,5 @@
-import { AnyAction, configureStore, Store } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import { createWrapper, Context } from 'next-redux-wrapper';
+import { configureStore} from '@reduxjs/toolkit';
 import { authReducer } from './slices/authSlices';
 import { rootSaga } from './saga';
 
@@ -10,9 +9,8 @@ const sagaMiddleware = createSagaMiddleware();
     reducer: authReducer,
     middleware: [sagaMiddleware],
   });
-
+  
   sagaMiddleware.run(rootSaga);
-
   export default store
 
 
