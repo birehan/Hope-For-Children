@@ -1,23 +1,9 @@
-import { setAuthUser } from "@/features/slices/authSlices";
-import { useDispatch } from "react-redux";
+import React from 'react'
 
 const Login = () => {
-
   return (
-    <div>
-      <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Username"
-      
-      />
-      <input
-        type="password"
-        placeholder="Password"
-      />
-      <button >Login</button>
-    </div>
-  );
-};
+    <div>Login</div>
+  )
+}
 
-export default Login;
+export default Login
