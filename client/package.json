@@ -23,6 +23,7 @@
     "@types/swiper": "^6.0.0",
     "axios": "^1.4.0",
     "next": "latest",
+    "next-redux-wrapper": "^8.1.0",
     "react": "latest",
     "react-countup": "^6.4.2",
     "react-dom": "latest",

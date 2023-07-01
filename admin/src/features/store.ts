@@ -1,8 +1,7 @@
-import { AnyAction, configureStore, Store } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import { createWrapper, Context } from 'next-redux-wrapper';
 import { authReducer } from './slices/authSlices';
 import { rootSaga } from './saga';
+import { configureStore } from '@reduxjs/toolkit';
 
 const sagaMiddleware = createSagaMiddleware();
 
