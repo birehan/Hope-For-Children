@@ -4,4 +4,7 @@ module.exports = {
   experimental: {
     esmExternals: true,
   },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 };

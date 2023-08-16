@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { partners } from "../../../common/data";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import surface from '../../../common/images/Surface.svg'
+import surface from "../../../common/images/Surface.svg";
 const Partners = () => {
   return (
     <div className="my-3">
@@ -28,8 +28,8 @@ const Partners = () => {
             },
           }}
         >
-          {partners.map((partner) => (
-            <SplideSlide>
+          {partners.map((partner, index) => (
+            <SplideSlide key={index}>
               <Image
                 className="w-20 h-20 md:mx-16 cursor-pointer"
                 src={partner}

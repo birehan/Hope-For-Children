@@ -8,9 +8,8 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import "../styles/globals.css";
 import Layout from "../src/components/Layout";
-import {Provider} from 'react-redux'
-import store from "../src/features/store";
-// Client-side cache, shared for the whole session of the user in the browser.
+import { Provider } from "react-redux";
+import { store } from "@/store";
 const clientSideEmotionCache = createEmotionCache();
 
 export interface MyAppProps extends AppProps {
@@ -47,17 +46,19 @@ export default function MyApp(props: MyAppProps) {
   return (
     <Provider store={store}>
       <Layout>
-      <CacheProvider value={emotionCache}>
-        <Head>
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
-        </Head>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </CacheProvider>
-    </Layout>
+        <CacheProvider value={emotionCache}>
+          <Head>
+            <meta
+              name="viewport"
+              content="initial-scale=1, width=device-width"
+            />
+          </Head>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </CacheProvider>
+      </Layout>
     </Provider>
   );
 }

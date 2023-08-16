@@ -41,7 +41,9 @@ export default function LandingCard({
           height="120"
           style={{ marginTop: "10px" }}
         />
-        <CardContent>
+        <CardContent
+          sx={{ display: "flex", flexDirection: "column", gap: "10px" }}
+        >
           <Typography
             variant="h5"
             component="h2"

@@ -6,7 +6,7 @@ const useStyles = () => {
       margin: { xs: "50px auto", lg: "0px auto" },
       gap: { xs: "30px", lg: "50px" },
       position: { xs: "relative", lg: "absolute" },
-      bottom: { xs: "0", lg: "-150px" },
+      bottom: { xs: "0", lg: "-50px", xl: "50px" },
       zIndex: 10,
       left: 0,
       right: 0,
@@ -26,6 +26,7 @@ const useStyles = () => {
       // height: "300px",
       zIndex: "10",
       height: "100%",
+      padding: "10px 0px",
     },
     media: {
       height: "200px",
@@ -50,7 +51,7 @@ const useStyles = () => {
       },
     },
     landingContainer: {
-      height: { xs: "500px", md: "600px", lg: "700px" },
+      height: { xs: "500px", md: "600px", lg: "100vh" },
       width: "100vw",
       position: "relative",
     },
@@ -65,7 +66,7 @@ const useStyles = () => {
     landingDesc: {
       color: "#E9ECEB",
       fontStyle: "normal",
-      fontSize: { xs: "18px", sm: "20px", md: "26px" },
+      fontSize: { xs: "18px", sm: "22px", md: "28px" },
       textAlign: "center",
       lineHeight: { xs: "32px", md: "72px" },
       fontWeight: "500",
@@ -95,6 +96,7 @@ const useStyles = () => {
         transition: "400ms all ease-in-out",
         background: "transparent !important",
       },
+      fontSize: "1.1rem",
     },
     videoButton: {
       textDecoration: "none",
@@ -111,6 +113,7 @@ const useStyles = () => {
         border: "1px solid #00B1F4",
         transition: "400ms all ease-in-out",
       },
+      fontSize: "1.1rem",
     },
     buttonContainer: {
       flexDirection: "row",

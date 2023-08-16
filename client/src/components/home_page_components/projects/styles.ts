@@ -1,7 +1,7 @@
 const useStyles = () => {
   return {
     projectContainer: {
-      margin: { xs: "50px auto", lg: "220px auto 80px" },
+      margin: { xs: "50px auto", lg: "50px auto 80px" },
       alignItems: "center",
     },
     projectText: {
@@ -38,6 +38,7 @@ const useStyles = () => {
       borderRadius: "15px",
       // height: "550px",
       border: "2px solid rgba(102, 102, 102, 0.08)",
+      marginBottom: "70px",
     },
     media: {
       height: "200px",

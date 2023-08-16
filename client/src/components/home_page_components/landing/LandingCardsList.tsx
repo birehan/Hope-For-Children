@@ -17,19 +17,19 @@ const LandingCardsList: React.FC = () => {
       imageUrl: "/assets/images/item1.png",
       title: "Hope For Children",
       description:
-        "Sponsor one child payment for the company so that he will have the life he want in the future ok",
+        "Hope for Children Organization is an indigenous, non-political, non-faith-based local NGO...",
     },
     {
-      imageUrl: "/assets/images/donation1.png",
+      imageUrl: "/assets/images/donation2.png",
       title: "Donation",
       description:
-        "Sponsor one child payment for the company so that he will have the life he want in the future ok",
+        "Your donation matters. Join us in making a difference and bring hope to those in need.",
     },
     {
       imageUrl: "/assets/images/sponsor.png",
       title: "Sponsor A Child",
       description:
-        "Sponsor one child payment for the company so that he will have the life he want in the future ok",
+        "Sponsor one child payment for the company so that he will have the life he want in the future.",
     },
   ];
 

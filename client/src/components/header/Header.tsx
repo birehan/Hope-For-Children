@@ -80,10 +80,8 @@ const Header = () => {
                 );
               }
               return (
-                <Link href={link.path}>
-                  <Box key={index} sx={classes.navLink}>
-                    {link.name}
-                  </Box>
+                <Link key={index} href={link.path}>
+                  <Box sx={classes.navLink}>{link.name}</Box>
                 </Link>
               );
             })}

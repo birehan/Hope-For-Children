@@ -15,7 +15,7 @@ const useStyles = () => {
     },
     stackLargeScreen: {
       fontWeight: 450,
-      fontSize: { md: "18px", lg: "20px", xl: "22px" },
+      fontSize: { md: "20px", lg: "22px", xl: "24px" },
       flexDirection: "row",
       gap: "0px",
       alignItems: "center",
@@ -148,7 +148,7 @@ const useStyles = () => {
     header: {
       position: "fixed",
       top: 0,
-      height: "60px",
+      height: "70px",
       width: "100%",
       zIndex: 100,
       background: "rgba(70, 69, 81, 0.62)",
@@ -191,7 +191,7 @@ const useStyles = () => {
     },
     navLink: {
       fontWeight: 500,
-      fontSize: { md: "18px", lg: "20px", xl: "22px" },
+      fontSize: { md: "20px", lg: "22px", xl: "24px" },
 
       "&:hover": {
         cursor: "pointer",
@@ -213,6 +213,8 @@ const useStyles = () => {
         transition: "400ms all ease-in-out",
         background: "transparent !important",
       },
+      fontWeight: "500",
+      fontSize: "1.1rem",
     },
   };
 };
