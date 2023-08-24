@@ -36,7 +36,6 @@ const ProjectCard = ({ photoUrl, title, description }: Props) => {
                 height: "100%",
                 width: "100%",
                 mb: "20px",
-                border: "5px solid green",
               }}
             >
               <img src={photoUrl} alt={title} style={{ marginTop: "0px" }} />

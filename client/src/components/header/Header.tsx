@@ -1,98 +1,86 @@
-import {
-  Box,
-  Button,
-  IconButton,
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import DrawerComponent from "./Drawer";
-import links from "./HeaderLinks";
-import Link from "next/link";
-import Image from "next/image";
-import AchievementDropDown from "./AchievementDropDown";
-import useStyles from "./styles";
+import { Popover } from "@headlessui/react";
+import HeaderDrawer from "./HeaderDrawer";
+import AchievementDropdown from "./AchievementDropdown";
+import HeaderLink from "./HeaderLink";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import React, { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
-  const classes = useStyles();
+interface HeaderProps {
+  children: ReactNode;
+}
 
-  const [openDrawer, setOpenDrawer] = useState(false);
-
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down(1100));
+const Header: React.FC<HeaderProps> = ({ children }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <Box sx={classes.header}>
-      {openDrawer && (
-        <DrawerComponent
-          openDrawer={openDrawer}
-          setOpenDrawer={setOpenDrawer}
-        />
-      )}
-      {isMatch ? (
-        <Stack sx={classes.smallScreenContainer}>
-          <Link href="/">
-            <Stack sx={classes.logoContainer}>
-              <Box
-                component="img"
-                alt="logo"
-                src="/assets/images/logo2.png"
-                sx={{ width: "30px", height: "30px" }}
-              ></Box>
-              <Typography sx={classes.hopeText}>Hope For Children</Typography>
-            </Stack>
-          </Link>
-
-          <IconButton
-            sx={{ color: "white" }}
-            onClick={() => setOpenDrawer(!openDrawer)}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Stack>
-      ) : (
-        <Stack sx={classes.largeLogoContainer}>
-          <Link href="/">
-            <Stack sx={classes.logoContainer2}>
-              <Image
-                src="/assets/images/logo2.png"
-                alt="log"
-                height="40"
-                width="40"
+    <div>
+      <header
+        className="w-full sticky top-0 bg-secondaryColor shadow-md"
+        style={{
+          filter: "brightness(100%) !important",
+          zIndex: 20,
+          backdropFilter: "blur(5px)",
+        }}
+      >
+        <nav
+          className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-5 lg:px-8"
+          aria-label="Global"
+        >
+          <div className="flex lg:flex-1">
+            <Link
+              to="/"
+              className="-m-1.5 p-1 flex flex-row gap-3 items-center"
+            >
+              <span className="sr-only">Your Company</span>
+              <img
+                className="h-12 w-auto"
+                src="assets/images/logo2.png"
+                alt=""
               />
-              <Typography sx={classes.hopeText}>Hope For Children</Typography>
-            </Stack>
-          </Link>
-
-          <Stack
-            sx={{
-              flexDirection: "row",
-              gap: { md: "15px", lg: "20px", xl: "50px" },
-            }}
-          >
-            {links.map((link, index) => {
-              if (link.name === "Achievements") {
-                return (
-                  <AchievementDropDown IsSmallScreen={false} key={index} />
-                );
-              }
-              return (
-                <Link key={index} href={link.path}>
-                  <Box sx={classes.navLink}>{link.name}</Box>
-                </Link>
-              );
-            })}
-          </Stack>
-
-          <Link href="/donate" style={{ textDecoration: "none" }}>
-            <Button sx={classes.donateButton}>Donate Now</Button>
-          </Link>
-        </Stack>
-      )}
-    </Box>
+              <p className="text-primaryColor font-bold text-2xl">
+                Hope For Children
+              </p>
+            </Link>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <Popover.Group className="hidden lg:flex lg:gap-x-12">
+            <HeaderLink title="Home" link="" position="screen" />
+            <HeaderLink title="About-Us" link="/about" position="screen" />
+            <AchievementDropdown />
+            <HeaderLink title="Projects" link="/projects" position="screen" />
+            <HeaderLink title="Gallery" link="/gallery" position="screen" />
+            <HeaderLink title="Contact-Us" link="/contact" position="screen" />
+          </Popover.Group>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <button
+              onClick={() => navigate("/donate")}
+              type="button"
+              className="rounded-lg bg-primaryColor px-3 py-1.5 text-base lg:text-lg font-semibold text-white shadow-sm hover:bg-primaryColorHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryColorHover"
+            >
+              DONTATE NOW
+            </button>
+          </div>
+        </nav>
+        <HeaderDrawer
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
+        />
+      </header>
+      {children}
+    </div>
   );
 };
+
 export default Header;
