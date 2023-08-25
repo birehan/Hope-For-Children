@@ -2,6 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* styles.css */
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
 body {
   background: rgba(247, 248, 252, 0.5);
 

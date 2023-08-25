@@ -33,7 +33,7 @@ export default function HeaderDrawer({
   return (
     <Dialog
       as="div"
-      className="lg:hidden z-50"
+      className="lg:hidden z-[100]"
       open={mobileMenuOpen}
       onClose={setMobileMenuOpen}
     >

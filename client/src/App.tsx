@@ -8,8 +8,21 @@ import ProjectsPage from "./pages/ProjectsPage";
 import GalleryPage from "./pages/GalleryPage";
 import ContactPage from "./pages/ContactPage";
 import DontationPage from "./pages/DontationPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import { getProjects } from "./actions/projectsAction";
+
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("use effect here here");
+
+    dispatch(getProjects());
+  });
+
   return (
     <Router>
       <Routes>
@@ -18,6 +31,8 @@ function App() {
         <Route path="/acheivements" element={<OurWorkPage />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/project/:id" element={<ProjectDetailPage />} />
+
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/donate" element={<DontationPage />} />

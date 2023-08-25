@@ -30,7 +30,7 @@ const Landing: React.FC = () => {
   };
 
   return (
-    <div className=" relative w-full h-[calc(100vh-5.28rem)] z-[10] filter brightness-100">
+    <div className=" relative w-full h-[calc(100vh-5.28rem)] z-[5] filter brightness-100">
       <div className="absolute inset-0 bg-cover bg-center transition-opacity duration-300">
         <div
           className="bg-cover bg-center filter brightness-50 absolute inset-0 z-[-1] object-cover"

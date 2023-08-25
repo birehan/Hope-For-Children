@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         className="w-full sticky top-0 bg-secondaryColor shadow-md"
         style={{
           filter: "brightness(100%) !important",
-          zIndex: 20,
+          zIndex: 10,
           backdropFilter: "blur(5px)",
         }}
       >
