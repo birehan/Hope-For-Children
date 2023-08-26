@@ -1,5 +1,5 @@
 import { Key, SetStateAction, useEffect, useState } from "react";
-import Project from "../types/project/project";
+import Project from "../../types/project/project";
 import ProjectCard from "./ProjectCard";
 import { useSelector } from "react-redux";
 
@@ -40,12 +40,12 @@ const ProjectsComponent = () => {
   };
 
   return (
-    <div className="my-16 flex gap-10 flex-col">
+    <div className="flex gap-10 flex-col">
       <p className="text-center text-3xl sm:text-4xl lg:text-5xl font-semibold text-primaryColor">
         Our Projects
       </p>
       <section className="py-10 bg-[#E6EFFA]">
-        <div className="mx-auto grid max-w-[90rem] grid-cols-1 gap-10 p-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-[90rem] grid-cols-1 gap-10 px-6  md:grid-cols-2 lg:grid-cols-3">
           {projects
             .slice(currentPage * itemsPerRow, (currentPage + 1) * itemsPerRow)
             .map((project: Project, index: Key | null | undefined) => (

@@ -5,11 +5,6 @@ const useStyles = () => {
       marginLeft: "auto",
       marginRight: "auto",
       marginBottom: { xs: "30px", md: "50px" },
-      // width: {
-      //   xs: "95vw",
-      //   md: "90vw",
-      //   lg: "85vw",
-      // },
       width: "100%",
       position: "relative",
       // borderRadius: "10px",

@@ -8,7 +8,7 @@ const accomplishment = () => {
       <Hero />
       <div className="flex flex-col lg:grid lg:grid-cols-12 mt-20 w-full">
         <div className="lg:sticky top-0 col-span-3">
-          <AccomplismentLeft/>
+          <AccomplismentLeft />
         </div>
         <div className="col-span-9">
           <AccomplishmentRight />
