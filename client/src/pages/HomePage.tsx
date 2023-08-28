@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import ProjectsComponent from "../components/homepage_components/ProjectsComponent";
 import Statistics from "../components/homepage_components/Statistics";
 import ThematicAreas from "../components/homepage_components/ThematicAreas";
+import Values from "../components/homepage_components/Values";
 
 const HomePage: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage: React.FC = () => {
         <ProjectsComponent />
         <Statistics />
         <ThematicAreas />
+        <Values />
       </div>
     </Header>
   );

@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         }}
       >
         <nav
-          className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-5 lg:px-8"
+          className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-5 2xl:px-0"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          <Popover.Group className="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
             <HeaderLink title="Home" link="" position="screen" />
             <HeaderLink title="About-Us" link="/about" position="screen" />
             <AchievementDropdown />

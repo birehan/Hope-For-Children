@@ -44,7 +44,7 @@ const ProjectsComponent = () => {
       <p className="text-center text-3xl sm:text-4xl lg:text-5xl font-semibold text-primaryColor">
         Our Projects
       </p>
-      <section className="py-10 bg-[#E6EFFA]">
+      <section className="py-12 bg-[#E6EFFA]">
         <div className="mx-auto grid max-w-[90rem] grid-cols-1 gap-10 px-6  md:grid-cols-2 lg:grid-cols-3">
           {projects
             .slice(currentPage * itemsPerRow, (currentPage + 1) * itemsPerRow)

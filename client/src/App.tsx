@@ -11,8 +11,9 @@ import DontationPage from "./pages/DontationPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import { getProjects } from "./actions/projectsAction";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import ProgramsPage from "./pages/ProgramsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/donate" element={<DontationPage />} />
+        <Route path="/programs" element={<ProgramsPage />} />
       </Routes>
     </Router>
   );

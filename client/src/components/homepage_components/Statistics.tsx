@@ -19,7 +19,7 @@ const Statistics = () => {
     >
       <div
         style={{
-          backdropFilter: "brightness(50%)",
+          backdropFilter: "brightness(60%)",
         }}
         className=" h-full"
       >
