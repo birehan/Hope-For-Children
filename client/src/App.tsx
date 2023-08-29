@@ -19,8 +19,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("use effect here here");
-
     dispatch(getProjects());
   });
 

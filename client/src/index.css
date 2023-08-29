@@ -37,3 +37,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.swiper-button-prev {
+  margin-left: -10px;
+}
+
+.swiper-button-next {
+  margin-right: -10px;
+}
+
+.sample-slider [class^="swiper-button-"]::after {
+  font-size: 34px;
+  color: #00b1f4 !important;
+}

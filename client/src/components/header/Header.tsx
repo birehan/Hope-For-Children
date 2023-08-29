@@ -36,11 +36,11 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
             >
               <span className="sr-only">Your Company</span>
               <img
-                className="h-12 w-auto"
+                className="h-8 lg:h-12 w-auto"
                 src="assets/images/logo2.png"
                 alt=""
               />
-              <p className="text-primaryColor font-bold text-2xl">
+              <p className="text-primaryColor font-bold text-xl  lg:text-2xl">
                 Hope For Children
               </p>
             </Link>

@@ -35,7 +35,7 @@ const Statistics = () => {
             );
 
             return (
-              <div className="flex items-center justify-center">
+              <div key={index} className="flex items-center justify-center">
                 <div
                   key={index}
                   className="flex flex-col text-white w-fit max-w-[18rem] text-center justify-center items-center gap-4"

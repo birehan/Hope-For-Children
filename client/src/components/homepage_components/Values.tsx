@@ -2,7 +2,7 @@ import ValuesList from "./ValuesList";
 
 const Values = () => {
   return (
-    <div className="flex gap-10 flex-col bg-[#F7F8FCA3]">
+    <div className="flex gap-10 flex-col ">
       <p className="text-center text-3xl sm:text-4xl lg:text-5xl font-semibold text-primaryColor">
         Our Values
       </p>

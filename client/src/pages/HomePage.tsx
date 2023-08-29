@@ -8,6 +8,8 @@ import ProjectsComponent from "../components/homepage_components/ProjectsCompone
 import Statistics from "../components/homepage_components/Statistics";
 import ThematicAreas from "../components/homepage_components/ThematicAreas";
 import Values from "../components/homepage_components/Values";
+import Partners from "../components/homepage_components/Partners";
+import Footer from "../components/Footer";
 
 const HomePage: React.FC = () => {
   return (
@@ -15,13 +17,15 @@ const HomePage: React.FC = () => {
       <Helmet>
         <title>Hope For Children</title>
       </Helmet>
-      <Landing />
-      <div className="flex flex-col gap-16 my-16">
+      <div className="flex flex-col gap-16">
+        <Landing />
         <AboutComponent />
         <ProjectsComponent />
         <Statistics />
         <ThematicAreas />
         <Values />
+        <Partners />
+        <Footer />
       </div>
     </Header>
   );
