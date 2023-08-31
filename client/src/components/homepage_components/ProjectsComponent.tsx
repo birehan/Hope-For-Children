@@ -1,13 +1,12 @@
 import { Key, SetStateAction, useEffect, useState } from "react";
-import Project from "../../types/project/project";
 import ProjectCard from "./ProjectCard";
 import { useSelector } from "react-redux";
+import { Project } from "../../types/types";
 
 const ProjectsComponent = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerRow, setItemsPerRow] = useState(1); // Initialize with 1 item per row
 
-  // Update itemsPerRow based on screen size
   const updateItemsPerRow = () => {
     if (window.innerWidth >= 1024) {
       setItemsPerRow(3); // Large screens

@@ -1,11 +1,24 @@
+import { useEffect } from "react";
 import StaffSidebar from "../components/about_page_components/StaffSidebar";
-import AboutContent from "../components/about_page_components/AboutContent";
+import { getStaffs } from "../actions/projectsAction";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import StaffsList from "../components/StaffsList";
 import CommonLanding from "../components/CommonLanding";
 
-const AboutPage = () => {
+const StaffsPage = () => {
+  const dispatch = useDispatch();
+  const { staffType } = useParams();
+
+  useEffect(() => {
+    dispatch(getStaffs(staffType));
+
+    return () => {};
+  }, [staffType]);
+
   return (
-    <div className="flex flex-col gap-8  xl:gap-16">
-      <CommonLanding title="Who We Are" icon={null} />
+    <div className="flex flex-col gap-8  xl:gap-16" id="scroll">
+      <CommonLanding title="" icon={null} />
 
       <div className="px-6">
         <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-4 xl:gap-12 lg:grid-cols-12">
@@ -17,7 +30,7 @@ const AboutPage = () => {
             </nav>
           </div>
           <div className="lg:col-span-9">
-            <AboutContent />
+            <StaffsList />
           </div>
         </div>
       </div>
@@ -25,4 +38,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default StaffsPage;

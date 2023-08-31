@@ -14,8 +14,47 @@ function* getProjects(): any {
   }
 }
 
+function* getProjectDetail(payload: any): any {
+  try {
+    const project = yield call(api.getProjectDetail, payload.payload);
+    yield put({ type: types.GET_PROJECT_DETAIL_SUCCESS, payload: project });
+  } catch (error) {
+    yield put({
+      type: types.GET_PROJECT_DETAIL_FAILED,
+      payload: error,
+    });
+  }
+}
+
+function* getAlumniStudents(): any {
+  try {
+    const alumnis = yield call(api.getAlumniStudents);
+    yield put({ type: types.GET_ALUMNI_STUDENTS_SUCCESS, payload: alumnis });
+  } catch (error) {
+    yield put({
+      type: types.GET_ALUMNI_STUDENTS_FAILED,
+      payload: error,
+    });
+  }
+}
+
+function* getStaffs(payload: any): any {
+  try {
+    const staffs = yield call(api.getStaffs, payload.payload);
+    yield put({ type: types.GET_STAFFS_SUCCESS, payload: staffs });
+  } catch (error) {
+    yield put({
+      type: types.GET_STAFFS_FAILED,
+      payload: error,
+    });
+  }
+}
+
 function* projectSaga() {
   yield takeEvery(types.GET_PROJECTS, getProjects);
+  yield takeEvery(types.GET_PROJECT_DETAIL, getProjectDetail);
+  yield takeEvery(types.GET_STAFFS, getStaffs);
+  yield takeEvery(types.GET_ALUMNI_STUDENTS, getAlumniStudents);
 }
 
 export default projectSaga;

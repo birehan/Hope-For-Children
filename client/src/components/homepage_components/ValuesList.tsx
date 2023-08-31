@@ -17,7 +17,7 @@ const ValuesList = () => {
       {values.map((val, index) => (
         <div className="py-5 px-6 rounded-sm bg-white" key={index}>
           <details
-            open={index == selectedValue ? true : false}
+            open={index === selectedValue ? true : false}
             className={`group`}
             id={`details${index}`}
           >
@@ -40,7 +40,7 @@ const ValuesList = () => {
                   viewBox="0 0 24 24"
                   width="24"
                 >
-                <path d="M6 9l6 6 6-6"></path>
+                  <path d="M6 9l6 6 6-6"></path>
                 </svg>
               </span>
             </summary>

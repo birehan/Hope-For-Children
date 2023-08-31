@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-editor-classic": "^39.0.1",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
     "@headlessui/react": "1.7.17",
     "@heroicons/react": "^2.0.18",
     "@splidejs/react-splide": "^0.7.12",
@@ -14,6 +16,7 @@
     "@types/node": "^16.18.43",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@types/react-html-parser": "^2.0.2",
     "@types/react-icons": "^3.0.0",
     "@types/react-redux": "^7.1.26",
     "@types/swiper": "^6.0.0",

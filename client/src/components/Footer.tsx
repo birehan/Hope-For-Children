@@ -24,8 +24,11 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F7F8FC80] py-8 ">
-      <div className="mx-auto max-w-[90rem] px-6 flex flex-col gap-4">
+    <footer
+      className="bg-[#F7F8FC80] py-8 mt-8 xl:mt-16 "
+      style={{ boxShadow: "0 -3px 3px -5px #333" }}
+    >
+      <div className="mx-auto max-w-[90rem] px-6 flex flex-col gap-4 ">
         <div className=" flex-wrap md:flex-nowrap flex justify-between ">
           <div className="flex flex-col gap-2">
             <h1 className="font-volkhov font-bold text-xl leading-6 tracking-wider">

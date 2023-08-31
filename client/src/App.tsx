@@ -3,39 +3,110 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import OurWorkPage from "./pages/OurWorkPage";
-import Alumni from "./pages/Alumni";
+import Alumni from "./pages/AlumniPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import GalleryPage from "./pages/GalleryPage";
 import ContactPage from "./pages/ContactPage";
 import DontationPage from "./pages/DontationPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
-import { getProjects } from "./actions/projectsAction";
-
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import ProgramsPage from "./pages/ProgramsPage";
+import StaffsPage from "./pages/StaffsPage";
+import Layout from "./components/Layout";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getProjects());
-  });
+ 
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/acheivements" element={<OurWorkPage />} />
-        <Route path="/alumni" element={<Alumni />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/project/:id" element={<ProjectDetailPage />} />
-
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/donate" element={<DontationPage />} />
-        <Route path="/programs" element={<ProgramsPage />} />
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <HomePage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <AboutPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/acheivements"
+          element={
+            <Layout>
+              <OurWorkPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/alumni"
+          element={
+            <Layout>
+              <Alumni />
+            </Layout>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <Layout>
+              <ProjectsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/project/:id"
+          element={
+            <Layout>
+              <ProjectDetailPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/gallery"
+          element={
+            <Layout>
+              <GalleryPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <ContactPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/donate"
+          element={
+            <Layout>
+              <DontationPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/programs"
+          element={
+            <Layout>
+              <ProgramsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/staffs/:staffType"
+          element={
+            <Layout>
+              <StaffsPage />
+            </Layout>
+          }
+        />
       </Routes>
     </Router>
   );

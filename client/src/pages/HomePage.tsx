@@ -1,33 +1,32 @@
-// HomePage.tsx
 import React from "react";
-import Header from "../components/header/Header";
 import Landing from "../components/homepage_components/Landing";
 import AboutComponent from "../components/homepage_components/AboutComponent";
-import { Helmet } from "react-helmet";
 import ProjectsComponent from "../components/homepage_components/ProjectsComponent";
 import Statistics from "../components/homepage_components/Statistics";
 import ThematicAreas from "../components/homepage_components/ThematicAreas";
 import Values from "../components/homepage_components/Values";
 import Partners from "../components/homepage_components/Partners";
-import Footer from "../components/Footer";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getProjects } from "../actions/projectsAction";
 
 const HomePage: React.FC = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProjects());
+  });
+
   return (
-    <Header>
-      <Helmet>
-        <title>Hope For Children</title>
-      </Helmet>
-      <div className="flex flex-col gap-16">
-        <Landing />
-        <AboutComponent />
-        <ProjectsComponent />
-        <Statistics />
-        <ThematicAreas />
-        <Values />
-        <Partners />
-        <Footer />
-      </div>
-    </Header>
+    <div className="flex flex-col gap-16">
+      <Landing />
+      <AboutComponent />
+      <ProjectsComponent />
+      <Statistics />
+      <ThematicAreas />
+      <Values />
+      <Partners />
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Project from "../../types/project/project";
+import { Project } from "../../types/types";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,7 +12,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="relative flex items-end overflow-hidden rounded-xl aspect-w-4 aspect-h-3 ">
           <img
             src={project.photoUrl}
-            alt="Project Photo"
+            alt="Project"
             className="object-cover w-full h-[18rem]"
           />
         </div>
