@@ -4,15 +4,21 @@ import { IconType } from "react-icons";
 interface Props {
   icon: IconType | null;
   title: string;
+  backgroundImage?: string;
 }
 
-const CommonLanding = ({ icon: IconComponent, title }: Props) => {
+const CommonLanding = ({
+  icon: IconComponent,
+  title,
+  backgroundImage = "/assets/images/stats.png",
+}: Props) => {
   return (
     <div
-      className="w-full h-80"
+      className="w-full h-[30rem]"
       style={{
-        backgroundImage: "url(/assets/images/stats.png)",
+        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div
@@ -21,11 +27,13 @@ const CommonLanding = ({ icon: IconComponent, title }: Props) => {
         }}
         className=" h-full"
       >
-        <div className="flex mx-auto max-w-[100rem]  justify-center items-center gap-4 h-full">
+        <div className="flex mx-auto max-w-[90rem]  justify-center items-center gap-4 h-full text-center">
           {IconComponent && (
             <IconComponent className="text-primaryColor text-4xl xl:text-5xl" />
           )}
-          <h1 className="text-primaryColor text-5xl font-bold">{title} </h1>
+          <h1 className="text-primaryColor text-3xl sm:text-4xl  lg:text-5xl font-bold">
+            {title}{" "}
+          </h1>
         </div>
       </div>
     </div>

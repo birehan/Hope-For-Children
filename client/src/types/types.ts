@@ -33,3 +33,16 @@ export interface Alumni {
   photoUrl: string;
   id: string;
 }
+
+export interface Gallery {
+  title: string;
+  mainPhotoUrl: string;
+  id: string;
+}
+
+export interface GalleryDetail {
+  title: string;
+  mainPhotoUrl: string;
+  photos: string[];
+  id: string;
+}

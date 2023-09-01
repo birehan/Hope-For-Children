@@ -23,6 +23,26 @@ export const getProjectDetail = async (payload: string) => {
   }
 };
 
+export const getGalleries = async () => {
+  try {
+    const { data } = await transport.get(API_BASE_URL + "/categories");
+    return data.value;
+  } catch (error) {
+    throw new Error("Server Error");
+  }
+};
+
+export const getGalleryDetail = async (payload: string) => {
+  try {
+    const { data } = await transport.get(
+      `${API_BASE_URL}/categories/${payload}`
+    );
+    return data.value;
+  } catch (error) {
+    throw new Error("Server Error");
+  }
+};
+
 export const getAlumniStudents = async () => {
   try {
     const { data } = await transport.get(API_BASE_URL + "/Alumnis");

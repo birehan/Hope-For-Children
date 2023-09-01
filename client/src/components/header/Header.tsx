@@ -24,12 +24,7 @@ const Header = () => {
         className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-5 2xl:px-0"
         aria-label="Global"
       >
-        <div
-          className="flex lg:flex-1"
-          style={{
-            height: "20px",
-          }}
-        >
+        <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1 flex flex-row gap-3 items-center">
             <img
               className="h-8 lg:h-12 w-auto"

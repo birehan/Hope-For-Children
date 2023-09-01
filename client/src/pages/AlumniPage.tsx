@@ -15,12 +15,12 @@ const AlumniPage = () => {
     return () => {};
   }, []);
 
-  if (alumnis.length === 0 || alumnis === undefined || !alumnis) {
+  if (alumnis === undefined || !alumnis) {
     return <div>Alumni Error</div>;
   }
 
   return (
-    <div>
+    <div id="scroll">
       <CommonLanding title="HFC Alumni Students" icon={PiStudentBold} />
       <AlumniList />
     </div>

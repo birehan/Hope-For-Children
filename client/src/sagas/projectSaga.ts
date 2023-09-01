@@ -26,6 +26,30 @@ function* getProjectDetail(payload: any): any {
   }
 }
 
+function* getGalleries(): any {
+  try {
+    const projects = yield call(api.getGalleries);
+    yield put({ type: types.GET_GALLERY_SUCCESS, payload: projects });
+  } catch (error) {
+    yield put({
+      type: types.GET_GALLERY_FAILED,
+      payload: error,
+    });
+  }
+}
+
+function* getGalleryDetail(payload: any): any {
+  try {
+    const project = yield call(api.getGalleryDetail, payload.payload);
+    yield put({ type: types.GET_GALLERY_DETAIL_SUCCESS, payload: project });
+  } catch (error) {
+    yield put({
+      type: types.GET_GALLERY_DETAIL_FAILED,
+      payload: error,
+    });
+  }
+}
+
 function* getAlumniStudents(): any {
   try {
     const alumnis = yield call(api.getAlumniStudents);
@@ -53,6 +77,8 @@ function* getStaffs(payload: any): any {
 function* projectSaga() {
   yield takeEvery(types.GET_PROJECTS, getProjects);
   yield takeEvery(types.GET_PROJECT_DETAIL, getProjectDetail);
+  yield takeEvery(types.GET_GALLERY, getGalleries);
+  yield takeEvery(types.GET_GALLERY_DETAIL, getGalleryDetail);
   yield takeEvery(types.GET_STAFFS, getStaffs);
   yield takeEvery(types.GET_ALUMNI_STUDENTS, getAlumniStudents);
 }

@@ -17,7 +17,7 @@ const ProjectsPage = () => {
     };
   }, []);
 
-  const { projects } = useSelector((state: any) => state.projects);
+  const { projects, loading } = useSelector((state: any) => state.projects);
 
   const [itemsPerPage, setItemsPerPage] = useState(1); // Initialize with 1 item per row
 

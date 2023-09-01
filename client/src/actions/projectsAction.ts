@@ -7,6 +7,13 @@ export const getProjectDetail = (payload: string | undefined) => {
   return { type: constants.GET_PROJECT_DETAIL, payload: payload };
 };
 
+export const getGalleries = () => {
+  return { type: constants.GET_GALLERY };
+};
+export const getGalleryDetail = (payload: string | undefined) => {
+  return { type: constants.GET_GALLERY_DETAIL, payload: payload };
+};
+
 export const getAlumniStudents = () => {
   return { type: constants.GET_ALUMNI_STUDENTS };
 };
@@ -25,4 +32,12 @@ export const cleanUpProjects = () => {
 
 export const cleanUpProjectDetail = () => {
   return { type: constants.CLEAN_UP_PROJECT_DETAIL };
+};
+
+export const cleanUpGalleries = () => {
+  return { type: constants.CLEAN_UP_GALLERY };
+};
+
+export const cleanUpGalleryDetail = () => {
+  return { type: constants.CLEAN_UP_GALLERY_DETAIL };
 };
