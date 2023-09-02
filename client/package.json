@@ -5,6 +5,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-editor-classic": "^39.0.1",
     "@ckeditor/ckeditor5-react": "^6.1.0",
+    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "1.7.17",
     "@heroicons/react": "^2.0.18",
     "@splidejs/react-splide": "^0.7.12",
