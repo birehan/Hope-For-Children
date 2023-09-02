@@ -93,9 +93,9 @@ const GalleryDetailPage = () => {
 
               let diff = row_end - row_start;
               if (diff == 1) {
-                height = "15rem";
+                height = "16rem";
               } else {
-                height = "30rem";
+                height = "24rem";
               }
             }
 
