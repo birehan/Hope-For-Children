@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col gap-16">
       <Landing />
-      <AboutComponent />
+      {/* <AboutComponent /> */}
       <ProjectsComponent />
       <Statistics />
       <ThematicAreas />
