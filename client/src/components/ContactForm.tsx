@@ -10,9 +10,9 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false); // Add a loading state
 
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     message: "",
+    subject: "",
   });
 
   const sendEmail = (e: any) => {
@@ -34,9 +34,9 @@ const ContactForm = () => {
             setShow(true);
 
             setFormData({
-              name: "",
               email: "",
               message: "",
+              subject: "",
             });
             setLoading(false);
           },
@@ -72,15 +72,7 @@ const ContactForm = () => {
           message={message}
         />
       )}
-      <input
-        type="text"
-        className="border rounded-md p-4"
-        placeholder="Name"
-        required
-        name="name"
-        value={formData.name}
-        onChange={handleInputChange}
-      />
+
       <input
         type="email"
         className="border rounded-md p-4"
@@ -88,6 +80,15 @@ const ContactForm = () => {
         required
         name="email"
         value={formData.email}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        className="border rounded-md p-4"
+        placeholder="Subject"
+        required
+        name="subject"
+        value={formData.subject}
         onChange={handleInputChange}
       />
       <textarea
