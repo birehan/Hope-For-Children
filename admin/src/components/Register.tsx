@@ -1,10 +1,12 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { User } from "../types/user";
 import { CreateUserAction } from "../features/redux/user/userSlice";
+import { authState } from "../features/redux/auth/authSlice";
 
 
 export default function Register() {
+  const user = useSelector((state: authState) => state.user);
   const dispatch = useDispatch();
   const {
     register,
@@ -124,7 +126,7 @@ export default function Register() {
                   <select
                     id="userRole"
                     {...register("userRole", { required: true })}
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block cursor-pointer w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   >
                     <option value="">-- select user role --</option>
                     <option value="superAdmin">Super Admin</option>

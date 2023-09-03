@@ -1,11 +1,18 @@
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-import { User } from "../types/user";
+import { AuthType, User } from "../types/user";
 
 export const createUserApi = async (user: User) => {
-  console.log(user, "userr");
+  const userJSON = localStorage.getItem("user");
+  const userfromlh = userJSON ? JSON.parse(userJSON) : null;
   try {
-    const { data } = await axios.post(API_BASE_URL + "/Account/register", user);
+    const { data } = await axios.post(
+      API_BASE_URL + "/Account/register",user,{
+        headers: {
+          Authorization: `Bearer ${userfromlh.value.token}`,
+        },
+      }
+    );
     return data;
   } catch (error) {
     throw new Error("Server Error");
