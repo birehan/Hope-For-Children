@@ -35,7 +35,7 @@ const GalleryPage = () => {
 
       <div className="px-6 mt-8 xl:mt-16">
         <div>
-          <div className="mx-auto grid max-w-[90rem] grid-cols-2 gap-6   lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mx-auto  max-w-[90rem] grid grid-cols-2 gap-6   lg:grid-cols-3 xl:grid-cols-4">
             {galleries.map((gallery: Gallery, index: number) => {
               return (
                 <article
