@@ -32,7 +32,7 @@ const DontationPage = () => {
           </div>
         </div>
 
-        <div className="mx-auto max-w-[70rem]  border-2 border-[#00B1F4] rounded-md mt-12 p-6 bg-white">
+        <div className="mx-auto max-w-[35rem]  shadow-md border-[#00B1F4] rounded-md mt-12 p-6 bg-white">
           <DonateForm />
         </div>
       </div>
