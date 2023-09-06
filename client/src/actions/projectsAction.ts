@@ -41,3 +41,13 @@ export const cleanUpGalleries = () => {
 export const cleanUpGalleryDetail = () => {
   return { type: constants.CLEAN_UP_GALLERY_DETAIL };
 };
+
+export const cleanUpAlumni = () => {
+  return { type: constants.CLEAN_UP_ALUMNI };
+};
+
+
+
+export const cleanUpStaff = () => {
+  return { type: constants.CLEAN_UP_STAFF };
+};

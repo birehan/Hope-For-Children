@@ -5,11 +5,11 @@ import projects from "./projectReducer";
 import staffs from "./staffReducer";
 import alumnis from "./alumniReducer";
 import galleries from "./galleryReducer";
-
+import projectDetail from "./projectDetailReducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["projects", "staffs", "alumnis", "galleries"],
+  whitelist: ["projects", "staffs", "alumnis", "galleries", "projectDetail"],
 };
 
 const rootReducer = combineReducers({
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   staffs,
   alumnis,
   galleries,
+  projectDetail,
 });
 const reducers = persistReducer(persistConfig, rootReducer);
 

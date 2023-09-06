@@ -35,6 +35,15 @@ const alumniReducer = (
         alumnis: [],
       };
 
+    case types.CLEAN_UP_ALUMNI:
+      return {
+        ...state,
+        loading: false,
+        success: false,
+        message: "",
+        alumnis: [],
+      };
+
     default:
       return state;
   }

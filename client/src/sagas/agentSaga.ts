@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import * as types from "../constants/actionTypes";
-import * as api from "../api/projects";
+import * as api from "../api/agent";
 
 function* getProjects(): any {
   try {

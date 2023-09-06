@@ -6,36 +6,41 @@ import {
   cleanUpProjectDetail,
 } from "../actions/projectsAction";
 import CommonLanding from "../components/CommonLanding";
+import Loading from "../components/Loading";
+import Layout from "../components/Layout";
 
 const ProjectDetailPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { project } = useSelector((state: any) => state.projects);
 
   useEffect(() => {
     dispatch(getProjectDetail(id));
     return () => {
       dispatch(cleanUpProjectDetail());
     };
-  }, [id]);
+  }, []);
 
-  if (project == null) {
-    return <div>Project Detail Error</div>;
+  const { project, loading } = useSelector((state: any) => state.projectDetail);
+
+  if (loading || project === null) {
+    return <Loading />;
   }
 
   return (
-    <div>
-      <CommonLanding title={project.title} icon={null} />
+    <Layout>
+      <div>
+        <CommonLanding title={project.title} icon={null} />
 
-      <div className="flex flex-col gap-4 px-6 mt-8 xl:mt-16">
-        <div
-          className="mx-auto mt-4 grid w-full max-w-[80rem] gap-10  grid-cols-1 bg-white p-8 rounded-md"
-          dangerouslySetInnerHTML={{
-            __html: project.content,
-          }}
-        />
+        <div className="flex flex-col gap-4 px-6 mt-8 xl:mt-16">
+          <div
+            className="mx-auto mt-4 grid w-full max-w-[80rem] gap-10  grid-cols-1 bg-white p-8 rounded-md"
+            dangerouslySetInnerHTML={{
+              __html: project.content,
+            }}
+          />
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

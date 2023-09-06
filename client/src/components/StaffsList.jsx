@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 
 export const staffMembers = {
   BoardMember: "Board Members",
-  Management: "Management Members",
+  ManagementMember: "Management Members",
   StaffMember: "Staff Members",
   FormerMember: "Former Members",
 };
@@ -17,10 +17,6 @@ const StaffsList = () => {
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = Math.ceil(staffs.length / itemsPerPage);
-
-  if (staffs.length === 0 || staffs === undefined || !staffs) {
-    return <div>Staff Error</div>;
-  }
 
   return (
     <section className="xl:pb-8 ">

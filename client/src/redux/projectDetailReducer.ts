@@ -1,55 +1,46 @@
 import * as types from "../constants/actionTypes";
 
 const initialState = {
-  staffs: [],
+  project: null,
   loading: false,
   success: false,
   failed: false,
   message: "",
 };
 
-const staffReducer = (
+const projectDetailReducer = (
   state = initialState,
   action: { type: any; payload: any }
 ) => {
   switch (action.type) {
-    case types.GET_STAFFS:
+    case types.GET_PROJECT_DETAIL:
       return {
         ...state,
         loading: true,
       };
-    case types.GET_STAFFS_SUCCESS:
+    case types.GET_PROJECT_DETAIL_SUCCESS:
       return {
         ...state,
-        staffs: action.payload,
+        project: action.payload,
         loading: false,
         success: true,
       };
-    case types.GET_STAFFS_FAILED:
+    case types.GET_PROJECT_DETAIL_FAILED:
       return {
         ...state,
         loading: false,
         success: false,
         message: action.payload,
-        staffs: [],
+        project: null,
       };
 
-    case types.CLEAN_UP:
+    case types.CLEAN_UP_PROJECT_DETAIL:
       return {
         ...state,
         loading: false,
         success: false,
         message: "",
-        staffs: [],
-      };
-
-    case types.CLEAN_UP_STAFF:
-      return {
-        ...state,
-        loading: false,
-        success: false,
-        message: "",
-        staffs: [],
+        project: null,
       };
 
     default:
@@ -57,4 +48,4 @@ const staffReducer = (
   }
 };
 
-export default staffReducer;
+export default projectDetailReducer;

@@ -6,6 +6,8 @@ import {
   cleanUpGalleryDetail,
   getGalleryDetail,
 } from "../actions/projectsAction";
+import Loading from "../components/Loading";
+import Layout from "../components/Layout";
 
 const GalleryDetailPage = () => {
   const dispatch = useDispatch();
@@ -58,67 +60,65 @@ const GalleryDetailPage = () => {
     };
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!gallery || !gallery.photos.length) {
-    return <div>Project Error</div>;
+  if (loading || gallery === null) {
+    return <Loading />;
   }
 
   return (
-    <div>
-      <CommonLanding icon={null} title={`${gallery.title}`} />
+    <Layout>
+      <div>
+        <CommonLanding icon={null} title={`${gallery.title}`} />
 
-      <div className="px-6 mt-8 xl:mt-16">
-        <div className="mx-auto grid max-w-[90rem] grid-cols-2 gap-4 lg:grid-cols-3 gallery-container">
-          {gallery.photos.map((photoUrl: string, index: number) => {
-            let row_start = 0;
-            let row_end = 0;
-            let height = "24rem";
-            if (index % 2 === 0) {
-              height = "36rem";
-            }
-
-            if (isLargeScreen) {
-              const grid_index = (index + 1) % 6;
-              row_start = grid_rows[grid_index][0];
-              row_end = grid_rows[grid_index][1];
-              grid_rows[grid_index] = [row_start + 4, row_end + 4];
-            } else {
-              const grid_index = (index + 1) % 8;
-              row_start = grid_rows_sm[grid_index][0];
-              row_end = grid_rows_sm[grid_index][1];
-              grid_rows_sm[grid_index] = [row_start + 6, row_end + 6];
-
-              let diff = row_end - row_start;
-              if (diff == 1) {
-                height = "16rem";
-              } else {
-                height = "24rem";
+        <div className="px-6 mt-8 xl:mt-16">
+          <div className="mx-auto grid max-w-[90rem] grid-cols-2 gap-4 lg:grid-cols-3 gallery-container">
+            {gallery.photos.map((photoUrl: string, index: number) => {
+              let row_start = 0;
+              let row_end = 0;
+              let height = "24rem";
+              if (index % 2 === 0) {
+                height = "36rem";
               }
-            }
 
-            return (
-              <div
-                style={{
-                  gridRow: `${row_start}/${row_end}`,
-                  height: `${height}`,
-                }}
-                key={index}
-                className={`hover:transform hover:scale-[1.02] duration-300`}
-              >
-                <img
-                  src={photoUrl}
-                  alt="gallery"
-                  className="object-cover w-full rounded-md h-full"
-                />
-              </div>
-            );
-          })}
+              if (isLargeScreen) {
+                const grid_index = (index + 1) % 6;
+                row_start = grid_rows[grid_index][0];
+                row_end = grid_rows[grid_index][1];
+                grid_rows[grid_index] = [row_start + 4, row_end + 4];
+              } else {
+                const grid_index = (index + 1) % 8;
+                row_start = grid_rows_sm[grid_index][0];
+                row_end = grid_rows_sm[grid_index][1];
+                grid_rows_sm[grid_index] = [row_start + 6, row_end + 6];
+
+                let diff = row_end - row_start;
+                if (diff == 1) {
+                  height = "16rem";
+                } else {
+                  height = "24rem";
+                }
+              }
+
+              return (
+                <div
+                  style={{
+                    gridRow: `${row_start}/${row_end}`,
+                    height: `${height}`,
+                  }}
+                  key={index}
+                  className={`hover:transform hover:scale-[1.02] duration-300`}
+                >
+                  <img
+                    src={photoUrl}
+                    alt="gallery"
+                    className="object-cover w-full rounded-md h-full"
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
