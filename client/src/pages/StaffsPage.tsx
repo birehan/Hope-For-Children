@@ -3,7 +3,7 @@ import StaffSidebar from "../components/about_page_components/StaffSidebar";
 import { cleanUpStaff, getStaffs } from "../actions/projectsAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import StaffsList from "../components/StaffsList";
+import StaffsList from "../components/StaffsList.jsx";
 import CommonLanding from "../components/CommonLanding";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
@@ -20,7 +20,7 @@ const StaffsPage = () => {
     return () => {
       dispatch(cleanUpStaff());
     };
-  }, [staffType]);
+  }, [staffType, dispatch]);
 
   if (loading) {
     return <Loading />;

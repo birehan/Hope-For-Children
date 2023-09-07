@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
     return () => {
       dispatch(cleanUpProjects());
     };
-  }, []);
+  }, [dispatch]);
 
   if (loading === true) {
     return <Loading />;

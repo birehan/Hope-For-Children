@@ -17,7 +17,7 @@ const AlumniPage = () => {
     return () => {
       dispatch(cleanUpAlumni());
     };
-  }, []);
+  }, [dispatch]);
 
   if (loading === true) {
     return <Loading />;

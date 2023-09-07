@@ -45,7 +45,7 @@ const DonateForm = () => {
               >
                 Donation Amount
               </label>
-              <div className="mt-2 flex flex-row gap-4">
+              <div className="mt-2 flex flex-row gap-4 items-center justify-center">
                 <div className=" flex-[4]">
                   <Select
                     className="select-input"
@@ -57,7 +57,7 @@ const DonateForm = () => {
                   />
                 </div>
 
-                <div className="flex-[6]">
+                <div className="flex-[6] ">
                   <input
                     className="remove-arrow p-[8px] border w-full border-[#00B1F4] rounded-md my-6 sm:my-0 flex-[7]"
                     placeholder="Amount"

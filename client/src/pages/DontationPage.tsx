@@ -11,8 +11,8 @@ const DontationPage = () => {
           icon={null}
         />
 
-        <div className="px-6 mt-8 xl:mt-16">
-          <div className="mx-auto  max-w-[70rem]">
+        <div className="px-6 mt-8 xl:mt-16 flex flex-col lg:flex-row max-w-[90rem] mx-auto gap-8">
+          <div className="mx-auto w-full flex-[6]">
             <div className=" my-3">
               <h1 className="text-2xl">Bank Account Details</h1>
             </div>
@@ -33,7 +33,7 @@ const DontationPage = () => {
             </div>
           </div>
 
-          <div className="mx-auto max-w-[35rem]  shadow-md border-[#00B1F4] rounded-md mt-12 p-6 bg-white">
+          <div className="mx-auto w-full shadow-md border-[#00B1F4] rounded-md mt-12 p-6 bg-white flex-[4]">
             <DonateForm />
           </div>
         </div>

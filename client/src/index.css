@@ -69,3 +69,38 @@ code {
 .remove-arrow {
   -moz-appearance: textfield;
 }
+
+.css-13cymwt-control {
+  border: 1px solid #00b1f4 !important;
+}
+
+.css-qbdosj-Input {
+  padding: 3px !important;
+}
+
+/* WebKit Scrollbar Styles */
+/* Track */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00b1f4; /* Change the color of the scrollbar handle */
+  border-radius: 5px; /* Rounded corners of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00b1f4; /* Change the color of the scrollbar handle on hover */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+  background: #e0e0e0; /* Color of the scrollbar track on hover */
+}

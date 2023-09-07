@@ -41,7 +41,7 @@ const GalleryDetailPage = () => {
     return () => {
       dispatch(cleanUpGalleryDetail());
     };
-  }, []);
+  }, [dispatch, id]);
 
   const updateisLargeScreen = () => {
     if (window.innerWidth >= 1024) {
@@ -58,7 +58,7 @@ const GalleryDetailPage = () => {
     return () => {
       window.removeEventListener("resize", updateisLargeScreen);
     };
-  }, []);
+}, [dispatch]);
 
   if (loading || gallery === null) {
     return <Loading />;
@@ -91,7 +91,7 @@ const GalleryDetailPage = () => {
                 grid_rows_sm[grid_index] = [row_start + 6, row_end + 6];
 
                 let diff = row_end - row_start;
-                if (diff == 1) {
+                if (diff === 1) {
                   height = "16rem";
                 } else {
                   height = "24rem";

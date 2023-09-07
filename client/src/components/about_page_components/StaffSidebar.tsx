@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { staffItems } from "../../data/aboutData";
 import StaffDropdown from "./StaffDropdown";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const StaffSidebar = () => {
   const { staffType } = useParams();
-  const navigate = useNavigate();
 
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
@@ -48,12 +47,9 @@ const StaffSidebar = () => {
           <li>
             <ul className=" space-y-1 flex flex-col gap-1">
               {staffItems.items.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => navigate(`/staffs/${item.staffType}`)}
-                >
-                  <a
-                    href="#"
+                <li key={index}>
+                  <Link
+                    to={`/staffs/${item.staffType}`}
                     className={classNames(
                       staffType === item.staffType
                         ? " text-primaryColor bg-[#F7F8FC80]"
@@ -73,7 +69,7 @@ const StaffSidebar = () => {
                       aria-hidden="true"
                     />
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

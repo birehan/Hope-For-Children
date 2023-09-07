@@ -1,4 +1,3 @@
-import React from "react";
 import { sidebarProjects, sidebarPrograms } from "../data/aboutData";
 import { Link } from "react-router-dom";
 

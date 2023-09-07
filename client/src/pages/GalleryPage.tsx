@@ -17,7 +17,7 @@ const GalleryPage = () => {
     return () => {
       dispatch(cleanUpGalleries());
     };
-  }, []);
+  }, [dispatch]);
 
   if (loading) {
     return <Loading />;
@@ -26,11 +26,7 @@ const GalleryPage = () => {
   return (
     <Layout>
       <div>
-        <CommonLanding
-          icon={null}
-          title="WELCOME TO OUR GALLERY"
-          backgroundImage="assets/images/gallery.png"
-        />
+        <CommonLanding icon={null} title="WELCOME TO OUR GALLERY" />
 
         <div className="px-6 mt-8 xl:mt-16">
           <div>

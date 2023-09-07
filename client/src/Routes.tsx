@@ -9,7 +9,6 @@ import DontationPage from "./pages/DontationPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ProgramsPage from "./pages/ProgramsPage";
 import StaffsPage from "./pages/StaffsPage";
-import Layout from "./components/Layout";
 import GalleryDetailPage from "./pages/GalleryDetailPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { createBrowserRouter } from "react-router-dom";

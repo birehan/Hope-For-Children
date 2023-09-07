@@ -1,5 +1,4 @@
 import axios from "axios";
-import { NavigateFunction } from "react-router-dom";
 import routes from "../Routes";
 
 axios.defaults.withCredentials = true;

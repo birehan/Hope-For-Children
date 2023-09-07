@@ -18,7 +18,7 @@ const ProjectDetailPage = () => {
     return () => {
       dispatch(cleanUpProjectDetail());
     };
-  }, []);
+  }, [dispatch, id]);
 
   const { project, loading } = useSelector((state: any) => state.projectDetail);
 

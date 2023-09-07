@@ -15,9 +15,9 @@ const ProjectsPage = () => {
     dispatch(getProjects());
 
     return () => {
-      // dispatch(cleanUpProjects());
+      dispatch(cleanUpProjects());
     };
-  }, []);
+  }, [dispatch]);
 
   const { projects, loading } = useSelector((state: any) => state.projects);
 

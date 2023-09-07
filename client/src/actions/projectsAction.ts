@@ -22,10 +22,6 @@ export const getStaffs = (payload: string | undefined) => {
   return { type: constants.GET_STAFFS, payload: payload };
 };
 
-export const cleanUp = () => {
-  return { type: constants.CLEAN_UP };
-};
-
 export const cleanUpProjects = () => {
   return { type: constants.CLEAN_UP_PROJECTS };
 };
@@ -45,8 +41,6 @@ export const cleanUpGalleryDetail = () => {
 export const cleanUpAlumni = () => {
   return { type: constants.CLEAN_UP_ALUMNI };
 };
-
-
 
 export const cleanUpStaff = () => {
   return { type: constants.CLEAN_UP_STAFF };
