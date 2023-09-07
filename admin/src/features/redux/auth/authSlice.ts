@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { AuthType } from "../../types/user/authType";
+import { AuthType } from "../../../types/user";
 
 export type authState = {
   user: AuthType | null;
@@ -7,7 +7,7 @@ export type authState = {
   errors: string;
 };
 const authInitialState: authState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem('user')|| ""),
   isLoading: false,
   errors: "",
 };
@@ -20,7 +20,6 @@ export const authSlice = createSlice({
       state: authState,
       { payload: user }: PayloadAction<AuthType>
     ) => {
-      console.log(user,"action")
       state.isLoading = true;
       state.errors = "";
     },
