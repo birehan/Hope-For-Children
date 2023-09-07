@@ -8,7 +8,9 @@ export type authState = {
   errors: string;
 };
 const authInitialState: authState = {
-  user: JSON.parse(localStorage.getItem("user") || ""),
+  user: localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user") || "")
+    : "",
   isLoading: false,
   errors: "",
 };
