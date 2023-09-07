@@ -1,10 +1,15 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { createUserApi } from "../../api/user";
-import { CreateUserErrorAction, CreateUserSuccessAction } from "../redux/user/userSlice";
+import {
+  CreateUserErrorAction,
+  CreateUserSuccessAction,
+} from "../redux/user/userSlice";
 import { User } from "../../types/user";
 
-function* createUser({ payload: user }: PayloadAction<User>): Generator<any, void, User> {
+function* createUser({
+  payload: user,
+}: PayloadAction<User>): Generator<any, void, User> {
   try {
     const data = yield call(createUserApi, user);
     yield put(CreateUserSuccessAction(data));
@@ -14,5 +19,5 @@ function* createUser({ payload: user }: PayloadAction<User>): Generator<any, voi
 }
 
 export function* userSaga() {
-  yield takeLatest("user/CreateUserAction",createUser);
+  yield takeLatest("user/CreateUserAction", createUser);
 }

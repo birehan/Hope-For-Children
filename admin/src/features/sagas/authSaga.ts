@@ -4,10 +4,11 @@ import { LoginErrorAction, LoginSuccessAction } from "../redux/auth/authSlice";
 import { userLoginApi } from "../../api/auth";
 import { AuthType } from "../../types/user";
 
-function* userLogin({ payload: user }: PayloadAction<AuthType>): Generator<any, void, AuthType> {
+function* userLogin({
+  payload: user,
+}: PayloadAction<AuthType>): Generator<any, void, AuthType> {
   try {
     const data = yield call(userLoginApi, user);
-    console.log(data,'sdfas')
     yield put(LoginSuccessAction(data));
   } catch (error) {
     yield put(LoginErrorAction("Something went wrong"));
