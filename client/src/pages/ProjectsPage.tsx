@@ -36,7 +36,6 @@ const ProjectsPage = () => {
     }
   };
 
-  // Listen for window resize and update itemsPerPage accordingly
   useEffect(() => {
     updateitemsPerPage();
     window.addEventListener("resize", updateitemsPerPage);
