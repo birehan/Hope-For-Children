@@ -16,10 +16,11 @@ export default function Layout() {
 
         <div className="lg:pl-72">
           <Header setSidebarOpen={setSidebarOpen} />
-
-          <Suspense fallback={<Loading />}>
-            <Outlet />
-          </Suspense>
+          <main className="py-6 px-6 xl:px-20">
+            <Suspense fallback={<Loading />}>
+              <Outlet />
+            </Suspense>
+          </main>
         </div>
       </div>
     </>

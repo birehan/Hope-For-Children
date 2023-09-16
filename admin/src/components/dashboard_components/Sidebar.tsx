@@ -1,19 +1,9 @@
 import { Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import {
-  FolderIcon,
-  UsersIcon,
-  XMarkIcon,
-  PhotoIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/outline";
+import { Dialog, Disclosure, Transition } from "@headlessui/react";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import navigation from "../../data/sidebarLinks";
 
-const navigation = [
-  { name: "Projects", href: "#", icon: FolderIcon, current: true },
-  { name: "Staffs", href: "#", icon: UserGroupIcon, current: false },
-  { name: "Gallery", href: "#", icon: PhotoIcon, current: false },
-  { name: "Alumni", href: "#", icon: UsersIcon, current: false },
-];
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   sidebarOpen: boolean;
@@ -93,26 +83,75 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: Props) => {
                       <ul role="list" className="-mx-2 space-y-1">
                         {navigation.map((item) => (
                           <li key={item.name}>
-                            <a
-                              href={item.href}
-                              className={classNames(
-                                item.current
-                                  ? "bg-gray-50 text-indigo-600"
-                                  : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
-                                "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                              )}
-                            >
-                              <item.icon
+                            {!item.children ? (
+                              <a
+                                href={item.href}
                                 className={classNames(
                                   item.current
-                                    ? "text-indigo-600"
-                                    : "text-gray-400 group-hover:text-indigo-600",
-                                  "h-6 w-6 shrink-0"
+                                    ? "bg-gray-50 text-indigo-600"
+                                    : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
+                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                 )}
-                                aria-hidden="true"
-                              />
-                              {item.name}
-                            </a>
+                              >
+                                <item.icon
+                                  className={classNames(
+                                    item.current
+                                      ? "text-indigo-600"
+                                      : "text-gray-400 group-hover:text-indigo-600",
+                                    "h-6 w-6 shrink-0"
+                                  )}
+                                  aria-hidden="true"
+                                />
+                                {item.name}
+                              </a>
+                            ) : (
+                              <Disclosure as="div">
+                                {({ open }) => (
+                                  <>
+                                    <Disclosure.Button
+                                      className={classNames(
+                                        item.current
+                                          ? "bg-gray-50"
+                                          : "hover:bg-gray-50",
+                                        "flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700"
+                                      )}
+                                    >
+                                      <ChevronRightIcon
+                                        className={classNames(
+                                          open
+                                            ? "rotate-90 text-gray-500"
+                                            : "text-gray-400",
+                                          "h-5 w-5 shrink-0"
+                                        )}
+                                        aria-hidden="true"
+                                      />
+                                      {item.name}
+                                    </Disclosure.Button>
+                                    <Disclosure.Panel
+                                      as="ul"
+                                      className="mt-1 px-2"
+                                    >
+                                      {item.children.map((subItem) => (
+                                        <li key={subItem.name}>
+                                          <Disclosure.Button
+                                            as="a"
+                                            href={subItem.href}
+                                            className={classNames(
+                                              subItem.current
+                                                ? "bg-gray-50"
+                                                : "hover:bg-gray-50",
+                                              "block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700"
+                                            )}
+                                          >
+                                            {subItem.name}
+                                          </Disclosure.Button>
+                                        </li>
+                                      ))}
+                                    </Disclosure.Panel>
+                                  </>
+                                )}
+                              </Disclosure>
+                            )}
                           </li>
                         ))}
                       </ul>
