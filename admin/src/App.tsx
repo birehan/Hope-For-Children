@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PrivateRoutes from "./Routes/PrivateRoutes";
 import PublicRoutes from "./Routes/PublicRoutes";
-import { setUpAxiosIntercept } from "./api/projects";
+import { setUpAxiosIntercept } from "./api/request";
 
 function App() {
   const { user } = useSelector((state: any) => state.auth);

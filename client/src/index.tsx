@@ -16,6 +16,6 @@ root.render(
         <App />
       </PersistGate>
     </Provider>
-  </>
+  </>t
 );
 reportWebVitals();

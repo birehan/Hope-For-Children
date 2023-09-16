@@ -29,6 +29,21 @@ export interface UpdateProject extends CommonProjectFields {
   id: string;
 }
 
+export interface CommonStaffFields {
+  name: string;
+  about: string;
+  userSector: string;
+  title: string;
+}
+
+export interface CreateStaff extends CommonStaffFields {
+  file: File;
+}
+export interface UpdateStaff extends CommonStaffFields {
+  file: File | null;
+  id: string;
+}
+
 export interface Staff {
   name: string;
   about: string;
