@@ -12,10 +12,10 @@ export interface StaffState {
 }
 
 const initialState: StaffState = {
+  staff: null,
   staffs: [],
   isLoading: false,
   error: null,
-  staff: null,
   isCreateSuccess: false,
   isUpdateSuccess: false,
   isDeleteSuccess: false,
@@ -59,7 +59,6 @@ export const staffslice = createSlice({
 
     GetStaffByIdAction: (state, { payload: id }: PayloadAction<string>) => {
       state.isLoading = true;
-      state.staffs = [];
       state.staff = null;
     },
 
@@ -136,6 +135,15 @@ export const staffslice = createSlice({
       state.isUpdateSuccess = false;
       state.isDeleteSuccess = false;
       state.staff = null;
+      state.staffs = [];
+    },
+
+    CleanUpStatusStaff: (state) => {
+      state.isLoading = false;
+      state.error = "";
+      state.isCreateSuccess = false;
+      state.isUpdateSuccess = false;
+      state.isDeleteSuccess = false;
     },
   },
 });
@@ -160,4 +168,5 @@ export const {
   DeleteStaffSuccess,
   DeleteStaffFailure,
   CleanUpStaff,
+  CleanUpStatusStaff,
 } = staffslice.actions;

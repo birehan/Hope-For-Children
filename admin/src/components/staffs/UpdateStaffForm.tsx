@@ -2,18 +2,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
+  CleanUpStatusStaff,
   GetStaffByIdAction,
   UpdateStaffAction,
 } from "../../features/redux/staffSlice";
 
-import { Staff, UpdateStaff } from "../../types/types";
+import { UpdateStaff } from "../../types/types";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import TextInput from "../inputs/TextInput";
 import SubmitButton from "../SubmitButton";
 import TextAreaInput from "../inputs/TextAreaInput";
 import ImageInput from "../inputs/ImageInput";
 import DropDownInput from "../inputs/DropDownInput";
-import { CleanUpStaff } from "../../features/redux/staffSlice";
 
 import Notification from "../Notification";
 import Loading from "../Loading";
@@ -27,23 +27,17 @@ const UpdateStaffForm = () => {
       dispatch(GetStaffByIdAction(id));
     }
     return () => {
-      dispatch(CleanUpStaff());
+      dispatch(CleanUpStatusStaff());
     };
   }, [dispatch, id]);
 
-  const { staff, loading } = useSelector((state: any) => state.staffs);
-
-  const [selectedImage, setSelectedImage] = useState<string | null>(
-    staff ? staff.photoUrl : null
-  );
-
-  const methods = useForm<UpdateStaff>({
-    defaultValues: staff,
-  });
-
-  const { isLoading, isUpdateSuccess, error } = useSelector(
+  const { staff, isLoading, isUpdateSuccess, error } = useSelector(
     (state: any) => state.staffs
   );
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const methods = useForm<UpdateStaff>();
 
   const onSubmit: SubmitHandler<UpdateStaff> = (data) => {
     const formData = new FormData();
@@ -58,7 +52,14 @@ const UpdateStaffForm = () => {
     dispatch(UpdateStaffAction({ formData, id: data.id }));
   };
 
-  if (loading) {
+  useEffect(() => {
+    if (staff) {
+      methods.reset(staff);
+      setSelectedImage(staff.photoUrl);
+    }
+  }, [staff, methods]);
+
+  if (staff === null) {
     return <Loading />;
   }
 

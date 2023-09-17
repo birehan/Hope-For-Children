@@ -1,41 +1,38 @@
 import { useDispatch, useSelector } from "react-redux";
-import { CreateStaff } from "../../types/types";
+import { CreateAlumni } from "../../types/types";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import TextInput from "../inputs/TextInput";
 import SubmitButton from "../SubmitButton";
 import TextAreaInput from "../inputs/TextAreaInput";
 import ImageInput from "../inputs/ImageInput";
-import DropDownInput from "../inputs/DropDownInput";
 import {
-  CleanUpStatusStaff,
-  CreateStaffAction,
-} from "../../features/redux/staffSlice";
+  CleanStatusAlumni,
+  CreateAlumniAction,
+} from "../../features/redux/alumniSlice";
 import { useEffect, useState } from "react";
 import Notification from "../Notification";
 
-const CreateStaffForm = () => {
+const CreateAlumniForm = () => {
   const dispatch = useDispatch();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const onSubmit: SubmitHandler<CreateStaff> = (data) => {
+  const onSubmit: SubmitHandler<CreateAlumni> = (data) => {
     const formData = new FormData();
     formData.append("name", data.name);
-    formData.append("about", data.about);
-    formData.append("title", data.title);
-    formData.append("userSector", data.userSector);
+    formData.append("story", data.story);
     formData.append("file", data.file);
 
-    dispatch(CreateStaffAction(formData));
+    dispatch(CreateAlumniAction(formData));
   };
 
-  const methods = useForm<CreateStaff>();
+  const methods = useForm<CreateAlumni>();
   const { isLoading, isCreateSuccess, error } = useSelector(
-    (state: any) => state.staffs
+    (state: any) => state.alumnis
   );
 
   useEffect(() => {
     return () => {
-      dispatch(CleanUpStatusStaff());
+      dispatch(CleanStatusAlumni());
     };
   }, [dispatch]);
 
@@ -55,40 +52,28 @@ const CreateStaffForm = () => {
         {isCreateSuccess && (
           <Notification
             success={isCreateSuccess}
-            message="Staff Created succesffully"
+            message="Alumni Created succesffully"
           />
         )}
 
         {error && <Notification success={isCreateSuccess} message={error} />}
 
-        <h2 className="text-3xl text-center">Create Staff Member</h2>
-        <div className="flex flex-col lg:flex-row gap-4 w-full">
-          <TextInput label="Name" name={"name"} />
-          <TextInput label="Staff Position" name={"title"} />
-        </div>
-        <DropDownInput
-          label="Staff Sector"
-          items={[
-            { key: "BoardMember", value: "Board Members" },
-            { key: "ManagementMember", value: "Management Members" },
-            { key: "StaffMember", value: "Staff Members" },
-            { key: "FormerMember", value: "Former Members" },
-          ]}
-          name="userSector"
-        />
-        <TextAreaInput label="About staff" name="about" />
+        <h2 className="text-3xl text-center">Create Alumni Member</h2>
+        <TextInput label="Name" name={"name"} />
+
+        <TextAreaInput label="Alumni story" name="story" />
         <ImageInput
-          label="Staff Photo"
+          label="Alumni Photo"
           name="file"
           selectedImage={selectedImage}
           setSelectedImage={setSelectedImage}
           isImageReqired={true}
         />
 
-        <SubmitButton text="Create Staff" isLoading={isLoading} />
+        <SubmitButton text="Create Alumni" isLoading={isLoading} />
       </form>
     </FormProvider>
   );
 };
 
-export default CreateStaffForm;
+export default CreateAlumniForm;

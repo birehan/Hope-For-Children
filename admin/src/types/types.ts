@@ -53,6 +53,20 @@ export interface Staff {
   id: string;
 }
 
+export interface CommonAlumniFields {
+  name: string;
+  story: string;
+}
+
+export interface CreateAlumni extends CommonAlumniFields {
+  file: File;
+}
+
+export interface UpdateAlumni extends CommonAlumniFields {
+  file: File | null;
+  id: string;
+}
+
 export interface Alumni {
   name: string;
   story: string;

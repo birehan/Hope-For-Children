@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { Suspense, useState } from "react";
 import Loading from "./Loading";
-import Sidebar from "./dashboard_components/Sidebar";
-import DesktopSidebar from "./dashboard_components/DesktopSidebar";
-import Header from "./dashboard_components/Header";
+import Sidebar from "./dashboard/Sidebar";
+import DesktopSidebar from "./dashboard/DesktopSidebar";
+import Header from "./dashboard/Header";
 
 export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

@@ -4,6 +4,7 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import navigation from "../../data/sidebarLinks";
 
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 interface Props {
   sidebarOpen: boolean;
@@ -132,20 +133,23 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: Props) => {
                                       className="mt-1 px-2"
                                     >
                                       {item.children.map((subItem) => (
-                                        <li key={subItem.name}>
-                                          <Disclosure.Button
-                                            as="a"
-                                            href={subItem.href}
-                                            className={classNames(
-                                              subItem.current
-                                                ? "bg-gray-50"
-                                                : "hover:bg-gray-50",
-                                              "block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700"
-                                            )}
-                                          >
-                                            {subItem.name}
-                                          </Disclosure.Button>
-                                        </li>
+                                        <Link
+                                          key={subItem.name}
+                                          to={subItem.href}
+                                        >
+                                          <li>
+                                            <Disclosure.Button
+                                              className={classNames(
+                                                subItem.current
+                                                  ? "bg-gray-50"
+                                                  : "hover:bg-gray-50",
+                                                "block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700"
+                                              )}
+                                            >
+                                              {subItem.name}
+                                            </Disclosure.Button>
+                                          </li>
+                                        </Link>
                                       ))}
                                     </Disclosure.Panel>
                                   </>

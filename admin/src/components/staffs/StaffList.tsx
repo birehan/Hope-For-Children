@@ -5,8 +5,8 @@ import Pagination from "../Pagination";
 import { Staff } from "../../types/types";
 import Notification from "../Notification";
 import {
+  CleanUpStatusStaff,
   FetchAllstaffs,
-  GetStaffDetailAction,
 } from "../../features/redux/staffSlice";
 import Loading from "../Loading";
 import { BsPlus } from "react-icons/bs";
@@ -23,17 +23,36 @@ const StaffsList = () => {
   const dispatch = useDispatch();
   const { staffType } = useParams();
 
-  useEffect(() => {
-    if (staffType !== undefined && staffMembers.hasOwnProperty(staffType)) {
-      dispatch(GetStaffDetailAction(staffType));
-    } else {
-      dispatch(FetchAllstaffs());
-    }
-  }, [dispatch, staffType]);
-
   const { isLoading, staffs, isDeleteSuccess, error } = useSelector(
     (state: any) => state.staffs
   );
+
+  useEffect(() => {
+    if (staffs.length === 0) {
+      dispatch(FetchAllstaffs());
+    }
+    return () => {
+      dispatch(CleanUpStatusStaff());
+    };
+  }, [dispatch, staffType]);
+
+  const [staffMemebers, setStaffMemebers] = useState([]);
+
+
+  useEffect(() => {
+    if (
+      staffType !== undefined &&
+      staffMembers.hasOwnProperty(staffType) &&
+      staffs.length !== 0
+    ) {
+      setStaffMemebers(
+        staffs.filter((item: Staff) => item.userSector === staffType)
+      );
+    } else {
+      setStaffMemebers(staffs);
+    }
+    return () => {};
+  }, [staffType, staffs]);
 
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(0);
@@ -71,7 +90,7 @@ const StaffsList = () => {
           </Link>
         </div>
         <div className="md:grid-cols-2 lg:grid-cols-3 grid gap-10  grid-cols-1">
-          {staffs
+          {staffMemebers
             .slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
             .map((staff: Staff, index: number) => (
               <StaffCard key={index} staff={staff} />
