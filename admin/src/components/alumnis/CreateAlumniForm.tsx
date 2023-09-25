@@ -21,6 +21,7 @@ const CreateAlumniForm = () => {
     formData.append("name", data.name);
     formData.append("story", data.story);
     formData.append("file", data.file);
+    console.log("file: ", data.file);
 
     dispatch(CreateAlumniAction(formData));
   };

@@ -7,7 +7,7 @@ import {
 
 const navigation = [
   { name: "Projects", href: "/", icon: FolderIcon, current: true },
-  { name: "Gallery", href: "/gallery", icon: PhotoIcon, current: false },
+  { name: "Gallery", href: "/galleries", icon: PhotoIcon, current: false },
   { name: "Alumni", href: "/alumnis", icon: UsersIcon, current: false },
   {
     name: "Staffs",

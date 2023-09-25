@@ -80,9 +80,34 @@ export interface Gallery {
   id: string;
 }
 
+export interface GalleryPhoto {
+  isMainPhoto: boolean;
+  File: File;
+  url: string;
+}
+
+export interface PhotoDetail {
+  id: string;
+  url: string;
+  isMainPhoto: boolean;
+}
+
+export interface CreateGallery {
+  title: string;
+  photos: GalleryPhoto[];
+  isMainPhotoCount: number;
+}
+
+export interface UpdateGallery {
+  title: string;
+  photos: GalleryPhoto[];
+  isMainPhotoCount: number;
+  id: string;
+}
+
 export interface GalleryDetail {
   title: string;
   mainPhotoUrl: string;
-  photos: string[];
+  photos: PhotoDetail[];
   id: string;
 }

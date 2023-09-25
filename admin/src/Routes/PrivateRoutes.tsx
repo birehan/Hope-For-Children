@@ -8,6 +8,10 @@ import UpdateStaffForm from "../components/staffs/UpdateStaffForm";
 import AlumniList from "../components/alumnis/AlumniList";
 import CreateAlumniForm from "../components/alumnis/CreateAlumniForm";
 import UpdateAlumniForm from "../components/alumnis/UpdateAlumniForm";
+import GalleryFormInput from "../components/gallery/CreateGalleryForm";
+import GalleryList from "../components/gallery/GalleryList";
+import GalleryDetail from "../components/gallery/GalleryDetail";
+import UpdateGalleryForm from "../components/gallery/UpdateGalleryForm";
 
 const ProjectsList = lazy(() => import("../features/projects/ProjectsList"));
 
@@ -21,7 +25,11 @@ export default function PrivateRoutes() {
       { path: "/staffs/create", element: <CreateStaffForm /> },
       { path: "/staffs/update/:id", element: <UpdateStaffForm /> },
 
-      { path: "/gallery", element: <GalleryPage /> },
+      { path: "/galleries", element: <GalleryList /> },
+      { path: "/galleries/:id", element: <GalleryDetail /> },
+      { path: "/gallery/create", element: <GalleryFormInput /> },
+      { path: "/gallery/update/:id", element: <UpdateGalleryForm /> },
+
       { path: "/alumnis", element: <AlumniList /> },
       { path: "/alumnis/create", element: <CreateAlumniForm /> },
       { path: "/alumnis/update/:id", element: <UpdateAlumniForm /> },

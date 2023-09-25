@@ -37,7 +37,7 @@ const AlumniCard = ({ alumni }: Props) => {
           <Link to={`/alumnis/update/${alumni.id}`}>
             <button
               type="button"
-              className="inline-flex items-center gap-x-1.5 rounded-md bg-blue-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              className="inline-flex items-center gap-x-1.5 rounded-md bg-blue-600  hover:bg-blue-500 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
             >
               <AiFillEdit className="-ml-0.5 h-5 w-5" aria-hidden="true" />
               Edit

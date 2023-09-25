@@ -62,7 +62,6 @@ function* updateAlumni({
     const data = yield call(Alumnis.update, formData, id); // Assuming Alumnis.update is your API call for updating Alumni
     yield put(UpdateAlumniSuccess(data));
   } catch (error) {
-    console.log("eror: ", error);
     yield put(UpdateAlumniFailure("Something went wrong! try again"));
   }
 }

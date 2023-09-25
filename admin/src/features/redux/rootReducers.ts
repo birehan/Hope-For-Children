@@ -5,6 +5,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { staffslice } from "./staffSlice";
 import { alumnislice } from "./alumniSlice";
+import { galleryslice } from "./gallerySlice";
 
 const persistConfig = {
   key: "root",
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   projects: projectSlice.reducer,
   staffs: staffslice.reducer,
   alumnis: alumnislice.reducer,
+  galleries: galleryslice.reducer,
 });
 const rootReducers = persistReducer(persistConfig, rootReducer);
 
