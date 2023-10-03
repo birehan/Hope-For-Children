@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/common/Layout";
 import CreateProjectForm from "../features/projects/CreateProjectForm";
 import GalleryPage from "../pages/GalleryPage";
 import StaffsList from "../components/staffs/StaffList";
@@ -12,6 +12,8 @@ import GalleryFormInput from "../components/gallery/CreateGalleryForm";
 import GalleryList from "../components/gallery/GalleryList";
 import GalleryDetail from "../components/gallery/GalleryDetail";
 import UpdateGalleryForm from "../components/gallery/UpdateGalleryForm";
+import ProjectDetail from "../features/projects/ProjectDetail";
+import UpdateProjectForm from "../features/projects/UpdateProjectForm";
 
 const ProjectsList = lazy(() => import("../features/projects/ProjectsList"));
 
@@ -21,6 +23,10 @@ export default function PrivateRoutes() {
     children: [
       { path: "/", element: <ProjectsList /> },
       { path: "/projects/create", element: <CreateProjectForm /> },
+      { path: "/project/:id", element: <ProjectDetail /> },
+
+      { path: "/project/update/:id", element: <UpdateProjectForm /> },
+
       { path: "/staff/:staffType?", element: <StaffsList /> },
       { path: "/staffs/create", element: <CreateStaffForm /> },
       { path: "/staffs/update/:id", element: <UpdateStaffForm /> },

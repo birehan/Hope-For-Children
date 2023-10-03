@@ -104,6 +104,9 @@ export const staffslice = createSlice({
       state.staff = action.payload;
       state.error = "";
       state.isUpdateSuccess = true;
+      state.staffs = state.staffs.map((alumni) =>
+        alumni.id === action.payload.id ? action.payload : alumni
+      );
     },
     UpdateStaffFailure: (state, action: PayloadAction<string>) => {
       state.isLoading = false;

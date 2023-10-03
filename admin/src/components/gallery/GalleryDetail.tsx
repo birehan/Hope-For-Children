@@ -6,11 +6,11 @@ import {
   DeleteGalleryAction,
   GetGalleryByIdAction,
 } from "../../features/redux/gallerySlice";
-import Loading from "../Loading";
+import Loading from "../common/Loading";
 import { PhotoDetail } from "../../types/types";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-import DeletePopup from "../DeletePopup";
-import Notification from "../Notification";
+import DeletePopup from "../common/DeletePopup";
+import Notification from "../common/Notification";
 
 const GalleryDetail = () => {
   const [openDelete, setOpenDelete] = useState(false);

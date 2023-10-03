@@ -1,5 +1,5 @@
 import authSlice from "./auth/authSlice";
-import { projectSlice } from "./project/projectSlice";
+import { projectSlice } from "./projectSlice";
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";

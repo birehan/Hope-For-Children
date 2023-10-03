@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CreateAlumni } from "../../types/types";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import TextInput from "../inputs/TextInput";
-import SubmitButton from "../SubmitButton";
+import SubmitButton from "../common/SubmitButton";
 import TextAreaInput from "../inputs/TextAreaInput";
 import ImageInput from "../inputs/ImageInput";
 import {
@@ -10,7 +10,7 @@ import {
   CreateAlumniAction,
 } from "../../features/redux/alumniSlice";
 import { useEffect, useState } from "react";
-import Notification from "../Notification";
+import Notification from "../common/Notification";
 
 const CreateAlumniForm = () => {
   const dispatch = useDispatch();

@@ -25,9 +25,11 @@ export interface CreateProject extends CommonProjectFields {
 }
 
 export interface UpdateProject extends CommonProjectFields {
-  imageFile?: File;
+  file: File | null;
   id: string;
 }
+
+export interface ProjectDetail extends UpdateProject {}
 
 export interface CommonStaffFields {
   name: string;

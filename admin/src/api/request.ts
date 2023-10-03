@@ -5,7 +5,6 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 export const setUpAxiosIntercept = (user: any) => {
   axios.interceptors.request.use((config) => {
-    // const { user } = useSelector((state: any) => state.authReducer);
     if (user?.token) {
       config.headers.Authorization = `Bearer ${user.token}`;
     }

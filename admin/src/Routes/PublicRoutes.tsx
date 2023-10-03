@@ -1,6 +1,6 @@
-import Login from "../components/Login";
-import NotFoundPage from "../components/NotFoundPage";
-import Register from "../components/Register";
+import Login from "../components/common/Login";
+import NotFoundPage from "../components/common/NotFoundPage";
+import Register from "../components/common/Register";
 
 export default function PublicRoutes() {
   return [

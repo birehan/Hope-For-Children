@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CreateStaff } from "../../types/types";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import TextInput from "../inputs/TextInput";
-import SubmitButton from "../SubmitButton";
+import SubmitButton from "../common/SubmitButton";
 import TextAreaInput from "../inputs/TextAreaInput";
 import ImageInput from "../inputs/ImageInput";
 import DropDownInput from "../inputs/DropDownInput";
@@ -11,7 +11,7 @@ import {
   CreateStaffAction,
 } from "../../features/redux/staffSlice";
 import { useEffect, useState } from "react";
-import Notification from "../Notification";
+import Notification from "../common/Notification";
 
 const CreateStaffForm = () => {
   const dispatch = useDispatch();

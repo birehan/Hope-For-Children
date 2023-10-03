@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Staff } from "../../types/types";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import DeletePopup from "../DeletePopup";
+import DeletePopup from "../common/DeletePopup";
 import { DeleteStaffAction } from "../../features/redux/staffSlice";
 
 interface Props {
@@ -24,7 +24,7 @@ const StaffCard = ({ staff }: Props) => {
       )}
 
       <div className="text-center">
-        <div className="relative flex items-end overflow-hidden rounded-xl aspect-w-4 aspect-h-3 ">
+        <div className="relative border border-[#e3dede] flex items-end overflow-hidden rounded-xl aspect-w-4 aspect-h-3 ">
           <img
             src={staff.photoUrl}
             alt="staff"

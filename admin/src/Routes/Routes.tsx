@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login from "../components/Login";
-import Register from "../components/Register";
-import NotFoundPage from "../components/NotFoundPage";
+import Login from "../components/common/Login";
+import Register from "../components/common/Register";
+import NotFoundPage from "../components/common/NotFoundPage";
 
 function RoutesPaths() {
   return [

@@ -89,6 +89,9 @@ export const galleryslice = createSlice({
       state.gallery = action.payload;
       state.error = "";
       state.isUpdateSuccess = true;
+      state.galleries = state.galleries.map((alumni) =>
+        alumni.id === action.payload.id ? action.payload : alumni
+      );
     },
     UpdateGalleryFailure: (state, action: PayloadAction<string>) => {
       state.isLoading = false;

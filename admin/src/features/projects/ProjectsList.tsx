@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Loading from "../../components/Loading";
+import Loading from "../../components/common/Loading";
 import { useDispatch } from "react-redux";
-import { FetchAllProjects } from "../redux/project/projectSlice";
-import Pagination from "../../components/Pagination";
+import { FetchAllProjects } from "../redux/projectSlice";
+import Pagination from "../../components/common/Pagination";
 import ProjectCard from "./ProjectCard";
 import { Project } from "../../types/types";
 import { BsPlus } from "react-icons/bs";
@@ -12,14 +12,16 @@ import { Link } from "react-router-dom";
 const ProjectsList = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(FetchAllProjects());
-    return () => {};
-  }, [dispatch]);
-
   const { projects, loading, errors } = useSelector(
     (state: any) => state.projects
   );
+
+  useEffect(() => {
+    if (projects.length == 0) {
+      dispatch(FetchAllProjects());
+    }
+    return () => {};
+  }, [dispatch]);
 
   const [itemsPerPage, setItemsPerPage] = useState(6); // Initialize with 1 item per row
 

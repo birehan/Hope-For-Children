@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Alumni } from "../../types/types";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import DeletePopup from "../DeletePopup";
+import DeletePopup from "../common/DeletePopup";
 import { DeleteAlumniAction } from "../../features/redux/alumniSlice";
 
 interface Props {

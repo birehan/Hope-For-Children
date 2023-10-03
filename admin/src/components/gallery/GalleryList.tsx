@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Gallery } from "../../types/types";
-import Notification from "../Notification";
+import Notification from "../common/Notification";
 import { FetchAllGallerys } from "../../features/redux/gallerySlice";
-import Loading from "../Loading";
+import Loading from "../common/Loading";
 import { BsPlus } from "react-icons/bs";
 
 const GalleryList = () => {

@@ -7,7 +7,7 @@ import {
 import { UpdateGallery } from "../../types/types";
 import TextInput from "../inputs/TextInput";
 import MultiImageInput from "../inputs/MultiImageInput";
-import SubmitButton from "../SubmitButton";
+import SubmitButton from "../common/SubmitButton";
 import UploadedImages from "./UploadedImages";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -17,8 +17,8 @@ import {
 } from "../../features/redux/gallerySlice";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../Loading";
-import Notification from "../Notification";
+import Loading from "../common/Loading";
+import Notification from "../common/Notification";
 
 const UpdateGalleryForm = () => {
   const dispatch = useDispatch();

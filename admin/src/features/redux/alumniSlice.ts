@@ -89,6 +89,9 @@ export const alumnislice = createSlice({
       state.alumni = action.payload;
       state.error = "";
       state.isUpdateSuccess = true;
+      state.alumnis = state.alumnis.map((alumni) =>
+        alumni.id === action.payload.id ? action.payload : alumni
+      );
     },
     UpdateAlumniFailure: (state, action: PayloadAction<string>) => {
       state.isLoading = false;

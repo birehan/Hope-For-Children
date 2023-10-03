@@ -7,14 +7,14 @@ import {
 import { CreateGallery } from "../../types/types";
 import TextInput from "../inputs/TextInput";
 import MultiImageInput from "../inputs/MultiImageInput";
-import SubmitButton from "../SubmitButton";
+import SubmitButton from "../common/SubmitButton";
 import UploadedImages from "./UploadedImages";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CleanStatusGallery,
   CreateGalleryAction,
 } from "../../features/redux/gallerySlice";
-import Notification from "../Notification";
+import Notification from "../common/Notification";
 import { useEffect } from "react";
 
 const CreateGalleryForm = () => {

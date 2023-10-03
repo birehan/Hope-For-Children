@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Pagination from "../Pagination";
+import Pagination from "../common/Pagination";
 import { Alumni } from "../../types/types";
-import Notification from "../Notification";
+import Notification from "../common/Notification";
 import { FetchAllAlumnis } from "../../features/redux/alumniSlice";
-import Loading from "../Loading";
+import Loading from "../common/Loading";
 import { BsPlus } from "react-icons/bs";
 import AlumniCard from "./AlumniCard";
 

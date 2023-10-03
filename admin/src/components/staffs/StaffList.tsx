@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Pagination from "../Pagination";
+import Pagination from "../common/Pagination";
 import { Staff } from "../../types/types";
-import Notification from "../Notification";
+import Notification from "../common/Notification";
 import {
   CleanUpStatusStaff,
   FetchAllstaffs,
 } from "../../features/redux/staffSlice";
-import Loading from "../Loading";
+import Loading from "../common/Loading";
 import { BsPlus } from "react-icons/bs";
 import StaffCard from "./StaffCard";
 
@@ -37,7 +37,6 @@ const StaffsList = () => {
   }, [dispatch, staffType]);
 
   const [staffMemebers, setStaffMemebers] = useState([]);
-
 
   useEffect(() => {
     if (
