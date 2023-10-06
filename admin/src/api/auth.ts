@@ -1,15 +1,21 @@
-import axios from "axios";
-import { API_BASE_URL } from "../config";
-import { AuthType } from "../types/user";
+import {
+  ChangePassword,
+  ForgetPasswordSendEmail,
+  LoginUser,
+  ResetPassword,
+} from "../types/types";
+import { requests } from "./request";
 
-export const userLoginApi = async (user: AuthType) => {
-  try {
-    const { data } = await axios.post(
-      process.env.REACT_APP_API_URL + "/Account/login",
-      user
-    );
-    return data.value;
-  } catch (error) {
-    throw new Error("Server Error");
-  }
+const Auths = {
+  login: (user: LoginUser) => requests.post<LoginUser>("/Account/login", user),
+  changePassword: (data: ChangePassword) =>
+    requests.put<string>("/Account/updatePassword", data),
+
+  forgetPassword: (data: ForgetPasswordSendEmail) =>
+    requests.put<string>("/Account/forgetPasswordSendEmail", data),
+
+  resetPassword: (data: ResetPassword) =>
+    requests.put<string>("/Account/resetPassword", data),
 };
+
+export default Auths;

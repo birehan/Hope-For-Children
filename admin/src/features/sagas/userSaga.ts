@@ -5,7 +5,7 @@ import {
   CreateUserErrorAction,
   CreateUserSuccessAction,
 } from "../redux/user/userSlice";
-import { User } from "../../types/user";
+import { User } from "../../types/types";
 
 function* createUser({
   payload: user,

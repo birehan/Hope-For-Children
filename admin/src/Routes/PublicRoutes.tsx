@@ -1,4 +1,4 @@
-import Login from "../components/common/Login";
+import Login from "../components/account/Login";
 import NotFoundPage from "../components/common/NotFoundPage";
 import Register from "../components/common/Register";
 

@@ -9,6 +9,38 @@ export interface ProjectResponse<T = Project[]> {
   value: T;
   error: string;
 }
+
+export interface ChangePassword {
+  oldPassword: string;
+  newPassword: string;
+}
+export interface ResetPassword {
+  userId: string | null;
+  token: string | null;
+  newPassword: string;
+}
+
+export interface ForgetPasswordSendEmail {
+  email: string;
+}
+
+export interface LoginUser {
+  email: string;
+  password: string;
+}
+
+export interface User {
+  email: string;
+  password: string;
+  username: string;
+  userRole: string;
+}
+
+export interface AuthType {
+  email: string;
+  password: string;
+}
+
 export interface CommonProjectFields {
   title: string;
   description: string;

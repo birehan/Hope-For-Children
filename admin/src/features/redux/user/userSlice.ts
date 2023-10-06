@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { User } from "../../../types/user";
+import { User } from "../../../types/types";
 
 export type userState = {
   user: User | null;
@@ -27,7 +27,7 @@ export const userSlice = createSlice({
       state: userState,
       { payload: user }: PayloadAction<User>
     ) => {
-      localStorage.setItem('user',JSON.stringify(user))
+      localStorage.setItem("user", JSON.stringify(user));
       state.user = user;
     },
     CreateUserErrorAction: (
@@ -39,7 +39,10 @@ export const userSlice = createSlice({
     },
   },
 });
-export const { CreateUserAction,CreateUserSuccessAction,CreateUserErrorAction } =
-  userSlice.actions;
+export const {
+  CreateUserAction,
+  CreateUserSuccessAction,
+  CreateUserErrorAction,
+} = userSlice.actions;
 
 export default userSlice;

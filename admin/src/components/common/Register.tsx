@@ -1,8 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { User } from "../../types/user";
 import { CreateUserAction } from "../../features/redux/user/userSlice";
 import { authState } from "../../features/redux/auth/authSlice";
+import { User } from "../../types/types";
 
 export default function Register() {
   const user = useSelector((state: authState) => state.user);
