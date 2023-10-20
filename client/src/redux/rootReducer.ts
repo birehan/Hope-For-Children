@@ -9,7 +9,7 @@ import projectDetail from "./projectDetailReducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["projects", "staffs", "alumnis", "galleries", "projectDetail"],
+  whitelist: [],
 };
 
 const rootReducer = combineReducers({

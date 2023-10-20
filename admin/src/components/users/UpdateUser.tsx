@@ -1,56 +1,64 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  CreateUserAction,
   CleanStatusUsers,
+  GetUserByIdAction,
+  UpdateUserAction,
 } from "../../features/redux/userSlice";
-import { RegisterUser } from "../../types/types";
+import { User } from "../../types/types";
 import TextInput from "../inputs/TextInput";
 import EmailInput from "../inputs/EmailInput";
-import PasswordInput from "../inputs/PasswordInput";
-import SubmitButton from "./SubmitButton";
-import Notification from "./Notification";
+import SubmitButton from "../common/SubmitButton";
+import Notification from "../common/Notification";
 import DropDownInput from "../inputs/DropDownInput";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-export default function Register() {
+export default function UpdateUser() {
   const dispatch = useDispatch();
-  const { isLoading, error, isCreateSuccess } = useSelector(
+  const { isLoading, error, isUpdateSuccess } = useSelector(
     (state: any) => state.users
   );
-  const methods = useForm<RegisterUser>();
+  const methods = useForm<User>();
 
-  const onSubmit: SubmitHandler<RegisterUser> = (data) => {
-    dispatch(CreateUserAction(data));
-  };
+  const { id } = useParams(); // Extract the user ID from the route parameter
 
   useEffect(() => {
+    if (id) {
+      dispatch(GetUserByIdAction(id));
+    }
     return () => {
       dispatch(CleanStatusUsers());
     };
-  }, [dispatch]);
+  }, [dispatch, id]);
+
+  const user = useSelector((state: any) => state.users.user);
+
+  const onSubmit: SubmitHandler<User> = (data) => {
+    dispatch(UpdateUserAction({ user: data }));
+  };
 
   useEffect(() => {
-    if (isCreateSuccess) {
-      methods.reset();
+    if (user) {
+      methods.reset(user);
     }
-  }, [isCreateSuccess, methods]);
+  }, [user, methods]);
 
   return (
     <FormProvider {...methods}>
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
-        {isCreateSuccess && (
+        {isUpdateSuccess && (
           <Notification
-            success={isCreateSuccess}
-            message="User Created succesffully"
+            success={isUpdateSuccess}
+            message="User Updated Successfully"
           />
         )}
 
-        {error && <Notification success={isCreateSuccess} message={error} />}
+        {error && <Notification success={isUpdateSuccess} message={error} />}
 
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Create user account
+            Update User Account
           </h2>
         </div>
 
@@ -60,9 +68,7 @@ export default function Register() {
               className="space-y-6"
               onSubmit={methods.handleSubmit(onSubmit)}
             >
-              <TextInput label={"User name"} name={"username"} />
               <EmailInput />
-              <PasswordInput label={"Password"} name={"password"} />
 
               <DropDownInput
                 label="Role"
@@ -72,8 +78,9 @@ export default function Register() {
                 ]}
                 name="userRole"
               />
+              <TextInput label={"User name"} name={"userName"} />
               <div className="text-center">
-                <SubmitButton text={"Create User"} isLoading={isLoading} />
+                <SubmitButton text={"Update User"} isLoading={isLoading} />
               </div>
             </form>
           </div>

@@ -2,12 +2,51 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import navigation from "../../data/sidebarLinks";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { UsersIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 const DesktopSidebar = () => {
   const location = useLocation();
+  const { user } = useSelector((state: any) => state.auth);
+  const [navigationLinks, setnavigationLinks] = useState<any>(navigation);
+
+  if (
+    user !== null &&
+    user.userRole === "SuperAdmin" &&
+    navigation[navigation.length - 1].name !== "Users"
+  ) {
+    navigation.push({
+      name: "Users",
+      href: "/users",
+      icon: UsersIcon,
+      current: false,
+    });
+  }
+
+  // useEffect(() => {
+  //   if (
+  //     user !== null &&
+  //     user.userRole === "SuperAdmin" &&
+  //     navigation[navigation.length - 1].name !== "Users"
+  //   ) {
+  //     console.log("user: ", user);
+  //     setnavigationLinks([
+  //       ...navigation,
+  //       {
+  //         name: "Users",
+  //         href: "/users",
+  //         icon: UsersIcon,
+  //         current: false,
+  //       },
+  //     ]);
+  //   }
+
+  //   return () => {};
+  // }, [user]);
 
   return (
     <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">

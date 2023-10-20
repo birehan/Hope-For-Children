@@ -20,6 +20,8 @@ import ChangePasswordForm from "../components/account/ChangePassword";
 import ResetPasswordForm from "../components/account/ResetPassword";
 import ForgetPassword from "../components/account/ForgetPassword";
 import EmailSentSuccess from "../components/account/EmailSendSuccess";
+import UsersTable from "../components/users/UsersTable";
+import UpdateUser from "../components/users/UpdateUser";
 
 const ProjectsList = lazy(() => import("../features/projects/ProjectsList"));
 
@@ -47,16 +49,17 @@ export default function PrivateRoutes() {
         { path: "/alumnis/update/:id", element: <UpdateAlumniForm /> },
 
         { path: "/auth/changePassword", element: <ChangePasswordForm /> },
+
+        { path: "/users", element: <UsersTable /> },
+        { path: "/user/register", element: <Register /> },
+        { path: "/user/update/:id", element: <UpdateUser /> },
+
       ],
     },
 
     {
       path: "/login",
       element: <Login />,
-    },
-    {
-      path: "/register",
-      element: <Register />,
     },
     {
       path: "*",
@@ -68,6 +71,5 @@ export default function PrivateRoutes() {
     { path: "/auth/forgetpassword", element: <ForgetPassword /> },
 
     { path: "/auth/emailsendsuccess", element: <EmailSentSuccess /> },
-
   ];
 }

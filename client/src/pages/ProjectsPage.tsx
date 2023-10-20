@@ -19,7 +19,9 @@ const ProjectsPage = () => {
     };
   }, [dispatch]);
 
-  const { projects, loading } = useSelector((state: any) => state.projects);
+  const { projects, loading, message } = useSelector(
+    (state: any) => state.projects
+  );
 
   const [itemsPerPage, setItemsPerPage] = useState(1); // Initialize with 1 item per row
 
@@ -54,24 +56,27 @@ const ProjectsPage = () => {
         <CommonLanding title="Our Projects" icon={null} />
 
         <div className="px-6">
-          <div>
-            <div className="mx-auto grid max-w-[90rem] grid-cols-1 gap-10 px-6  md:grid-cols-2 lg:grid-cols-3">
-              {projects
-                .slice(
-                  currentPage * itemsPerPage,
-                  (currentPage + 1) * itemsPerPage
-                )
-                .map((project: Project, index: number) => {
-                  return <ProjectCard key={index} project={project} />;
-                })}
-            </div>
+          {projects && (
+            <div>
+              <div className="mx-auto grid max-w-[90rem] grid-cols-1 gap-10 px-6  md:grid-cols-2 lg:grid-cols-3">
+                {projects
+                  .slice(
+                    currentPage * itemsPerPage,
+                    (currentPage + 1) * itemsPerPage
+                  )
+                  .map((project: Project, index: number) => {
+                    return <ProjectCard key={index} project={project} />;
+                  })}
+              </div>
 
-            <Pagination
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-              totalPages={totalPages}
-            />
-          </div>
+              <Pagination
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                totalPages={totalPages}
+              />
+            </div>
+          )}
+          {message && <div>{message}</div>}
         </div>
       </div>
     </Layout>

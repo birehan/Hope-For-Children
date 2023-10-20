@@ -20,8 +20,8 @@ export const staffMembers = {
 };
 
 const StaffsList = () => {
-  const dispatch = useDispatch();
   const { staffType } = useParams();
+  const dispatch = useDispatch();
 
   const { isLoading, staffs, isDeleteSuccess, error } = useSelector(
     (state: any) => state.staffs

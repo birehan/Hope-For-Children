@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { MdOutlineAccountCircle } from "react-icons/md";
-import { LogOutAction } from "../../features/redux/auth/authSlice";
+import { LogOutAction } from "../../features/redux/authSlice";
 import { Link } from "react-router-dom";
 
 function classNames(...classes: string[]) {

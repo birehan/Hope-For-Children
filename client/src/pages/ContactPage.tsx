@@ -77,7 +77,7 @@ const ContactPage = () => {
               <Map
                 animate={true}
                 defaultCenter={[9.06223, 38.7584]}
-                defaultZoom={12}
+                defaultZoom={6}
                 height={isLargeScreen ? 0 : 350}
               >
                 <Marker width={50} anchor={[9.06223, 38.7584]} />

@@ -24,16 +24,30 @@ export interface ForgetPasswordSendEmail {
   email: string;
 }
 
+export interface User {
+  email: string;
+  userRole: string;
+  userName: string;
+  id: string;
+}
+
+export interface RegisterUser {
+  password: string;
+  email: string;
+  userRole: string;
+  username: string;
+}
+
+export interface UpdateUser {
+  email: string;
+  userRole: string;
+  username: string;
+  id: string;
+}
+
 export interface LoginUser {
   email: string;
   password: string;
-}
-
-export interface User {
-  email: string;
-  password: string;
-  username: string;
-  userRole: string;
 }
 
 export interface AuthType {

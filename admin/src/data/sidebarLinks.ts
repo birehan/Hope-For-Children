@@ -5,7 +5,7 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 
-const navigation = [
+let navigation = [
   { name: "Projects", href: "/", icon: FolderIcon, current: true },
   { name: "Gallery", href: "/galleries", icon: PhotoIcon, current: false },
   { name: "Alumni", href: "/alumnis", icon: UsersIcon, current: false },

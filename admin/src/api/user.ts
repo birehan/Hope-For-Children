@@ -1,21 +1,16 @@
-import axios from "axios";
-import { User } from "../types/types";
+import { RegisterUser, User } from "../types/types";
+import { requests } from "./request";
 
-export const createUserApi = async (user: User) => {
-  const userJSON = localStorage.getItem("user");
-  const userfromlh = userJSON ? JSON.parse(userJSON) : null;
-  try {
-    const { data } = await axios.post(
-      process.env.REACT_APP_API_URL + "/Account/register",
-      user,
-      {
-        headers: {
-          Authorization: `Bearer ${userfromlh.value.token}`,
-        },
-      }
-    );
-    return data;
-  } catch (error) {
-    throw new Error("Server Error");
-  }
+const Users = {
+  register: (user: RegisterUser) =>
+    requests.post<RegisterUser>("/Account/register", user),
+  update: (user: User) => requests.put<User>(`/Account/updateUser`, user),
+
+  list: () => requests.get<User>("/Account/users"),
+
+  getDetail: (id: string) => requests.get<User>(`/Account/${id}`),
+
+  delete: (id: string) => requests.del<string>(`/Account/${id}`),
 };
+
+export default Users;

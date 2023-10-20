@@ -6,10 +6,12 @@ function* getProjects(): any {
   try {
     const projects = yield call(api.getProjects);
     yield put({ type: types.GET_PROJECTS_SUCCESS, payload: projects });
-  } catch (error) {
+  } catch (error: any) {
+    console.log("eror: ", error);
     yield put({
       type: types.GET_PROJECTS_FAILED,
-      payload: error,
+      payload:
+        error?.response?.data?.error || "Something went wrong! try again",
     });
   }
 }
@@ -18,10 +20,11 @@ function* getProjectDetail(payload: any): any {
   try {
     const project = yield call(api.getProjectDetail, payload.payload);
     yield put({ type: types.GET_PROJECT_DETAIL_SUCCESS, payload: project });
-  } catch (error) {
+  } catch (error: any) {
     yield put({
       type: types.GET_PROJECT_DETAIL_FAILED,
-      payload: error,
+      payload:
+        error?.response?.data?.error || "Something went wrong! try again",
     });
   }
 }
@@ -30,10 +33,11 @@ function* getGalleries(): any {
   try {
     const projects = yield call(api.getGalleries);
     yield put({ type: types.GET_GALLERY_SUCCESS, payload: projects });
-  } catch (error) {
+  } catch (error: any) {
     yield put({
       type: types.GET_GALLERY_FAILED,
-      payload: error,
+      payload:
+        error?.response?.data?.error || "Something went wrong! try again",
     });
   }
 }
@@ -42,10 +46,11 @@ function* getGalleryDetail(payload: any): any {
   try {
     const project = yield call(api.getGalleryDetail, payload.payload);
     yield put({ type: types.GET_GALLERY_DETAIL_SUCCESS, payload: project });
-  } catch (error) {
+  } catch (error: any) {
     yield put({
       type: types.GET_GALLERY_DETAIL_FAILED,
-      payload: error,
+      payload:
+        error?.response?.data?.error || "Something went wrong! try again",
     });
   }
 }
@@ -54,10 +59,11 @@ function* getAlumniStudents(): any {
   try {
     const alumnis = yield call(api.getAlumniStudents);
     yield put({ type: types.GET_ALUMNI_STUDENTS_SUCCESS, payload: alumnis });
-  } catch (error) {
+  } catch (error: any) {
     yield put({
       type: types.GET_ALUMNI_STUDENTS_FAILED,
-      payload: error,
+      payload:
+        error?.response?.data?.error || "Something went wrong! try again",
     });
   }
 }
@@ -66,10 +72,11 @@ function* getStaffs(payload: any): any {
   try {
     const staffs = yield call(api.getStaffs, payload.payload);
     yield put({ type: types.GET_STAFFS_SUCCESS, payload: staffs });
-  } catch (error) {
+  } catch (error: any) {
     yield put({
       type: types.GET_STAFFS_FAILED,
-      payload: error,
+      payload:
+        error?.response?.data?.error || "Something went wrong! try again",
     });
   }
 }

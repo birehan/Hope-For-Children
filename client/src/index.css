@@ -81,7 +81,7 @@ code {
 /* WebKit Scrollbar Styles */
 /* Track */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 6px; /* Width of the scrollbar */
 }
 
 /* Handle */

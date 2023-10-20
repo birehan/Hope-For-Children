@@ -2,10 +2,22 @@ import { Key, SetStateAction, useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { useSelector } from "react-redux";
 import { Project } from "../../types/types";
+import Loading from "../Loading";
+import { useDispatch } from "react-redux";
+import { getProjects, cleanUpProjects } from "../../actions/projectsAction";
 
 const ProjectsComponent = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerRow, setItemsPerRow] = useState(1); // Initialize with 1 item per row
+  const [itemsPerRow, setItemsPerRow] = useState(1);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProjects());
+    return () => {
+      dispatch(cleanUpProjects());
+    };
+  }, [dispatch]);
 
   const updateItemsPerRow = () => {
     if (window.innerWidth >= 1024) {
@@ -26,11 +38,9 @@ const ProjectsComponent = () => {
     };
   }, []);
 
-  const { projects } = useSelector((state: any) => state.projects);
-
-  if (projects == null) {
-    return <div>Server Error</div>;
-  }
+  const { projects, loading, message } = useSelector(
+    (state: any) => state.projects
+  );
 
   const totalRows = Math.ceil(projects.length / itemsPerRow);
 
@@ -38,12 +48,18 @@ const ProjectsComponent = () => {
     setCurrentPage(pageIndex);
   };
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="flex gap-10 flex-col">
       <p className="text-center text-3xl sm:text-4xl lg:text-5xl font-semibold text-primaryColor">
         Our Projects
       </p>
       <section className="py-12 bg-[#E6EFFA]">
+        {message && <div className="text-center px-8">{message}</div>}
+
         <div className="mx-auto grid max-w-[90rem] grid-cols-1 gap-10 px-6  md:grid-cols-2 lg:grid-cols-3">
           {projects
             .slice(currentPage * itemsPerRow, (currentPage + 1) * itemsPerRow)

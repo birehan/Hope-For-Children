@@ -3,17 +3,11 @@ import routes from "../Routes";
 
 axios.defaults.withCredentials = true;
 
-const sleep = (delay: number) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, delay);
-  });
-};
-
 const transport = axios.create({
   withCredentials: true,
 });
 
-const apiBaseUrl = process.env.REACT_APP_BACKEND_BASE_URL;
+const apiBaseUrl = process.env.REACT_APP_API_URL;
 
 transport.interceptors.request.use(
   (config) => config,
@@ -25,22 +19,8 @@ transport.interceptors.request.use(
   }
 );
 
-// Set up Axios interceptors
-transport.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    if (process.env.NODE_ENV === "development") await sleep(1000);
-    routes.navigate("/error/500", {
-      state: { path: routes.state.location.pathname },
-    });
-    return Promise.reject(error);
-  }
-);
-
 const makeRequest = async (endpoint: string) => {
-  const { data } = await transport.get(apiBaseUrl + endpoint, {
-    timeout: 100000,
-  });
+  const { data } = await transport.get(apiBaseUrl + endpoint, {});
   return data.value;
 };
 

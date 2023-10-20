@@ -2,7 +2,7 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import {
   CleanStatusAuth,
   ForgetPasswordSendEmaildAction,
-} from "../../features/redux/auth/authSlice";
+} from "../../features/redux/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SubmitButton from "../common/SubmitButton";
 import { useEffect } from "react";

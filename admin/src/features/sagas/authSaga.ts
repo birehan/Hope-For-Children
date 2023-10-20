@@ -9,7 +9,7 @@ import {
   LoginSuccessAction,
   ResetPasswordActionError,
   ResetPasswordActionSuccess,
-} from "../redux/auth/authSlice";
+} from "../redux/authSlice";
 import {
   AuthType,
   ChangePassword,
@@ -25,8 +25,6 @@ function* userLogin({
     const data = yield call(Auths.login, user);
     yield put(LoginSuccessAction(data));
   } catch (error: any) {
-    console.log("error: ", error);
-
     yield put(
       LoginErrorAction(
         error?.response?.data?.error || "Something went wrong! try again"
@@ -57,7 +55,6 @@ function* forgetPasswordSendEmail({
     yield call(Auths.forgetPassword, user);
     yield put(ForgetPasswordSendEmailSuccess());
   } catch (error: any) {
-    console.log("error: ", error);
     yield put(
       ForgetPasswordSendEmailError(
         error?.response?.data?.error || "Something went wrong! try again"

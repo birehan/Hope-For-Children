@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {
   ResetPasswordAction,
   CleanStatusAuth,
-} from "../../features/redux/auth/authSlice";
+} from "../../features/redux/authSlice";
 import SubmitButton from "../common/SubmitButton";
 import Notification from "../common/Notification";
 import { ResetPassword } from "../../types/types";

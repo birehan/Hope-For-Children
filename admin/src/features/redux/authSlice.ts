@@ -4,7 +4,7 @@ import {
   ChangePassword,
   ForgetPasswordSendEmail,
   ResetPassword,
-} from "../../../types/types";
+} from "../../types/types";
 
 export type authState = {
   user: AuthType | null;

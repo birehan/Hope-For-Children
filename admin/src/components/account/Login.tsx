@@ -1,8 +1,5 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import {
-  CleanStatusAuth,
-  LoginAction,
-} from "../../features/redux/auth/authSlice";
+import { CleanStatusAuth, LoginAction } from "../../features/redux/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SubmitButton from "../common/SubmitButton";
 import { useEffect } from "react";
