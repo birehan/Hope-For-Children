@@ -1,11 +1,7 @@
 import axios from "axios";
 import routes from "../Routes";
 
-axios.defaults.withCredentials = true;
-
-const transport = axios.create({
-  withCredentials: true,
-});
+const transport = axios.create({});
 
 const apiBaseUrl = process.env.REACT_APP_API_URL;
 

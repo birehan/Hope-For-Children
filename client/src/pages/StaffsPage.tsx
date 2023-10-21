@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import StaffSidebar from "../components/about_page_components/StaffSidebar";
-import { cleanUpStaff, getStaffs } from "../actions/projectsAction";
+import StaffSidebar from "../components/about_components/StaffSidebar";
+import { getStaffs } from "../api/ApiActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import StaffsList from "../components/StaffsList.jsx";
@@ -16,10 +16,6 @@ const StaffsPage = () => {
 
   useEffect(() => {
     dispatch(getStaffs(staffType));
-
-    return () => {
-      dispatch(cleanUpStaff());
-    };
   }, [staffType, dispatch]);
 
   if (loading) {

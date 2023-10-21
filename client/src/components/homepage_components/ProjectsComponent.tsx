@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Project } from "../../types/types";
 import Loading from "../Loading";
 import { useDispatch } from "react-redux";
-import { getProjects, cleanUpProjects } from "../../actions/projectsAction";
+import { getProjects } from "../../api/ApiActions";
 
 const ProjectsComponent = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -14,9 +14,6 @@ const ProjectsComponent = () => {
 
   useEffect(() => {
     dispatch(getProjects());
-    return () => {
-      dispatch(cleanUpProjects());
-    };
   }, [dispatch]);
 
   const updateItemsPerRow = () => {
@@ -39,7 +36,7 @@ const ProjectsComponent = () => {
   }, []);
 
   const { projects, loading, message } = useSelector(
-    (state: any) => state.projects
+    (state: any) => state.reducer
   );
 
   const totalRows = Math.ceil(projects.length / itemsPerRow);

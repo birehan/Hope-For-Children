@@ -4,7 +4,7 @@ import Pagination from "../components/Pagination";
 import { Project } from "../types/types";
 import ProjectCard from "../components/homepage_components/ProjectCard";
 import { useDispatch } from "react-redux";
-import { getProjects, cleanUpProjects } from "../actions/projectsAction";
+import { getProjects } from "../api/ApiActions";
 import CommonLanding from "../components/CommonLanding";
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
@@ -13,14 +13,10 @@ const ProjectsPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProjects());
-
-    return () => {
-      dispatch(cleanUpProjects());
-    };
   }, [dispatch]);
 
   const { projects, loading, message } = useSelector(
-    (state: any) => state.projects
+    (state: any) => state.reducer
   );
 
   const [itemsPerPage, setItemsPerPage] = useState(1); // Initialize with 1 item per row

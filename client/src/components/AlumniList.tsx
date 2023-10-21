@@ -5,7 +5,7 @@ import { Alumni } from "../types/types";
 import Pagination from "./Pagination";
 
 const AlumniList = () => {
-  const { alumnis } = useSelector((state: any) => state.alumnis);
+  const { alumnis } = useSelector((state: any) => state.reducer);
   const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = Math.ceil(alumnis.length / itemsPerPage);

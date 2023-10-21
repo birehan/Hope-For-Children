@@ -1,5 +1,5 @@
-import StaffSidebar from "../components/about_page_components/StaffSidebar";
-import AboutContent from "../components/about_page_components/AboutContent";
+import StaffSidebar from "../components/about_components/StaffSidebar";
+import AboutContent from "../components/about_components/AboutContent";
 import CommonLanding from "../components/CommonLanding";
 import Layout from "../components/Layout";
 

@@ -2,16 +2,13 @@ import { useEffect, useState } from "react";
 import CommonLanding from "../components/CommonLanding";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {
-  cleanUpGalleryDetail,
-  getGalleryDetail,
-} from "../actions/projectsAction";
+import { getGalleryDetail } from "../api/ApiActions";
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
 
 const GalleryDetailPage = () => {
   const dispatch = useDispatch();
-  const { gallery, loading } = useSelector((state: any) => state.galleries);
+  const { gallery, loading } = useSelector((state: any) => state.reducer);
   const { id } = useParams();
   const [isLargeScreen, setIsLargeScreen] = useState(true); // Initialize with 1 item per row
 
@@ -37,10 +34,6 @@ const GalleryDetailPage = () => {
 
   useEffect(() => {
     dispatch(getGalleryDetail(id));
-
-    return () => {
-      dispatch(cleanUpGalleryDetail());
-    };
   }, [dispatch, id]);
 
   const updateisLargeScreen = () => {
@@ -58,7 +51,7 @@ const GalleryDetailPage = () => {
     return () => {
       window.removeEventListener("resize", updateisLargeScreen);
     };
-}, [dispatch]);
+  }, [dispatch]);
 
   if (loading || gallery === null) {
     return <Loading />;
@@ -71,7 +64,7 @@ const GalleryDetailPage = () => {
 
         <div className="px-6 mt-8 xl:mt-16">
           <div className="mx-auto grid max-w-[90rem] grid-cols-2 gap-4 lg:grid-cols-3 gallery-container">
-            {gallery.photos.map((photoUrl: string, index: number) => {
+            {gallery.photos.map((photo: any, index: number) => {
               let row_start = 0;
               let row_end = 0;
               let height = "24rem";
@@ -108,7 +101,7 @@ const GalleryDetailPage = () => {
                   className={`hover:transform hover:scale-[1.02] duration-300`}
                 >
                   <img
-                    src={photoUrl}
+                    src={photo.url}
                     alt="gallery"
                     className="object-cover w-full rounded-md h-full"
                   />

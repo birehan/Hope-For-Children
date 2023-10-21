@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getProjectDetail,
-  cleanUpProjectDetail,
-} from "../actions/projectsAction";
+import { getProjectDetail } from "../api/ApiActions";
 import CommonLanding from "../components/CommonLanding";
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
@@ -15,12 +12,9 @@ const ProjectDetailPage = () => {
 
   useEffect(() => {
     dispatch(getProjectDetail(id));
-    return () => {
-      dispatch(cleanUpProjectDetail());
-    };
   }, [dispatch, id]);
 
-  const { project, loading } = useSelector((state: any) => state.projectDetail);
+  const { project, loading } = useSelector((state: any) => state.reducer);
 
   if (loading || project === null) {
     return <Loading />;

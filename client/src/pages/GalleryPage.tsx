@@ -3,20 +3,16 @@ import CommonLanding from "../components/CommonLanding";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Gallery } from "../types/types";
-import { cleanUpGalleries, getGalleries } from "../actions/projectsAction";
+import { getGalleries } from "../api/ApiActions";
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
 
 const GalleryPage = () => {
   const dispatch = useDispatch();
-  const { galleries, loading } = useSelector((state: any) => state.galleries);
+  const { galleries, loading } = useSelector((state: any) => state.reducer);
 
   useEffect(() => {
     dispatch(getGalleries());
-
-    return () => {
-      dispatch(cleanUpGalleries());
-    };
   }, [dispatch]);
 
   if (loading) {
